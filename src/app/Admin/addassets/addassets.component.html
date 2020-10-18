@@ -1,0 +1,260 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Assets</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #assetsForm="ngForm" (ngSubmit)="assetsForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="AssetName">Asset Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="AssetName" name="AssetName" class="form-control form_color"
+                                [(ngModel)]="ServiceData.AssetName" #AssetName="ngModel" placeholder="Enter Asset Name"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && AssetName.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && AssetName.invalid">
+                                <div *ngIf="AssetName.errors.required">Asset Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="PurchaseDate">Purchase Date<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="PurchaseDate" name="PurchaseDate"
+                                placeholder="Enter PurchaseDate" class="form-control form_color"
+                                [(ngModel)]="ServiceData.PurchaseDate" #PurchaseDate="ngModel"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && PurchaseDate.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && PurchaseDate.invalid">
+                                <div *ngIf="PurchaseDate.errors.required">UserName* is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="PurchaseDate">Purchase Date<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="date" id="PurchaseDate" name="PurchaseDate" placeholder="Enter Purchase Date"
+                                class="form-control form_color" [(ngModel)]="ServiceData.PurchaseDate" #PurchaseDate="ngModel"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && PurchaseDate.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && PurchaseDate.invalid">
+                                <div *ngIf="PurchaseDate.errors.required">Purchase Date* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Manufacturer">Manufacturer<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Manufacturer" name="Manufacturer" placeholder="Enter Manufacturer"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Manufacturer" #Manufacturer="ngModel"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && Manufacturer.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && Manufacturer.invalid">
+                                <div *ngIf="Manufacturer.errors.required">Manufacturer* is Required</div>
+
+                            </div>
+                        </div>
+                    </div>
+                  <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="SerialNumber">Serial Number</label>
+                                    <input type="text" id="SerialNumber" name="SerialNumber" placeholder="SerialNumber"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.SerialNumber" #SerialNumber="ngModel"
+                                        [ngClass]="{'is-invalid': assetsForm.submitted && SerialNumber.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="assetsForm.submitted && SerialNumber.invalid">
+                                        <div *ngIf="SerialNumber.errors.required">SerialNumber field is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Condition">Condition<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="Condition" name="Condition" placeholder="Enter Condition"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Condition" #Condition="ngModel"
+                                        [ngClass]="{'is-invalid': assetsForm.submitted && Condition.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="assetsForm.submitted && Condition.invalid">
+                                        <div *ngIf="Condition.errors.required">Condition* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Value">Value<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="Value" name="Value" placeholder="Enter Value"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Value" #Value="ngModel"
+                                        [ngClass]="{'is-invalid': assetsForm.submitted && Value.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="assetsForm.submitted && Value.invalid">
+                                        <div *ngIf="Value.errors.required">Value* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Status">Status</label>
+                                    <select class="form-control form_color" id="Status"  #Status="ngModel"  name="Status" [(ngModel)]="ServiceData.Status">
+                    
+                                         <option value="1">Pending</option>
+                                         <option value="2">Approved</option>
+                                         <option value="3">Deployed</option>
+                                         <option value="4">Damaged</option>
+                    
+                                     </select>
+                                    <div class="invalid-feedback" *ngIf="assetsForm.submitted && Status.invalid">
+                                        <div *ngIf="Status.errors.required">Status* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Assetid">Asset Id<span style="color: red;font-size: 18px;"></span></label>
+                            <input type="text" id="Assetid" name="Assetid" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Assetid" #Assetid="ngModel" placeholder="Enter Assetid"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && Assetid.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && Assetid.invalid">
+                                <div *ngIf="Assetid.errors.required">Assetid is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="WarrantyEnd">Warranty End<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="WarrantyEnd" name="WarrantyEnd" placeholder="Enter WarrantyEnd"
+                                class="form-control form_color" [(ngModel)]="ServiceData.WarrantyEnd" #WarrantyEnd="ngModel"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && WarrantyEnd.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && WarrantyEnd.invalid">
+                                <div *ngIf="WarrantyEnd.errors.required">WarrantyEnd field is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="WarrantyEnd">Warranty End<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="date" id="WarrantyEnd" name="WarrantyEnd" placeholder="Enter Warranty End"
+                                class="form-control form_color" [(ngModel)]="ServiceData.WarrantyEnd" #WarrantyEnd="ngModel"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && WarrantyEnd.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && WarrantyEnd.invalid">
+                                <div *ngIf="WarrantyEnd.errors.required">Warranty End* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Model">Model<span style="color: red;font-size: 18px;"></span></label>
+                            <input type="text" id="Model" name="Model" placeholder="Model"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Model" #Model="ngModel"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && Model.invalid}" required  />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && Model.invalid">
+                                <div *ngIf="Model.errors.required">Model is Required</div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                   
+                    <!-- <div class="col-md-12" hidden>
+                                <div class="form-group">
+                                    <label for="registerPassword">Password</label>
+                                    <input type="text" id="registerPassword" name="password" placeholder="Password"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.password" #password="ngModel"
+                                        [ngClass]="{'is-invalid': assetsForm.submitted && password.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="assetsForm.submitted && password.invalid">
+                                        <div *ngIf="password.errors.required">password field is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                    
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Supplier">Supplier<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Supplier" name="Supplier" placeholder="Enter Supplier"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Supplier" #Supplier="ngModel"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && Supplier.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && Supplier.invalid">
+                                <div *ngIf="Supplier.errors.required">Supplier field is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Warranty">Warranty<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Warranty" name="Warranty" placeholder="Enter In Months"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Warranty" #Warranty="ngModel"
+                                [ngClass]="{'is-invalid': assetsForm.submitted && Warranty.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && Warranty.invalid">
+                                <div *ngIf="Warranty.errors.required">Warranty field is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Asset_User">Asset User<span style="color: red;font-size: 18px;">*</span></label>
+                            <select class="form-control form_color" id="Asset_User"  #Asset_User="ngModel"  name="Asset_User" [(ngModel)]="ServiceData.Asset_User">
+                                <option value="John Doe">John Doe</option>
+                                <option value="Richard Miles">Richard Miles</option>
+            
+                             </select>
+                            <div class="invalid-feedback" *ngIf="assetsForm.submitted && Asset_User.invalid">
+                                <div *ngIf="Asset_User.errors.required">AssetUser field is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+            </div>
+        
+          
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Description">Description<span style="color: red;font-size: 18px;">*</span></label>
+                        <textarea id="Description" class="form-control form_color" rows="3" cols="50" id="Description"  #Description="ngModel"  name="Description" [(ngModel)]="ServiceData.Description"
+                         [ngClass]="{'is-invalid': assetsForm.submitted && Description.invalid}">
+                          
+                            </textarea>
+                        <div class="invalid-feedback" *ngIf="assetsForm.submitted && Description.invalid">
+                            <div *ngIf="Description.errors.required">Description field is Required</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <button type="submit" (click)='register(ServiceData)' class="btn btn-primary btn-sm text-uppercase mt-5" >Add Asset</button>
+                  
+                </div>
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

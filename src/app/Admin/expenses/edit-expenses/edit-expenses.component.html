@@ -1,0 +1,183 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Edit Expenses</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #ExpensesForm="ngForm" (ngSubmit)="ExpensesForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Item_Name">Item Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Item_Name" name="Item_Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Item_Name" #Item_Name="ngModel" placeholder="Enter Item Name"
+                                [ngClass]="{'is-invalid': ExpensesForm.submitted && Item_Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="ExpensesForm.submitted && Item_Name.invalid">
+                                <div *ngIf="Item_Name.errors.required">Item Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                 
+                  
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Purchase_Date">Purchase Date<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="date" id="Purchase_Date" name="Purchase_Date" placeholder="Enter Purchase_Date"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Purchase_Date" #Purchase_Date="ngModel"
+                                        [ngClass]="{'is-invalid': ExpensesForm.submitted && Purchase_Date.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="ExpensesForm.submitted && Purchase_Date.invalid">
+                                        <div *ngIf="Purchase_Date.errors.required">Purchase_Date* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Amount">Amount<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="Amount" name="Amount" placeholder="Enter Amount"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Amount" #Amount="ngModel"
+                                        [ngClass]="{'is-invalid': ExpensesForm.submitted && Amount.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="ExpensesForm.submitted && Amount.invalid">
+                                        <div *ngIf="Amount.errors.required">Amount* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">     
+                                <div class="form-group">
+                                    <label for="Status">Status<span style="color: red;font-size: 18px;">*</span></label>
+                                    <select name="Status" id="Status" class="form-control form_color"
+                                                class="form-control form_color" [(ngModel)]="ServiceData.Status" #Status="ngModel"
+                                                [ngClass]="{'is-invalid': ExpensesForm.submitted && Status.invalid}">
+        
+                                                    <option value="Pending">Pending</option>
+                                                    <option value="Approved">Approved</option>
+        
+                                                </select>
+                                    <div class="invalid-feedback" *ngIf="ExpensesForm.submitted && Status.invalid">
+                                        <div *ngIf="Status.errors.required">Status* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        
+
+                           
+
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Purchase_From"> Purchase From<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Purchase_From" name="Purchase_From" placeholder="Purchase_From"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Purchase_From" #Purchase_From="ngModel"
+                                [ngClass]="{'is-invalid': ExpensesForm.submitted && Purchase_From.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="ExpensesForm.submitted && Purchase_From.invalid">
+                                <div *ngIf="Purchase_From.errors.required">Purchase_From* is Required</div>
+                            </div>
+                        </div>
+                    </div> 
+                 
+                    <div class="col-md-12">     
+                        <div class="form-group">
+                            <label for="Purchased_By">Purchased By<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="Purchased_By" id="Purchased_By" class="form-control form_color"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Purchased_By" #Purchased_By="ngModel"
+                                        [ngClass]="{'is-invalid': ExpensesForm.submitted && Purchased_By.invalid}">
+
+                                            <option value="hourly">client1</option>
+                                            <option value="fixed">client2</option>
+                                            <option value="fixed">client3</option>
+
+                                        </select>
+                            <div class="invalid-feedback" *ngIf="ExpensesForm.submitted && Purchased_By.invalid">
+                                <div *ngIf="Purchased_By.errors.required">Purchased_By* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">     
+                        <div class="form-group">
+                            <label for="Paid_By">Paid By<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="Paid_By" id="Paid_By" class="form-control form_color"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Paid_By" #Paid_By="ngModel"
+                                        [ngClass]="{'is-invalid': ExpensesForm.submitted && Paid_By.invalid}">
+
+                                            <option value="Cash">Cash</option>
+                                            <option value="Cheque">Cheque</option>
+                                          
+
+                                        </select>
+                            <div class="invalid-feedback" *ngIf="ExpensesForm.submitted && Paid_By.invalid">
+                                <div *ngIf="Paid_By.errors.required">Paid_By* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+            
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                    <label for="uploadlogo">Attachments<span style="color: red;font-size: 18px;">*</span></label>
+                    <input type="file" class="input form-control" name="file" (change)="incomingFile($event)"
+                    ngModel required />
+                    </div>
+                    </div>
+
+
+                   
+
+
+                   
+                 
+             
+                  
+                 
+            </div>
+                </div>
+
+
+           
+
+                <div class="col-md-12 text-center">
+                    <button type="submit" (click)='sendData(ExpensesForm.value)' class="btn btn-primary btn-sm text-uppercase mt-5" style="float: right;">Submit</button>
+                    <button type="reset"  style="float: right;" class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+                    (click)="d('Cross click');clear(ServiceData)">Cancel</button>
+                </div>
+            
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

@@ -1,0 +1,194 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Today Work details</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #workForm="ngForm" (ngSubmit)="workForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row" style="margin: 0px 90px">
+
+                <div class="col-md-12 text-center middle" >
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="first_Name">First Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="first_Name" name="first_Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.first_Name" #first_Name="ngModel" placeholder="Enter First Name"
+                                [ngClass]="{'is-invalid': workForm.submitted && first_Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="workForm.submitted && first_Name.invalid">
+                                <div *ngIf="first_Name.errors.required">First Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Last_Name">Last Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Last_Name" name="Last_Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Last_Name" #Last_Name="ngModel" placeholder="Enter Last Name"
+                                [ngClass]="{'is-invalid': workForm.submitted && Last_Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="workForm.submitted && Last_Name.invalid">
+                                <div *ngIf="Last_Name.errors.required">Last Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">     
+                        <div class="form-group">
+                            <label for="Designationt">Designationt<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="client" id="Designationt" class="form-control form_color"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Designationt" #Designationt="ngModel"
+                                        [ngClass]="{'is-invalid': workForm.submitted && Designationt.invalid}">
+                                        <option>Select Designationt</option>
+                                        <option  *ngFor="let x of sats" >
+                                            {{x.designation}}
+                                        </option>
+                                            <!-- <option value="hourly">client1</option>
+                                            <option value="fixed">client2</option>
+                                            <option value="fixed">client3</option> -->
+
+                                        </select>
+                            <div class="invalid-feedback" *ngIf="workForm.submitted && Designationt.invalid">
+                                <div *ngIf="Designationt.errors.required">Designationt* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">     
+                        <div class="form-group">
+                            <label for="Project">Project<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="client" id="Project" class="form-control form_color"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Project" #Project="ngModel"
+                                        [ngClass]="{'is-invalid': workForm.submitted && Project.invalid}">
+                                        <option>Select Project</option>
+                                        <option  *ngFor="let x of projects" >
+                                            {{x.projectname}}
+                                        </option>
+                                            <!-- <option value="hourly">client1</option>
+                                            <option value="fixed">client2</option>
+                                            <option value="fixed">client3</option> -->
+
+                                        </select>
+                            <div class="invalid-feedback" *ngIf="workForm.submitted && Project.invalid">
+                                <div *ngIf="Project.errors.required">Project* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="Deadline">Deadline<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="date" id="Deadline" name="Deadline" placeholder="Enter Deadline "
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Deadline" #Deadline="ngModel"
+                                        [ngClass]="{'is-invalid': workForm.submitted && Deadline.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="workForm.submitted && Deadline.invalid">
+                                        <div *ngIf="Deadline.errors.required">Employee ID* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="Total_Hours">Total Hours<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="Total_Hours" name="Total_Hours" class="form-control form_color"
+                                        [(ngModel)]="ServiceData.Total_Hours" #Total_Hours="ngModel" placeholder="Enter Total_Hours"
+                                        [ngClass]="{'is-invalid': workForm.submitted && Total_Hours.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="workForm.submitted && Total_Hours.invalid">
+                                        <div *ngIf="Total_Hours.errors.required">Total_Hours* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="Remaining_Hours">Remaining Hours<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="Remaining_Hours" name="Remaining_Hours" class="form-control form_color"
+                                        [(ngModel)]="ServiceData.Remaining_Hours" #Remaining_Hours="ngModel" placeholder="Enter Remaining_Hours"
+                                        [ngClass]="{'is-invalid': workForm.submitted && Remaining_Hours.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="workForm.submitted && Remaining_Hours.invalid">
+                                        <div *ngIf="Remaining_Hours.errors.required">Remaining_Hours* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- | date:'yyyy/MM/dd' -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="today_Date">Date<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="today_Date" name="today_Date" placeholder="Enter Date"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.today_Date " #today_Date="ngModel" disabled
+                                        [ngClass]="{'is-invalid': workForm.submitted && today_Date.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="workForm.submitted && today_Date.invalid">
+                                        <div *ngIf="today_Date.errors.required">Date* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="Hours">Hours<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="Hours" name="Hours" placeholder="Enter Hours"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Hours" #Hours="ngModel"
+                                        [ngClass]="{'is-invalid': workForm.submitted && Hours.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="workForm.submitted && Hours.invalid">
+                                        <div *ngIf="Hours.errors.required">Hours* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Description">Description<span style="color: red;font-size: 18px;">*</span></label>
+                        <textarea id="Description" class="form-control form_color" rows="3" cols="50" id="Description"  #Description="ngModel"  name="Description" [(ngModel)]="ServiceData.Description"
+                         [ngClass]="{'is-invalid': workForm.submitted && Description.invalid}">
+                          
+                            </textarea>
+                        <div class="invalid-feedback" *ngIf="workForm.submitted && Description.invalid">
+                            <div *ngIf="Description.errors.required">Description field is Required</div>
+                        </div>
+                    </div>
+                </div>
+                     
+
+
+
+
+                           
+
+            </div>
+                </div>
+                <!-- column right 2 -->
+              
+
+
+              
+
+                <div class="col-md-12 text-center">
+                    <button type="submit" (click)='register(ServiceData)' class="btn btn-primary btn-sm text-uppercase mt-5" style="text-align: center;">Add</button>
+                    <button type="reset"  style="text-align: center;" class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+                    (click)="d('Cross click');clear(ServiceData)">Cancel</button>
+                </div>
+            
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

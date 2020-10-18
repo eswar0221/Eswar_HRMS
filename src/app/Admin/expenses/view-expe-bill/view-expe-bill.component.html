@@ -1,0 +1,48 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>View Bill Expenses</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                     <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="back()">+ View  Expenses</button>
+                </div>
+
+
+            <!-- <div  class="pull-left user-img m-r-10"><a href="#" ><img  alt="wwesa" class="w-40 img-circle" src="assets/img/collge.jpg"><span  class="status online"></span></a></div> -->
+
+            </div>
+            <!--second row-->
+<div *ngFor="let x of view"  style="text-align: center;">
+    <h4>Expensives_ID: {{x.Expensives_ID}}</h4>
+    <img src="{{x.file}}" alt="" width="500px">
+
+</div>
+
+
+
+
+          </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

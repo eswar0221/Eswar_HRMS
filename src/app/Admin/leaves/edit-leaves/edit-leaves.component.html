@@ -1,0 +1,309 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Leave Request</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <!-- <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i> -->
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #leaverequest="ngForm" (ngSubmit)="leaverequest.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="leaveid">Leave ID<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="leaveid" name="leaveid" placeholder="Enter Leave ID"
+                                class="form-control form_color" [(ngModel)]="ServiceData.leaveid" #leaveid="ngModel"  minlength="2"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && leaveid.invalid}" required />
+                                <div *ngIf="leaverequest.submitted && leaveid.invalid && (leaveid.dirty || leaveid.untouched)" >
+                                    <div *ngIf="leaveid.errors.required" class="text-danger">leaveid field is Required.</div>
+                                    <div *ngIf="leaveid.errors.minlength" class="text-danger">*Please enter a min 2 characters</div>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="employeename">Employee Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="employeename"  name="employeename" class="form-control form_color"
+                                [(ngModel)]="ServiceData.employeename" #employeename="ngModel" placeholder="Enter First Name"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && employeename.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && employeename.invalid">
+                                <div *ngIf="employeename.errors.required">First Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="email">Email<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="email"  name="email" class="form-control form_color"
+                                [(ngModel)]="ServiceData.email" #email="ngModel" placeholder="Enter email"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && email.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && email.invalid">
+                                <div *ngIf="email.errors.required">email* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="leavetype">Leave Type</label>
+                            <select name="leavetype" id="leavetype" [(ngModel)]="ServiceData.leavetype" required class="form-control form_color"  #leavetype="ngModel"
+                            [ngClass]="{'is-invalid': leaverequest.submitted && leavetype.invalid}" >
+                               
+                                <option value="casual">Casual Leave</option>
+                                <option value="medical">Medical Leave</option>
+                                <option value="lop">Loss Of Pay</option>
+                            </select>
+                          
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && leavetype.invalid">
+                                <div *ngIf="leavetype.errors.required">leavetype* is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                     <!-- <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="leavetype">Leave Type<span style="color: red;font-size: 18px;">*</span></label>
+                                    <select name="leavetype" id="leavetype" [(ngModel)]="ServiceData.leavetype" (input)="onChange1($event);" required class="form-control form_color"  #leavetype="ngModel"
+                                    [ngClass]="{'is-invalid': leaverequest.submitted && leavetype.invalid}" >
+                                    
+                                        <option value="casual">Casual Leave</option>
+                                        <option value="medical">Medical Leave</option>
+                                       
+                                    </select>
+                                  
+                                    <div class="invalid-feedback" *ngIf="leaverequest.submitted && leavetype.invalid">
+                                        <div *ngIf="leavetype.errors.required">leavetype* is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                         <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="leavetype"> leavetype<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="leavetype" name="leavetype" placeholder=" Enter leavetype" (input)="onChange1();" 
+                                class="form-control form_color" [(ngModel)]="ServiceData.leavetype" #leavetype="ngModel"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && leavetype.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && leavetype.invalid">
+                                <div *ngIf="leavetype.errors.required">leavetype* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="fmonth">From Month<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="fmonth" name="fmonth" class="form-control form_color"
+                                [(ngModel)]="ServiceData.fmonth" #fmonth="ngModel" placeholder="Enter fmonth "
+                                [ngClass]="{'is-invalid': leaverequest.submitted && fmonth.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && fmonth.invalid">
+                                <div *ngIf="fmonth.errors.required">fmonth * is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="fday">From Day<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="fday" name="fday" 
+                                        class="form-control form_color" [(ngModel)]="ServiceData.fday" #fday="ngModel"
+                                        [ngClass]="{'is-invalid': leaverequest.submitted && fday.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="leaverequest.submitted && fday.invalid">
+                                        <div *ngIf="fday.errors.required">From Day* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                               <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tmonth">To Month<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="tmonth" name="tmonth" class="form-control form_color"
+                                [(ngModel)]="ServiceData.tmonth" #tmonth="ngModel" placeholder="Enter tmonth "
+                                [ngClass]="{'is-invalid': leaverequest.submitted && tmonth.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && tmonth.invalid">
+                                <div *ngIf="tmonth.errors.required">tmonth * is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                            <div class="col-md-6">
+                                <div class="form-group  cal">
+                                    <label for="tday">To Day<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text"  id="tday" name="tday" placeholder="Enter tday Name"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.tday" #tday="ngModel"
+                                        [ngClass]="{'is-invalid': leaverequest.submitted && tday.invalid}" required />
+                                        <!-- <i class="fa fa-calendar"></i> -->
+                                    <div class="invalid-feedback" *ngIf="leaverequest.submitted && tday.invalid">
+                                        <div *ngIf="tday.errors.required">tday* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select name="status" id="status" [(ngModel)]="ServiceData.status" (input)="onChange($event);"  required class="form-control form_color"  #status="ngModel"
+                                    [ngClass]="{'is-invalid': leaverequest.submitted && status.invalid}" >
+                                        <!-- <option value="">Select Leave Type </option> -->
+                                        <!-- <option value="Pending">Pending</option> -->
+                                        <option value="Reject">Reject </option>
+                                        <option value="Approved">Approved</option>
+                                    </select>                                  
+                                    <div class="invalid-feedback" *ngIf="leaverequest.submitted && status.invalid">
+                                        <div *ngIf="status.errors.required">status* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                         
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerEmployeeID">Employee ID<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="employeeid" name="employeeid" placeholder="Enter Employee ID"
+                                class="form-control form_color" [(ngModel)]="ServiceData.employeeid" #employeeid="ngModel"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && employeeid.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && employeeid.invalid">
+                                <div *ngIf="employeeid.errors.required">Employee ID* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label for="designation">Employee Designation<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="designation" name="designation" 
+                                placeholder="Enter User Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.designation" #designation="ngModel"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && designation.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && designation.invalid">
+                                <div *ngIf="designation.errors.required">designation* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label for="totalleaves">Total Leaves <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="number" id="totalleaves" name="totalleaves"
+                                placeholder="Enter Total Leaves" class="form-control form_color"
+                                [(ngModel)]="ServiceData.totalleaves" #totalleaves="ngModel"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && totalleaves.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && totalleaves.invalid">
+                                <div *ngIf="totalleaves.errors.required">totalleaves* is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label for="No_Of_Days_Leave_Apply">No Of Days Leave Apply <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="number" id="No_Of_Days_Leave_Apply" name="No_Of_Days_Leave_Apply"
+                                placeholder="Enter No_Of_Days_Leave_Apply" class="form-control form_color" (input)="calcu(ServiceData)"
+                                [(ngModel)]="ServiceData.No_Of_Days_Leave_Apply" #No_Of_Days_Leave_Apply="ngModel"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && No_Of_Days_Leave_Apply.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && No_Of_Days_Leave_Apply.invalid">
+                                <div *ngIf="No_Of_Days_Leave_Apply.errors.required">No_Of_Days_Leave_Apply* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label for="noofleaves">Remaining Leaves <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="number" id="noofleaves" name="noofleaves"
+                                placeholder="Enter Remaining Leaves" class="form-control form_color"
+                                [(ngModel)]="ServiceData.noofleaves" #noofleaves="ngModel"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && noofleaves.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && noofleaves.invalid">
+                                <div *ngIf="noofleaves.errors.required">noofleaves* is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                   <div class="col-md-12" > 
+                        <div class="form-group">
+                            <label for="casual_lev">Remaining casual Leaves <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="number" id="casual_lev" name="casual_lev" 
+                                placeholder="Enter Remaining Leaves" class="form-control form_color"
+                                [(ngModel)]="ServiceData.casual_lev" #casual_lev="ngModel"
+                                [ngClass]="{'is-invalid': leaverequest.submitted && casual_lev.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && casual_lev.invalid">
+                                <div *ngIf="casual_lev.errors.required">casual_lev* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" >
+                        <div class="form-group">
+                            <label for="medical_lev">Remaining Medical Leaves <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="number" id="medical_lev" name="medical_lev"  (input)="add(ServiceData)"
+                                placeholder="Enter medical_lev " class="form-control form_color"
+                                [(ngModel)]="ServiceData.medical_lev" #medical_lev="ngModel"  
+                                [ngClass]="{'is-invalid': leaverequest.submitted && medical_lev.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="leaverequest.submitted && medical_lev.invalid">
+                                <div *ngIf="medical_lev.errors.required">medical_lev* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="leavereason">Leave Reason<span style="color: red;font-size: 18px;"></span></label>
+
+                            <textarea name="leavereason"  id="leavereason" cols="10" rows="2"  class="form-control form_color" [(ngModel)]="ServiceData.leavereason" ></textarea>
+      
+                            <!-- <div class="invalid-feedback" *ngIf="leaverequest.submitted && leavereason.invalid">
+                                <div *ngIf="leavereason.errors.required">leavereason is Required</div>
+                            </div> -->
+                        </div>
+                    </div>
+                   
+                   
+                    <!-- <div class="col-md-12" hidden>
+                                <div class="form-group">
+                                    <label for="registerPassword">Password</label>
+                                    <input type="text" id="registerPassword" name="password" placeholder="Password"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.password" #password="ngModel"
+                                        [ngClass]="{'is-invalid': leaverequest.submitted && password.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="leaverequest.submitted && password.invalid">
+                                        <div *ngIf="password.errors.required">password field is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                    
+                  
+                    <div class="col-md-12">
+                        <button type="submit" (click)='apply(leaverequest.value)' class="btn btn-primary btn-sm text-uppercase mt-5" style="float: right;">Send Leave Request</button>
+                        <button type="reset"  style="float: right;" class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+                        (click)="d('Cross click');clear(ServiceData)">Cancel</button>
+                    </div>
+            </div>
+                </div>
+            
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>
+
+
+

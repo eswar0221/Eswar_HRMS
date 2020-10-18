@@ -1,0 +1,195 @@
+<!--first row-->
+<div class="clearfix">&nbsp;</div>
+<div class="card rows">
+    <div class="card-body">
+        <div class="clearfix">&nbsp;</div>
+        <div class="row rows">
+            <div class="col-md-4">
+                <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                    (click)="openMediumModalPopup(addUniversity);clear(ServiceData)"
+                    title="click here for Registration">University
+                    Register</button>
+            </div>
+            <div class="col-md-8">
+                <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" [(ngModel)]="searchText" class="form-control btn-radius"
+                        placeholder="Search By category">
+                </div>
+            </div>
+        </div>
+        <!--second row-->
+        <div class="row">
+            <!--Pagination-->
+            <!-- <div class="col-md-8">
+                            <ul *ngIf="pager.pages && pager.pages.length" class="pagination upper">
+                                <li class="pageItemRight" [ngClass]="{disabled:pager.currentPage === 1}">
+                                    <a class="page-link" aria-label="Previous" (click)="setPage(pager.currentPage - 1)"
+                                        style="font-size: 12px;">&#8592;&nbsp;&nbsp;&nbsp;Previous</a>
+                                </li>
+                                <span class="countofPages">{{pager.currentPage}}&nbsp;&nbsp;/&nbsp;&nbsp;{{pager.totalPages}}</span>
+                                <li class="pageItemLeft" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                    <a class="page-link" aria-label="Next" (click)="setPage(pager.currentPage + 1)"
+                                        style="font-size: 12px;">&nbsp;&nbsp;Next&nbsp;&nbsp;&nbsp;&nbsp;&#8594;</a>
+                                </li>
+                            </ul>
+                        </div> -->
+        </div>
+        <div class="clearfix">&nbsp;</div>
+        <!--this is for no data found table-->
+        <div class="row">
+            <div class="col-md-12 text-center middle">
+                <div *ngIf="show==true">
+                    <img src="assets/images/img_empty_statues.png" class="nodataimage" alt="No Data Image">
+                    <h4>{{tabledatanotfound}}</h4>
+                </div>
+            </div>
+        </div>
+        <!--Index list of Sub category names view-->
+        <div class="clearfix">&nbsp;</div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-borderless">
+                        <thead class="bg-dark text-white">
+                            <tr>
+                                <th class="text-white">S.No</th>
+                                <th class="text-white">Transaction Name</th>
+                                <th class="text-white">University EthAddress</th>
+                                <th class="text-white">User Name</th>
+                                <th class="text-white">Added By</th>
+                                <th class="text-white">Block No</th>
+                                <th class="text-white">Block Hash</th>
+                                <th class="text-white">Transaction Hash</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of universities; let i=index">
+                                <td>{{i+1}}</td>
+                                <td>{{data.event}}</td>
+                                <td class="elips">{{data.returnValues._issueradd}}</td>
+                                <td>{{data.returnValues._username}}</td>
+                                <td class="elips">{{data.returnValues.addedBy}}</td>
+                                <td>{{data.blockNumber}}</td>
+                                <td class="elips">{{data.blockHash}}</td>
+                                <td class="elips">{{data.transactionHash}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--adding spa category modal popup-->
+        <ng-template #addUniversity let-c="close" let-d="dismiss">
+            <div class="modal-body">
+                <h4 class="text-center font-medium text-dark">University Register</h4>
+                <!-- addingUniversity(ServiceData)" -->
+                <form #universityForm="ngForm" (ngSubmit)="universityForm.form.valid" >
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="regsiterIssuer">Issuer Address</label>
+                            <input type="text" id="registerIssuer" name="issuer" class="form-control form_color"
+                                [(ngModel)]="ServiceData.issuer" #issuer="ngModel" placeholder="Enter Issue Address"
+                                [ngClass]="{'is-invalid': universityForm.submitted && issuer.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="universityForm.submitted && issuer.invalid">
+                                <div *ngIf="issuer.errors.required">Issuer Address is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="regsiterUniversity">Department Name</label>
+                            <input type="text" id="regsiterUniversity" name="universityName"
+                                placeholder="Enter University Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.departmentname" #universityName="ngModel"
+                                [ngClass]="{'is-invalid': universityForm.submitted && universityName.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="universityForm.submitted && universityName.invalid">
+                                <div *ngIf="universityName.errors.required">University Name is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerUsername">Email</label>
+                            <input type="text" id="registerUsername" name="username" placeholder="User Name"
+                                class="form-control form_color" [(ngModel)]="ServiceData.email" #username="ngModel"
+                                [ngClass]="{'is-invalid': universityForm.submitted && username.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="universityForm.submitted && username.invalid">
+                                <div *ngIf="username.errors.required">Username is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12" hidden>
+                                <div class="form-group">
+                                    <label for="registerPassword">Password</label>
+                                    <input type="text" id="registerPassword" name="password" placeholder="Password"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.password" #password="ngModel"
+                                        [ngClass]="{'is-invalid': universityForm.submitted && password.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="universityForm.submitted && password.invalid">
+                                        <div *ngIf="password.errors.required">password field is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerEmail">Officer Name</label>
+                            <input type="email" id="registerEmail" name="email" placeholder="Email"
+                                class="form-control form_color" [(ngModel)]="ServiceData.officername" #email="ngModel"
+                                [ngClass]="{'is-invalid': universityForm.submitted && email.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="universityForm.submitted && email.invalid">
+                                <div *ngIf="email.errors.required">Email field is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerEmail">Officer PhoneNumber</label>
+                            <input type="email" id="registerEmail" name="email" placeholder="Email"
+                                class="form-control form_color" [(ngModel)]="ServiceData.phonenumber" #email="ngModel"
+                                [ngClass]="{'is-invalid': universityForm.submitted && email.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="universityForm.submitted && email.invalid">
+                                <div *ngIf="email.errors.required">Email field is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="col-md-12 text-center">
+                <span class="text-danger">{{addingError}}</span>
+            </div>
+            <!--Modal footer for In Room dining editing-->
+            <div class="modal-footer">
+                <div class="col-md-12 text-center">
+                    <button type="submit" class="btn btn-rounded btn-save text-white"
+                        *ngIf="universityForm.form.invalid">Submit</button>&nbsp;&nbsp;
+                    <button type="submit" class="btn btn-rounded btn-save text-white" *ngIf="universityForm.form.valid"
+                        (click)="closing();openMediumModalPopup(confirm);">Submit</button>&nbsp;&nbsp;
+                    <button type="reset" class="btn btn-rounded btn-cancel text-white"
+                        (click)="d('Cross click');clear(ServiceData)">Cancel</button>
+                </div>
+            </div>
+            </form>
+    </div>
+    <!--Accepting confirmation popup-->
+<ng-template #confirm let-c="close" let-d="dismiss">
+        <div class="clearfix">&nbsp;</div>
+        <div class="clearfix">&nbsp;</div>
+        <h6 class="text-center font-light smallPopups">Are you sure want to Submit the Form &#63;</h6>
+        <div class="modal-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="text-center">
+                <button class="btn btn-rounded btn-save text-white" style="width: 65px;"
+                    (click)="addingUniversity(ServiceData)">Yes</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-rounded btn-cancel text-white" style="width: 65px;" (click)="d('Cross click')"> No </button>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+        </div>
+    </ng-template>
+    </ng-template>
+    
+</div>
+
+</div>

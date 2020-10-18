@@ -1,0 +1,259 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Edit New Job</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+            
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #addnewjobForm="ngForm" (ngSubmit)="addnewjobForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Job_Id">Job Id<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Job_Id" name="Job_Id" placeholder="Enter Job_Id"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Job_Id" #Job_Id="ngModel"
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Job_Id.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Job_Id.invalid">
+                                <div *ngIf="Job_Id.errors.required">Job_Id* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Job_Title">Job Title<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Job_Title" name="Job_Title" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Job_Title" #Job_Title="ngModel" placeholder="Enter Job_Title"
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Job_Title.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Job_Title.invalid">
+                                <div *ngIf="Job_Title.errors.required">Job_Title* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Job_Location">Job Location <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Job_Location" name="Job_Location" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Job_Location" #Job_Location="ngModel" placeholder="Enter Job_Location  "
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Job_Location.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Job_Location.invalid">
+                                <div *ngIf="Job_Location.errors.required">Job_Location * is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Experience">Experience<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Experience" name="Experience" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Experience" #Experience="ngModel" placeholder="Enter Experience "
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Experience.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Experience.invalid">
+                                <div *ngIf="Experience.errors.required">Experience * is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                  
+              
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Salary_From">Salary From<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Salary_From" name="Salary_From" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Salary_From" #Salary_From="ngModel" placeholder="Enter Salary From "
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Salary_From.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Salary_From.invalid">
+                                <div *ngIf="Salary_From.errors.required">Salary_From * is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Job_Type">Job Type<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="Job_Type" id="Job_Type" [(ngModel)]="ServiceData.Job_Type" required class="form-control form_color"  #Job_Type="ngModel"
+                            [ngClass]="{'is-invalid': addnewjobForm.submitted && Job_Type.invalid}" >
+                                <!-- <option value="">Select Leave Type </option> -->
+                                <option  value="Part Time">Part Time</option>
+                                <option  value="Internship">Internship</option>
+                                <option  value="Full Time">Full Time</option>
+                                <option  value="Temporary">Temporary</option>
+                                <option  value="Remote">Remote</option>
+                                <option  value="Others">Others</option>
+                            </select>
+                          
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Job_Type.invalid">
+                                <div *ngIf="Job_Type.errors.required">Job_Type* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Start_Date">Start Date<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="date" id="Start_Date" name="Start_Date" placeholder="Enter Start_Date"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Start_Date" #Start_Date="ngModel"
+                                        [ngClass]="{'is-invalid': addnewjobForm.submitted && Start_Date.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Start_Date.invalid">
+                                        <div *ngIf="Start_Date.errors.required">Start_DateD* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                          
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+
+                    <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label for="Department">Department <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Department" name="Department"
+                                placeholder="Enter Department" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Department" #Department="ngModel"
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Department.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Department.invalid">
+                                <div *ngIf="Department.errors.required">Department* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label for="No_of_Vacancies"> No of Vacancies<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="No_of_Vacancies" name="No_of_Vacancies"
+                                placeholder="Enter No_of_Vacancies" class="form-control form_color"
+                                [(ngModel)]="ServiceData.No_of_Vacancies" #No_of_Vacancies="ngModel"
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && No_of_Vacancies.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && No_of_Vacancies.invalid">
+                                <div *ngIf="No_of_Vacancies.errors.required">No_of_Vacancies* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label for="Age">Age<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Age" name="Age"
+                                placeholder="Enter Age" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Age" #Age="ngModel"
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Age.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Age.invalid">
+                                <div *ngIf="Age.errors.required">Age* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12"> 
+                        <div class="form-group">
+                            <label for="Salary_To">Salary To<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Salary_To" name="Salary_To"
+                                placeholder="Enter Salary_To" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Salary_To" #Salary_To="ngModel"
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Salary_To.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Salary_To.invalid">
+                                <div *ngIf="Salary_To.errors.required">Salary_To* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Status">Status<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="Status" id="Status" [(ngModel)]="ServiceData.Status" required class="form-control form_color"  #Status="ngModel"
+                            [ngClass]="{'is-invalid': addnewjobForm.submitted && Status.invalid}" >
+                                <!-- <option value="">Select Leave Type </option> -->
+                                <option value="Open">Open</option>
+                                <option value="Closed">Closed</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                          
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Status.invalid">
+                                <div *ngIf="Status.errors.required">Status* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group  cal">
+                            <label for="Expired_Date">Expired Date<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="date"  id="Expired_Date" name="Expired_Date" placeholder="Enter Expired Date"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Expired_Date" #Expired_Date="ngModel"
+                                [ngClass]="{'is-invalid': addnewjobForm.submitted && Expired_Date.invalid}" required />
+                                <!-- <i class="fa fa-calendar"></i> -->
+                            <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && Expired_Date.invalid">
+                                <div *ngIf="Expired_Date.errors.required">Expired_Date* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                 
+                 
+                   
+                    <!-- <div class="col-md-12" hidden>
+                                <div class="form-group">
+                                    <label for="registerPassword">Password</label>
+                                    <input type="text" id="registerPassword" name="password" placeholder="Password"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.password" #password="ngModel"
+                                        [ngClass]="{'is-invalid': addnewjobForm.submitted && password.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && password.invalid">
+                                        <div *ngIf="password.errors.required">password field is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                    
+                 
+            </div>
+
+
+                </div>
+               <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Description">Description<span style="color: red;font-size: 18px;"></span></label>
+
+                            <textarea name="Description"  id="Description" cols="10" rows="5"  class="form-control form_color" #Description="ngModel" [(ngModel)]="ServiceData.Description" ></textarea>
+      
+                            <!-- <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && leavereason.invalid">
+                                <div *ngIf="leavereason.errors.required">leavereason is Required</div>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <button type="submit" (click)='Update(addnewjobForm.value)' class="btn btn-primary btn-sm text-uppercase mt-5" style="text-align: center;"> Update Job </button>
+                        <button type="reset"  style="text-align: center;" class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+                        (click)="d('Cross click');clear(ServiceData)">Cancel</button>
+                    </div>
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>
+
+
+

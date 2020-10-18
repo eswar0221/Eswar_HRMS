@@ -1,0 +1,84 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Taxes</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                     <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="addcontact()">+ Add Taxes</button>
+                </div>
+
+
+            <!-- <div  class="pull-left user-img m-r-10"><a href="#" ><img  alt="wwesa" class="w-40 img-circle" src="assets/img/collge.jpg"><span  class="status online"></span></a></div> -->
+
+            </div>
+            <!--second row-->
+
+<div class="content container-fluid">
+    <div class="row shadow p-3 mb-5 bg-white rounded">
+        <table  class="table table-borderless table-condensed table-striped" >
+            <thead class="text-white bg-primary" >
+            <tr class="text-center">
+                <th style="color: aliceblue;">
+                    Tax Name
+                </th>
+                <th style="color: aliceblue;">
+                    Tax Percentage
+                </th>
+                <th style="color: aliceblue;">
+                    Status
+                 </th>
+             
+               
+                <th style="color: aliceblue;"> 
+                     Action
+                 </th>
+               
+            
+            </tr>
+            </thead>
+           <!-- {{sats | json}} -->
+            <tbody>
+            <tr *ngFor="let item of taxes;" class="text-center">
+                <td class="case">{{item.Tax_Name}}</td>
+                <td>{{item.Tax_Percentage}}</td>
+                <td>{{item.Status}}</td>
+           
+    
+            
+               
+               
+                
+               <td>
+                <div class="btn-group dropleft ml-5" style="cursor: pointer;">
+                    <a  class="fa fa-ellipsis-v" data-toggle="dropdown"  aria-expanded="false">
+                    </a>
+                    <div class="dropdown-menu">
+                        <a  class="dropdown-item" (click)="edit($event)"><i class="fa fa-pencil mr-4"></i>Edit</a>
+                        <a class="dropdown-item" (click)="del(item.Tax_Name)"><i class="fa fa-trash-o mr-4"></i>Delete</a>
+    
+                    </div>
+                  </div>
+               </td>
+    
+            </tr>
+            </tbody>
+        
+        </table>
+    
+</div></div>
+
+
+
+          </div></div>

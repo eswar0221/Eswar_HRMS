@@ -1,0 +1,128 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+
+
+
+
+            <div class="row rows" *ngIf="tmp!=false; else abc ;">
+                <div class="col-md-4" >
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>All Employees</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                     <!-- <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="tmpe()">+ Add</button> -->
+                </div>
+
+<div>
+  
+    <!-- <div class="row shadow p-3 mb-5 bg-white rounded"> -->
+    
+        <section class="our-webcoderskull padding-lg">
+        <div class="container">
+          <!-- <div class="row heading heading-icon">
+              <h2>Employees</h2>
+          </div> -->
+          <div class="row" >              
+                      <ul *ngFor="let x of sats | filter :searchText">
+            <li class=" col-md-6 col-lg-3 cardsss"   >
+                
+                <div class="cnt-block equal-hight" style="height: auto;width: 200px;">
+    
+                    <!-- <div class="btn-group dropleft ml-5" style="cursor: pointer; float: right;">
+                        <a  class="fa fa-ellipsis-v" data-toggle="dropdown"  aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a  class="dropdown-item" (click)=row($event)><i class="fa fa-pencil mr-4"></i>Edit</a>
+                            <a class="dropdown-item" (click)="deleteRow($event)"><i class="fa fa-trash-o mr-4"></i>Delete</a>
+    
+                        </div>
+                      </div> -->
+                    
+                  <figure><img src="{{x.file}}" class="img-responsive" alt="">
+                 
+                </figure>
+                  <h3><a href="#">{{x.company}}</a></h3>
+                  <!-- <div>{{x.firstname}}</div> -->
+                  <div class="sdf">{{x.firstname}}</div>
+                  <div class="des">{{x.designation}}</div>
+                  <div class="des">{{x.phone}}</div>
+
+                    <!-- <button class="btn  btn-primary btn-sm msg1 " style="padding: 4px;" style="display: inline-block;"  >{{x.phone}}</button> -->
+                    <!-- <button class="btn  btn-primary btn-sm msg " style="padding: 4px;" style="display: inline-block;" (click)="addclient1()">View Profile</button> -->
+    
+                </div>
+                <br>
+            </li>
+          
+           
+          </ul>
+          <ul *ngFor="let x of hrmandata | filter :searchText">
+            <li class=" col-md-6 col-lg-3 cardsss"   >
+                
+                <div class="cnt-block equal-hight" style="height: auto;width: 200px;">
+    
+                    <!-- <div class="btn-group dropleft ml-5" style="cursor: pointer; float: right;">
+                        <a  class="fa fa-ellipsis-v" data-toggle="dropdown"  aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a  class="dropdown-item" (click)=row($event)><i class="fa fa-pencil mr-4"></i>Edit</a>
+                            <a class="dropdown-item" (click)="deleteRow($event)"><i class="fa fa-trash-o mr-4"></i>Delete</a>
+    
+                        </div>
+                      </div> -->
+                    
+                  <figure><img src="{{x.file}}" class="img-responsive" alt="">
+                 
+                </figure>
+                  <h3><a href="#">{{x.company}}</a></h3>
+                  <!-- <div>{{x.firstname}}</div> -->
+                  <div class="sdf">{{x.firstname}}</div>
+                  <div class="des">{{x.designation}}</div>
+                  <div class="des">{{x.phone}}</div>
+
+                    <!-- <button class="btn  btn-primary btn-sm msg1 " style="padding: 4px;" style="display: inline-block;" >{{x.phone}}</button> -->
+                    <!-- <button class="btn  btn-primary btn-sm msg " style="padding: 4px;" style="display: inline-block;" >View Profile</button> -->
+    
+                </div>
+                <br>
+            </li>
+          
+           
+          </ul>
+        </div>
+
+        </div>
+      </section>
+    <!-- </div> -->
+
+</div>
+</div>
+ 
+
+
+
+
+
+
+</div></div>
+
+
+
+
+
+
+
+
+
+
+

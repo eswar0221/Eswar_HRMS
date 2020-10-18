@@ -1,0 +1,118 @@
+
+
+
+.dropdown-menu.show{
+    left: 35px !important;
+    box-shadow: none;
+    border: none;
+}
+header.dt-header{
+    box-shadow: none !important;
+}
+
+
+
+
+
+.sidebar .sidebar-profile .user-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+
+.user-picture img {
+    width: 100%;
+    height:100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+
+ .sidebar .sidebar-profile .profile-details .name {
+    font-size: .9rem;
+    font-weight: 800;
+}
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+
+ .sidebar .sidebar-profile .profile-details .role {
+    font-size: .7rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+ .sidebar .sidebar-profile .role {
+    color: white;
+}
+
+
+small, .small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+small {
+    font-size: 80%;
+}
+
+
+.badge { 
+    position: relative; 
+    top: -8px; 
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    /* left: -25px;  */
+    /* border: 1px solid black;  */
+    background-color: none;
+    border-radius: 50%; 
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,262 @@
+<!-- <div class="col-lg-8" > -->
+
+    <div class="card rows">
+        <div class="card-body">
+                <div class="clearfix">&nbsp;</div>
+                <div class="row rows">
+                    <div class="col-md-4">
+                        <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                            (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                            Register</button> -->
+                            <h1>View Bill Expenses</h1>
+                    </div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-3">
+                        <!-- <span class="nav-tabs tabs" role="tablist">
+                        <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+    
+                        <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                        </span> -->
+                         <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="back()">+ View  Expenses</button>
+                    </div>
+    
+    
+                <!-- <div  class="pull-left user-img m-r-10"><a href="#" ><img  alt="wwesa" class="w-40 img-circle" src="assets/img/collge.jpg"><span  class="status online"></span></a></div> -->
+    
+                </div>
+                <!--second row-->
+               
+    <div *ngFor="let x of view"  style="text-align: center;">  
+        <h4>Expensives_ID: {{x.Expensives_ID}}</h4>
+
+        <!-- <div class="col-md-6">
+            <div class="form-group">
+                <label for="Expensives_ID">Expensives_ID<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="text" id="Expensives_ID" name="Expensives_ID" class="form-control form_color"
+                    [(ngModel)]="ServiceData.Expensives_ID" #Expensives_ID="ngModel" placeholder="Enter Expensives_ID">
+               
+            </div>
+        </div> -->
+        
+        <!-- <img src="{{x.file}}" alt="" width="500px"> -->
+
+        <div class="card" style="padding: 15px;" *ngFor="let x of view">
+            <!-- <form #studentForm1="ngForm" (ngSubmit)="studentForm.form.valid"> -->
+      
+              <div class="row mt-5">
+                  
+                <div class="col-md-4" *ngFor="let x of view">
+                   <img class="p-3" src="../../../assets/uplogou.png" style="width: 108px;
+                   border-radius: 25px;" alt="">
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-4" *ngFor="let x of view">
+                  <p>Invoice # :{{x.Purchased_By}}</p>
+                      
+                  <div class="row">
+                      <div class="col-md-4">
+                          <small class="mt-2"> &nbsp;&nbsp; Created :</small>
+                      </div>
+                      <div class="col-md-8" *ngFor="let x of view">
+                        
+                        {{x.pday}}/{{x.pmonth}}/{{x.pyear}}
+                      </div>
+                  </div>
+      
+                  <div class="row">
+                      <div class="col-md-4">
+                          <small class="mt-2">Due :</small>
+                      </div>
+                      <div class="col-md-8" *ngFor="let x of view">
+                     {{x.total_amount}}
+                      </div>
+                  </div>
+      
+                 
+      
+                </div>
+                <div class="col-md-1"></div>
+      
+              </div>
+      
+              <div class="row mt-3">
+                  <div class="col-md-4">
+                      <p style="font-weight: 500;font-size: 14px;" class="ml-3">CUSTOMER DETAILS: </p>
+                       
+                       <ul class="p-1 ml-4" *ngFor="let x of view">
+                          <li style="text-align: left;">Name :{{x.Purchased_By}}</li>
+                          <li style="text-align: left;">Email:{{x.email}}</li>
+                          <!-- <li>{{ServiceData.phonenumber}}</li>
+                          <li>{{ServiceData.tax}}</li>
+                          <li>{{ServiceData.address}}</li>
+                          <li>{{ServiceData.city}}</li>
+                          <li>{{ServiceData.state}}</li>
+                          <li>{{ServiceData.country}}</li> -->
+                          
+                       </ul>
+                  </div>
+                  <div class="col-md-4"></div>
+      
+                  <div class="col-md-4">
+                      <p style="font-weight: 500;font-size: 14px;" class="ml-3">COMPANY DETAILS: </p>
+                       
+                       <ul class="p-1 ml-4">
+                           <li>Upsteer tek solutions</li>
+                           <li>Banjara Hills </li>
+                           <li>MLA Colony,RoadNo:12</li>
+                           <li>Near ACB Headquaters</li>
+                           <li>Hyderabad,Telanagana</li>
+                         
+                           
+                       </ul>
+                  </div>
+              </div>
+      
+             <div class="row p-2">
+                 <div class="col-4 ">
+                    <p class="ml-3">Item</p>
+                 </div>
+                 <div class="col-2">
+                 <p class="ml-3">Unit Cost</p>
+              </div>
+              <div class="col-2">
+               <p class="ml-3">Quantity</p>
+              </div>
+              <div class="col-2">
+                 <p class="ml-1">Price</p>
+              </div>
+             </div>
+             <div class="row no-gutters">
+                <div class="col-md-12">
+                        <div class="row justify-content-center">
+                          <div class="col-md-12">
+                           
+
+                                    <div >
+                                        <div>
+                                            <div class="row p-1">
+                                            <div class="col-4 ">
+                                                {{x.Item_Name}}
+                                             </div>
+                                             <div class="col-2">
+{{x.Amount}}                                          </div>
+                                          <div class="col-2">
+1
+                                         </div>
+                                          <div class="col-2">
+                                            {{x.Amount}}                                          </div>
+                                        
+                                        </div>
+                                         </div>
+                                    </div>
+                             
+                            
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-8"> </div>
+                                <div class="col-md-2">
+                                    <p>Subtotal:</p>
+                               </div>
+                               <div class="col-md-2"  *ngFor="let x of view">
+{{x.Amount}}
+                             </div>
+                              </div>
+    
+                              <div class="row">
+                                <div class="col-md-8"> </div>
+                                <div class="col-md-2">
+                                    <p>VAT(%):</p>
+                               </div>
+                               <div class="col-md-2"  *ngFor="let x of view">
+{{x.gst}}    
+                                  <hr>
+                             </div>
+                              </div>
+    
+                              <div class="row">
+                                <div class="col-md-8"> </div>
+                                <div class="col-md-2">
+                                    <p class="font-bold">Total:</p>
+                               </div>
+                               <div class="col-md-2"  *ngFor="let x of view">
+{{x.total_amount}}    
+                             </div>
+                              </div>
+                        
+
+                          </div>
+                        </div>    
+                </div>
+            </div>
+             
+              
+             
+                
+      
+                <div class="row mt-6"  *ngFor="let x of view">
+                  <div class="col-md-4"  *ngFor="let x of view">
+                      <p style="font-weight: 500;font-size: 14px;" class="ml-3">Purchase_From </p>
+                      <small class="ml-3">{{x.Purchase_From}}</small>
+                  </div> 
+                  <div class="col-md-4">
+                    <!-- <form  #ExpensesForm="ngForm" (ngSubmit)="ExpensesForm.form.valid" >
+
+                    <div class="col-md-6">     
+                        <div class="form-group" *ngFor="let x of view">
+                            <label for="Status">Status<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="Status" id="Status" class="form-control selects"  
+                                         [(ngModel)]="ServiceData.Status" #Status="ngModel"  >
+                                        <option selected>{{x.Status}}</option>
+
+                                            <option value="Pending">Pending</option>
+                                            <option value="Approved">Approved</option>
+
+                                        </select> 
+                          
+                        </div>
+                    </div>
+                  
+                </form> -->
+                  </div>
+      
+                  <div class="col-md-4" *ngFor="let x of view">
+                      <p style="font-weight: 500;font-size: 14px;" class="ml-3">PAYMENT METHOD </p>
+                      <small class="ml-3 text-center">{{x.Paid_By}}</small>
+                       
+                  </div> 
+              </div>
+              <div class="mt-4 p-5" style="float: right;">
+              <!-- <button  type="submit" class="btn btn-md"
+                  *ngIf="studentForm.form.invalid" style="background-color:
+                  #2f3e65 ;color: white;">Next</button> -->
+                  <button  type="submit" (click)="asset(ExpensesForm)" class="btn btn-md" style="background-color:
+                  #2f3e65 ;color: white;">submit</button>
+               </div>
+              <!-- </form> -->
+          </div>
+    </div> 
+    
+    
+    
+    
+              </div>
+    </div>
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+    
+    <!-- </div> -->

@@ -1,0 +1,140 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Edit Ticket</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #ticketForm="ngForm" (ngSubmit)="ticketForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="TicketSubject">Ticket Subject<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="TicketSubject" name="TicketSubject" class="form-control form_color"
+                                [(ngModel)]="ServiceData.TicketSubject" #TicketSubject="ngModel" placeholder="Enter Ticket Subject"
+                                [ngClass]="{'is-invalid': ticketForm.submitted && TicketSubject.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="ticketForm.submitted && TicketSubject.invalid">
+                                <div *ngIf="TicketSubject.errors.required">Ticket Subject* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select class="form-control form_color" placeholder="Select Status"  name="status" [(ngModel)]="ServiceData.status">
+                                 <option value="open">open</option>
+                                 
+                                 <option value="Pending">Pending</option>
+                                 <option value="Close">Close</option>
+                           
+            
+                             </select>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="email">Email<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="email" name="email" placeholder="Enter email"
+                                class="form-control form_color" [(ngModel)]="ServiceData.email" #email="ngModel"
+                                [ngClass]="{'is-invalid': ticketForm.submitted && email.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="ticketForm.submitted && email.invalid">
+                                <div *ngIf="email.errors.required">email* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                         
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="TicketId">Ticket Id<span style="color: red;font-size: 18px;"></span></label>
+                            <input type="text" id="TicketId" name="TicketId" class="form-control form_color"
+                                [(ngModel)]="ServiceData.TicketId" #TicketId="ngModel" placeholder="Enter Ticket Id"
+                                [ngClass]="{'is-invalid': ticketForm.submitted && TicketId.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="ticketForm.submitted && TicketId.invalid">
+                                <div *ngIf="TicketId.errors.required">Ticket Id is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+              
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Priority">Priority<span style="color: red;font-size: 18px;">*</span></label>
+                            <select class="form-control form_color" name="Priority" [(ngModel)]="ServiceData.Priority">
+                                <option value="Highest">Highest</option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option  value="Low">Low</option>
+            
+                             </select>
+                            
+                        </div>
+                    </div>
+
+                    
+            </div>
+
+          
+
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Description">Description<span style="color: red;font-size: 18px;">*</span></label>
+                        <textarea id="Description" class="form-control form_color" name="Description"  [(ngModel)]="ServiceData.Description" #Description="ngModel" rows="3" cols="50">
+                          
+                            </textarea>
+                        <div class="invalid-feedback" *ngIf="ticketForm.submitted && Description.invalid">
+                            <div *ngIf="Description.errors.required">Description field is Required</div>
+                        </div>
+                    </div>
+                </div>
+            
+                    
+                <!-- <div class="col-md-12">
+                    <div class="form-group">
+                <label for="file">Upload Files<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="file" class="input form-control" name="file" (change)="incomingFile($event)"
+                ngModel required />
+                </div>
+                </div> -->
+                <div class="col-md-12 text-center">
+                    <button type="submit"  (click)='edit(ticketForm.value)'
+                    class="btn btn-primary btn-sm text-uppercase mt-5" >Update Ticket</button>
+                  
+                </div>
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

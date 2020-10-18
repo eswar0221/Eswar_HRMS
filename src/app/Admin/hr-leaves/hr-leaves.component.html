@@ -1,0 +1,161 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Leave Request</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                     <!-- <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="navigate()">+ Add aLeave</button> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+            
+                          </div>
+                        
+                    <div class="clearfix">&nbsp;</div>
+              
+                
+            <table  class="table table-borderless table-condensed table-striped" [mfData]="sats" #mf="mfDataTable" [mfRowsOnPage]="30" id="tableSEcond_tab" *ngIf="tableSEcond_tab">
+                <thead class="text-white bg-primary">
+                <tr  class="text-white">
+                    <!-- <th  style="color: white;">
+                      <mfDefaultSorter by="sequencyId">S.NO</mfDefaultSorter>
+                    </th> -->
+                    <th style="color: white;">
+                        <mfDefaultSorter by="email"> Name</mfDefaultSorter>
+                    </th>
+                    <!-- <th style="color: white;">
+                        <mfDefaultSorter by="city">Disignation</mfDefaultSorter>
+              </th> -->
+              <th style="color: white;">
+                <mfDefaultSorter by="city">Leave ID</mfDefaultSorter>
+      </th>
+                    <th style="color: white;">
+                        <mfDefaultSorter by="age">From</mfDefaultSorter>
+                    </th>
+                    <th style="color: white;">
+                        <mfDefaultSorter by="city">To</mfDefaultSorter>
+                    </th>
+                   
+                    <th style="color: white;">
+                          <mfDefaultSorter by="age">Leavetype</mfDefaultSorter>
+                     </th>
+                     <th style="color: white;">
+                        <mfDefaultSorter by="age">Status</mfDefaultSorter>
+                   </th>
+                     <th style="color: white;">
+                      <mfDefaultSorter by="age">Leave Reason</mfDefaultSorter>
+                 </th>
+                 <th style="color: white;">
+                    <mfDefaultSorter by="age">Action</mfDefaultSorter>
+               </th>
+                </tr>
+                </thead>
+                <tbody *ngIf="tabledata==true">
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                         
+                          <td>
+                            <div class="NoDataStyle">
+                              <img src="assets/images/img_empty_status.png" height="90px" alt="No Data Image">
+                              <h6>{{tabledatanotfound}}</h6>
+                            </div>
+                          </td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>  
+                      </tbody>
+                <tbody>
+                <tr *ngFor="let item of mf.data | sortBy: 'desc';let i=index ">
+                    <!-- <td>{{i+ 1}}</td> -->
+                    <td >{{item.employeename}}</td>
+                    <!-- <td>{{item.designation}}</td> -->
+                    <td>{{item.leaveid}}</td>
+                    <td >{{item.fday}}{{item.fmonth}}{{item.fyear}}</td>
+                    <td >{{item.tday}}{{item.tmonth}}{{item.tyear}}</td>
+                    <td>{{item.leavetype}}</td>
+                    <td>{{item.status}}</td>
+
+                    <td >{{item.leavereason}}</td>
+                   
+                    
+                   <td>
+                    <div class="btn-group dropleft ml-5" style="cursor: pointer;">
+                        <a  class="fa fa-ellipsis-v" data-toggle="dropdown"  aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu">
+                            <a  class="dropdown-item" (click)="row(item.leaveid)"><i class="fa fa-pencil mr-4"></i>Edit</a>
+                            <a class="dropdown-item" (click)="Delete(item.leaveid)"><i class="fa fa-trash-o mr-4"></i>Delete</a>
+
+                        </div>
+                      </div>
+                   </td>
+
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <mfBootstrapPaginator ></mfBootstrapPaginator>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+
+
+            <div class="text-center" id="secondTable" *ngIf="secondTable">
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="text-center">Hellow world !!</div>
+            </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+    </div>
+     
+</div>
+  
+
+
+      

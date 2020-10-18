@@ -1,0 +1,288 @@
+
+<div class="card rows">
+    <div class="card-body ">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows ">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Client</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #clientForm="ngForm" >
+                    <!--this is for no data found table-->
+            <div class="row   shadow p-3 mb-5 bg-white rounded">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group"> 
+                            <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                                [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name" minlength="4"
+                                [ngClass]="{'is-invalid': clientForm.submitted && firstname.invalid}" required />
+                                <div *ngIf=" clientForm.submitted && firstname.invalid&&(firstname.dirty||firstname.touched)" >
+                                    <div *ngIf="firstname.errors.required" class="text-danger">firstname field is Required.</div>
+                                    <div *ngIf="firstname.errors.minlength" class="text-danger">*Please enter a min 4 characters</div>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="company_name">Company Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="company_name" name="company_name"
+                                placeholder="company_name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.company_name" #company_name="ngModel" minlength="2"
+                                [ngClass]="{'is-invalid': clientForm.submitted && company_name.invalid}"
+                                required />
+                                <div *ngIf="clientForm.submitted && company_name.invalid&&(company_name.dirty||company_name.touched)" >
+                                    <div *ngIf="company_name.errors.required" class="text-danger">company_name field is Required.</div>
+                                    <div *ngIf="company_name.errors.minlength" class="text-danger">*Please enter a min 2  characters </div>
+                                    </div>
+                        </div>
+                    </div>
+                
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerPassword"> Password<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="registerPassword" name="password" placeholder="Enter Password"
+                                class="form-control form_color" [(ngModel)]="ServiceData.password" #password="ngModel" minlength="6" required
+                                [ngClass]="{'is-invalid': clientForm.submitted && password.invalid}"   />
+                                <div class="invalid-feedback" *ngIf="clientForm.submitted && password.invalid">
+                                    <div *ngIf="password.errors.required">Password is Required</div>
+                                </div>
+                                <div *ngIf=" clientForm.submitted && password.invalid&&(password.dirty||password.touched)" >
+                                    <div *ngIf="password.errors.required" class="text-danger">* password is required.</div>
+                                    <div *ngIf="password.errors.minlength" class="text-danger">* password should be minimum 6 characters</div>
+                                    </div>
+                                    <!-- <div *ngIf=" cpassword.dirty && ( cpassword.value!=password.value) && cpassword.value!=''">
+                                    <div class="text-danger">*Confirm password should be match with password </div> </div>
+                          -->
+                        </div>
+                    </div>
+                   
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="clientid">Client ID<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="clientid" name="clientid" placeholder="Enter Client ID"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.clientid" #clientid="ngModel"  minlength="2"
+                                        [ngClass]="{'is-invalid': clientForm.submitted && clientid.invalid}" required />
+                                        <div *ngIf="clientForm.submitted && clientid.invalid&&(clientid.dirty||clientid.touched)" >
+                                            <div *ngIf="clientid.errors.required" class="text-danger">clientid field is Required.</div>
+                                            <div *ngIf="clientid.errors.minlength" class="text-danger">*Please enter a min 2 characters</div>
+                                            </div>
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="registerPhone">Phone<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="phone" name="phone" placeholder="Enter Phone Number"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.phone" #phone="ngModel" minlength="2"
+                                        [ngClass]="{'is-invalid': clientForm.submitted && phone.invalid}" required />
+                                        <div *ngIf= " clientForm.submitted && phone.invalid&&(phone.dirty||phone.touched)" >
+                                            <div *ngIf="phone.errors.required" class="text-danger">phone field is Required.</div>
+                                            <div *ngIf="phone.errors.minlength" class="text-danger">*Please enter a min characters</div>
+                                            </div>
+                                </div>
+                            </div>
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="regsiterLastname">Last Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="registerLastname" name="lastname" class="form-control form_color"
+                                [(ngModel)]="ServiceData.lastname" #lastname="ngModel" placeholder="Enter Last Name" minlength="3" 
+                                [ngClass]="{'is-invalid': clientForm.submitted && lastname.invalid}" required />
+                                <div *ngIf="clientForm.submitted && lastname.invalid&&(lastname.dirty||lastname.touched)" >
+                                    <div *ngIf="lastname.errors.required" class="text-danger">lastname field is Required.</div>
+                                    <div *ngIf="lastname.errors.minlength" class="text-danger">*Please enter a min 3 characters</div>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerEmail">Email<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="email" id="registerEmail" name="email" placeholder="Enter Email"
+                                class="form-control form_color" [(ngModel)]="ServiceData.email" #email="ngModel" email
+                                [ngClass]="{'is-invalid': clientForm.submitted && email.invalid}" required />
+                           
+                            <div *ngIf="clientForm.submitted && email.invalid&&(email.dirty||email.touched)" >
+                                <div *ngIf="email.errors.required" class="text-danger">Email field is Required.</div>
+                                <div *ngIf="email.errors.email" class="text-danger">*Please enter a valid email</div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerConfirmPassword">Confirm Password<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="registerConfirmPassword" name="cpassword" placeholder="Confirm Password"
+                                class="form-control form_color" [(ngModel)]="ServiceData.cpassword" #cpassword="ngModel" minlength="6"
+                                [ngClass]="{'is-invalid': clientForm.submitted && cpassword.invalid}" required  />
+                            <div class="invalid-feedback" *ngIf="clientForm.submitted && cpassword.invalid">
+                                <div *ngIf="cpassword.errors.required">Password is Required</div>
+                            </div>
+                            <div *ngIf="cpassword.invalid&&(cpassword.dirty||cpassword.touched)" >
+                                <div *ngIf="cpassword.errors.required" class="text-danger">*Confirm password is required.</div>
+                                <div *ngIf="cpassword.errors.minlength" class="text-danger">*Confirm password should be minimum 6 characters</div>
+                                </div>
+                                <div *ngIf=" cpassword.dirty && ( cpassword.value!=password.value) && cpassword.value!=''">
+                                <div class="text-danger">*Confirm password should be match with password </div> </div>
+                        </div>
+                    </div>
+                   
+                    
+                    
+                 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerDesignation">Designation <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="registerDesignation" name="designation" placeholder="Designation"
+                                class="form-control form_color" [(ngModel)]="ServiceData.designation" #designation="ngModel" minlength="3"
+                                [ngClass]="{'is-invalid': clientForm.submitted && designation.invalid}" required />
+                                <div *ngIf="clientForm.submitted && designation.invalid&&(designation.dirty||designation.touched)" >
+                                    <div *ngIf="designation.errors.required" class="text-danger">designation field is Required.</div>
+                                    <div *ngIf="designation.errors.minlength" class="text-danger">*Please enter a minimum 3 characters</div>
+                                    </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                    <label for="uploadlogo">Photo<span style="color: red;font-size: 18px;">*</span></label>
+                    <input type="file" class="input form-control" name="file" (change)="incomingFile($event)"
+                    ngModel required />
+                    </div>
+                    </div> -->
+                  
+            </div>
+                </div>
+            
+            </div>
+
+
+<br>
+            
+<!-- <div class="row shadow p-3 mb-5 bg-white rounded">
+    <div class="table-responsive">
+    <table style="width:100%" class="table">
+        <tr>
+          <th>Module Permission</th>
+          <th>Read</th> 
+          <th>Write</th>
+          <th>Create</th>
+          <th>Delete</th>
+      
+
+        </tr>
+        <tr>
+          <td>Projects</td>
+          <td>     <input type="checkbox" id="choosecert" name="pread" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.pread" #pread="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="pwrite" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.pwrite" #pwrite="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="pcreate" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.pcreate" #pcreate="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="pdelete" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.pdelete" #pdelete="ngModel"/>
+</td>
+      
+
+        </tr>
+        <tr>
+          <td>Tasks</td>
+
+          <td>     <input type="checkbox" id="choosecert" name="tread" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.tread" #tread="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="twrite" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.twrite" #twrite="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="tcreate" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.tcreate" #tcreate="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="tdelete" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.tdelete" #tdelete="ngModel"/>
+</td>
+        
+
+        </tr>
+        <tr>
+          <td>Chat</td>
+          <td>     <input type="checkbox" id="choosecert" name="cread" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.cread" #cread="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="cwrite" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.cwrite" #cwrite="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="ccreate" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.ccreate" #ccreate="ngModel"/>
+</td>
+          <td>     <input type="checkbox" id="choosecert" name="cdelete" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.cdelete" #cdelete="ngModel"/>
+</td>
+         
+        </tr>
+        <tr>
+            <td>Estimates</td>
+            <td>     <input type="checkbox" id="choosecert" name="eread" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.eread" #eread="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="ewrite" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.ewrite" #ewrite="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="ecreate" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.ecreate" #ecreate="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="edelete" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.edelete" #edelete="ngModel"/>
+</td>
+         
+          </tr> 
+          <tr>
+            <td>Invoices</td>
+            <td>     <input type="checkbox" id="choosecert" name="iread" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.iread" #iread="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="iwrite" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.iwrite" #iwrite="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="icreate" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.icreate" #icreate="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="idelete" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.idelete" #idelete="ngModel"/>
+</td>
+       
+          </tr>
+
+          <tr>
+            <td>Timing Sheets</td>
+            <td>     <input type="checkbox" id="choosecert" name="tsread" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.tsread" #tsread="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="tswrite" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.tswrite" #tswrite="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="tscreate	" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.tscreate" #tscreate="ngModel"/>
+</td>
+            <td>     <input type="checkbox" id="choosecert" name="tsdelete" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.tsdelete" #tsdelete="ngModel"/>
+</td>
+         
+          </tr>
+      </table></div>
+</div> -->
+
+<!-- [disabled]="!clientForm.valid"  -->
+      <div class="col-md-12 text-center" >
+        <button type="submit" (click)='register(ServiceData)' class="btn btn-primary btn-sm text-uppercase mt-5" >Register</button>
+        <button type="reset"  class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+        (click)="d('Cross click');clear(ServiceData)">Cancel</button>
+    </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

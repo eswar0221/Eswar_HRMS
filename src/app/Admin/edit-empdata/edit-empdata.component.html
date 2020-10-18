@@ -1,0 +1,277 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Employee</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                   
+                    <!-- <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i> -->
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #empRegistrationForm="ngForm" (ngSubmit)="empRegistrationForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row"  >
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                                [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+                                <div *ngIf="firstname.errors.required">First Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Reporting_Manager">Reporting Manager<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Reporting_Manager" name="Reporting_Manager" placeholder="Enter Reporting_Manager"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Reporting_Manager" #Reporting_Manager="ngModel"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && Reporting_Manager.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && Reporting_Manager.invalid">
+                                <div *ngIf="Reporting_Manager.errors.required">Reporting_Manager* is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Designation">Designation</label>
+                            <select class="form-control form_color"  (change)="onChange1($event);"  placeholder="Select Designation" id="Designation" #designation="ngModel"  name="designation" [(ngModel)]="ServiceData.designation">
+                              <option  value="Devloper">Devloper</option>
+                              <option  value="Team_Lead">Team Lead</option>
+
+                                 <option  value="Testing">Testing</option>                                
+                             </select>
+                            
+                        </div>
+                    </div> 
+                    <div class="col-md-12"  *ngIf="hrs">
+                        <div class="form-group">
+                            <label for="Reporting_Manager">Reporting Person</label>
+                            <select name="Reporting_Manager" id="Reporting_Manager" [(ngModel)]="ServiceData.Reporting_Manager" required class="form-control form_color"  #Reporting_Manager="ngModel"
+                            [ngClass]="{'is-invalid': empRegistrationForm.submitted && Reporting_Manager.invalid}" >
+                                <!-- <option value="">Select Leave Type </option> -->
+                                <option >Select Reporting_Person </option>
+                                <!-- <option >this.empteml </option> -->
+
+                                <option *ngFor="let x of empteml">{{x}}</option>
+                            </select>
+                          
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && Reporting_Manager.invalid">
+                                <div *ngIf="Reporting_Manager.errors.required">Reporting_Manager* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="Tea">
+                        <div class="form-group">
+                            <label for="Reporting_Manager">Reporting Person</label>
+                            <select name="Reporting_Manager" id="Reporting_Manager" [(ngModel)]="ServiceData.Reporting_Manager" required class="form-control form_color"  #Reporting_Manager="ngModel"
+                            [ngClass]="{'is-invalid': empRegistrationForm.submitted && Reporting_Manager.invalid}" >
+                                <!-- <option value="">Select Leave Type </option> -->
+                                <option >Select Reporting_Person </option>
+                                <!-- <option >this.empteml </option> -->
+
+                                <option *ngFor="let x of hrdata">{{x.firstname}}</option>
+                            </select>
+                          
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && Reporting_Manager.invalid">
+                                <div *ngIf="Reporting_Manager.errors.required">Reporting_Manager* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="username">User Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="username" name="username"
+                              class="form-control form_color"
+                            [(ngModel)]="ServiceData.username"   #username="ngModel"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && username.invalid}"
+                                required />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && username.invalid">
+                                <div *ngIf="username.errors.required">UserName* is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="password">Password<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="password" name="password" 
+                                class="form-control form_color" [(ngModel)]="ServiceData.password"      #password="ngModel"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && password.invalid}" required minlength="8" maxlength="15"/>
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && password.invalid">
+                                <div *ngIf="password.errors.required">Password* is Required</div>
+                                <div *ngIf="password.errors.minlength" class="text-danger">*Confirm password should be minimum 8 characters</div>
+
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-12" hidden>
+                                <div class="form-group">
+                                    <label for="registerPassword">Password</label>
+                                    <input type="text" id="registerPassword" name="password" placeholder="Password"
+                                        class="form-control form_color" ngModel="ServiceData.password" #password="ngModel"
+                                        [ngClass]="{'is-invalid': empRegistrationForm.submitted && password.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && password.invalid">
+                                        <div *ngIf="password.errors.required">password field is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="employeeid">Employee ID<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="employeeid" name="employeeid" 
+                                        class="form-control form_color" [(ngModel)]="ServiceData.employeeid"   #employeeid="ngModel"
+                                        [ngClass]="{'is-invalid': empRegistrationForm.submitted && employeeid.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && employeeid.invalid">
+                                        <div *ngIf="employeeid.errors.required">Employee ID* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="company">Company<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="company" name="company"  
+                                        class="form-control form_color"  [(ngModel)]="ServiceData.company" #company="ngModel"
+                                        [ngClass]="{'is-invalid': empRegistrationForm.submitted && company.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && company.invalid">
+                                        <div *ngIf="company.errors.required">Company* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                                  
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="lastname">Last Name<span style="color: red;font-size: 18px;"></span></label>
+                            <input type="text" id="lastname" name="lastname" class="form-control form_color"
+                            [(ngModel)]="ServiceData.lastname" #lastname="ngModel" 
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && lastname.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && lastname.invalid">
+                                <div *ngIf="lastname.errors.required">Lastname is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="email">Email<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="email" id="email" name="email" 
+                                class="form-control form_color" [(ngModel)]="ServiceData.email" #email="ngModel"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && email.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && email.invalid">
+                                <div *ngIf="email.errors.required">Email field is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="text" id="phone" name="phone" 
+                                class="form-control form_color" [(ngModel)]="ServiceData.phone"  #phone="ngModel"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && phone.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && phone.invalid">
+                                <div *ngIf="phone.errors.required">Phone* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="ctc">CTC <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="ctc" name="ctc" class="form-control form_color"
+                                [(ngModel)]="ServiceData.ctc" #ctc="ngModel" placeholder="Enter CTC"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && ctc.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && ctc.invalid">
+                                <div *ngIf="ctc.errors.required">CTC* is Required</div>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="cpassword">Confirm Password<span style="color: red;font-size: 18px;"></span></label>
+                            <input type="text" id="cpassword" name="cpassword"  [(ngModel)]="ServiceData.cpassword"
+                                class="form-control form_color"  #cpassword="ngModel"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && cpassword.invalid}" required  />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && cpassword.invalid">
+                                <div *ngIf="cpassword.errors.required">Password is Required</div>
+                            </div>
+                            <div *ngIf="cpassword.invalid&&(cpassword.dirty||cpassword.touched)" >
+                                <div *ngIf="cpassword.errors.required" class="text-danger">*Confirm password is required.</div>
+                                <div *ngIf="cpassword.errors.minlength" class="text-danger">*Confirm password should be minimum 8 characters</div>
+                                </div>
+                                <div *ngIf="cpassword.dirty && ( cpassword.value!=password.value) && cpassword.value!=''">
+                                <div class="text-danger">*Confirm password should be match with password </div> </div>
+                        </div>
+                    </div> -->
+                   
+                    <!-- <div class="col-md-12" hidden>
+                                <div class="form-group">
+                                    <label for="registerPassword">Password</label>
+                                    <input type="text" id="registerPassword" name="password" placeholder="Password"
+                                        class="form-control form_color" ngModel="ServiceData.password" #password="ngModel"
+                                        [ngClass]="{'is-invalid': empRegistrationForm.submitted && password.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && password.invalid">
+                                        <div *ngIf="password.errors.required">password field is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                    
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                    <label for="uploadlogo">Joining Date<span style="color: red;font-size: 18px;">*</span></label>
+                    <input type="file" class="input form-control" name="file" (change)="incomingFile($event)"
+                    ngModel required />
+                    </div>
+                    </div> -->
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="designation">Designation<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="designation" name="designation" 
+                                class="form-control form_color" [(ngModel)]="ServiceData.designation" #designation="ngModel"
+                                [ngClass]="{'is-invalid': empRegistrationForm.submitted && designation.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && designation.invalid">
+                                <div *ngIf="designation.errors.required">Designation field is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                 
+                    <div class="col-md-12">
+                        <button type="submit" (click)='edit(empRegistrationForm.value)' class="btn btn-primary btn-sm text-uppercase mt-5" style="float: right;">Save Changes</button>
+                        <button type="reset"  style="float: right;" class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+                        (click)="clear(ServiceData)">Cancel</button>
+                    </div>
+            </div>
+                </div>
+            
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

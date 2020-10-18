@@ -1,0 +1,1375 @@
+<link rel="stylesheet" href="./assets/css/style.min.css" type="text/css">
+<!-- Root -->
+<div class="dt-root">
+  <div class="dt-root__inner">
+    <div class="dt-root__intra">
+      <!-- Header -->
+      <header class="dt-header">
+        <!-- Header container -->
+        <div class="dt-header__container">
+          <!-- Brand -->
+          <div class="dt-brand">
+            <!-- Brand tool -->
+            <div class="dt-brand__tool d-lg-none" data-toggle="main-sidebar">
+              <div class="hamburger-inner"></div>
+            </div>
+            <!-- /brand tool -->
+            <!-- ../../../assets/uplogou.png -->
+            <!-- Brand logo -->
+            <span class="dt-brand__logo" *ngIf="adminlogin">
+              <a class="dt-brand__logo-link" >
+                <img class="dt-brand__logo-img d-none d-sm-inline-block" src="../../../assets/uplogou.png" alt="Drift">
+<h4 style="color: white;margin-top: 20px;">ADMINISTRATOR</h4>
+
+
+              </a>
+            </span>
+            <!-- /brand logo -->
+            <aside class="sidebar shadow-sm" *ngIf="EmpLogin" style="height: auto;margin-left: 50px; ">
+            <div class="sidebar-profile d-flex flex-column justify-content-center pt-5 pb-3" *ngFor="let x of profile">
+              <div class="picture-wrapper mb-4"  style="margin-top: 40px;" >
+                <div class="user-picture m-auto"  >
+                  <img src="{{x.file}}" class="img-fluid" alt="">
+                </div>
+              </div>
+              <div class="profile-details text-center pb-4" *ngFor="let x of profile">
+                <p class="mb-0 text-uppercase name">{{x.firstname}}</p>
+                <small class="text-uppercase role">{{x.designation}}</small>
+              </div>
+            </div>
+          </aside>
+          <aside class="sidebar shadow-sm" *ngIf="Team_Lead"  style="height: auto;margin-left: 50px; ">
+            <div class="sidebar-profile d-flex flex-column justify-content-center pt-5 pb-3" *ngFor="let x of profile">
+              <div class="picture-wrapper mb-4"  style="margin-top: 40px;">
+                <div class="user-picture m-auto">
+                  <img src="{{x.file}}" class="img-fluid" alt="">
+                </div>
+              </div>
+              <div class="profile-details text-center pb-4" *ngFor="let x of profile">
+                <p class="mb-0 text-uppercase name">{{x.firstname}}</p>
+                <small class="text-uppercase role">{{x.designation}}</small>
+              </div>
+            </div>
+          </aside>
+          <aside class="sidebar shadow-sm" *ngIf="Managerlogin" style="height: auto;margin-left: 50px; ">
+            <div class="sidebar-profile d-flex flex-column justify-content-center pt-5 pb-3" *ngFor="let x of hrmdata">
+              <div class="picture-wrapper mb-4" style="margin-top: 40px;">
+                <div class="user-picture m-auto">
+                  <img src="{{x.file}}" class="img-fluid" alt="">
+                </div>
+              </div>
+              <div class="profile-details text-center pb-4" *ngFor="let x of hrmdata">
+                <p class="mb-0 text-uppercase name">{{x.firstname}}</p>
+                <small class="text-uppercase role">{{x.designation}}</small>
+              </div>
+            </div>
+          </aside>
+          <aside class="sidebar shadow-sm" *ngIf="Accounting_login" style="height: auto;margin-left: 50px; ">
+            <div class="sidebar-profile d-flex flex-column justify-content-center pt-5 pb-3" *ngFor="let x of profile">
+              <div class="picture-wrapper mb-4" style="margin-top: 40px;">
+                <div class="user-picture m-auto">
+                  <img src="{{x.file}}" class="img-fluid" alt="">
+                </div>
+              </div>
+              <div class="profile-details text-center pb-4" *ngFor="let x of profile">
+                <p class="mb-0 text-uppercase name">{{x.firstname}}</p>
+                <small class="text-uppercase role">{{x.designation}}</small>
+              </div>
+            </div>
+          </aside>
+          </div>
+          <!-- /brand -->
+
+          <!-- Header toolbar-->
+          <div class="dt-header__toolbar">
+
+            <!-- Search box -->
+            <form class="search-box d-none d-lg-block">
+
+              <!-- <input class="form-control" placeholder="Search in app..." value="" type="search">
+              <span class="search-icon"><i class="icon icon-search icon-lg"></i></span> -->
+              <div *ngIf="Managerlogin"  style="margin-left: -430px;">
+              <div class="profile-details text-center pb-4" *ngFor="let x of hrmdata" >
+                <h1 style="color: white;">{{x.firstname}}</h1>
+                <h5 style="color: white;margin-top: -10px;">{{x.designation}}</h5>
+              </div> </div>
+              <div *ngIf="Team_Lead" style="margin-left: -430px;"> 
+              <div class=" text-center " *ngFor="let x of profile"  >
+                <h1 style="color: white;">{{x.firstname}}</h1>
+                <h5 style="color: white;margin-top: -10px;">{{x.designation}}</h5>
+              </div></div>
+
+              <div *ngIf="Accounting_login" style="margin-left: -430px;"> 
+                <div class=" text-center " *ngFor="let x of profile"  >
+                  <h1 style="color: white;">{{x.firstname}}</h1>
+                  <h5 style="color: white;margin-top: -10px;">{{x.designation}}</h5>
+                </div></div>
+              <div  *ngIf="EmpLogin"  style="margin-left: -430px;">
+
+              <div class="profile-details text-center pb-4" *ngFor="let x of profile">
+                <h1 style="color: white;">{{x.firstname}}</h1>
+                <h5 style="color: white;margin-top: -10px;">{{x.designation}}</h5>
+              </div></div>
+            </form>
+            <!-- /search box -->
+            <h2 style="color: white;margin-top: 15px; margin-left: -150px;">UPSTEER TEK SOLUTIONS</h2>
+
+            <!-- Header Menu Wrapper -->
+            <div class="dt-nav-wrapper">
+              <!-- Header Menu -->
+              <ul class="dt-nav d-lg-none">
+                <li class="dt-nav__item dt-notification-search dropdown">
+
+                  <!-- Dropdown Link -->
+                  <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"> <i class="icon icon-search icon-fw icon-lg"></i> </a>
+                  <!-- /dropdown link -->
+
+                  <!-- Dropdown Option -->
+                  <div class="dropdown-menu">
+
+                    <!-- Search Box -->
+                    <form class="search-box right-side-icon">
+                      <input class="form-control form-control-lg" type="search" placeholder="Search in app...">
+                      <button type="submit" class="search-icon"><i class="icon icon-search icon-lg"></i></button>
+                    </form>
+                    <!-- /search box -->
+
+                  </div>
+                  <!-- /dropdown option -->
+
+                </li>
+               
+              </ul>
+              <!-- /header menu -->
+              <!-- <h3 style="color: white;margin-top: 15px; margin-left: -300px;">UPSTEER TEK SOLUTIONS</h3> -->
+
+              <!-- Header Menu -->
+              <ul class="dt-nav d-lg-none">
+                <li class="dt-nav__item dt-notification dropdown">
+
+                  <!-- Dropdown Link -->
+                  <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"> <i class="icon icon-notification2 icon-fw dt-icon-alert"></i>
+                  </a>
+                  <!-- /dropdown link -->
+
+                  <!-- Dropdown Option -->
+                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-media">
+                    <!-- Dropdown Menu Header -->
+                    <div class="dropdown-menu-header">
+                      <h4 class="title">Notifications (9)</h4>
+
+                      <div class="ml-auto action-area">
+                        <a href="javascript:void(0)">Mark All Read</a> <a class="ml-2" href="javascript:void(0)">
+                          <i class="icon icon-settings icon-lg text-light-gray"></i> </a>
+                      </div>
+                    </div>
+                    <!-- /dropdown menu header -->
+
+                    <!-- Dropdown Menu Body -->
+                    <div class="dropdown-menu-body ps-custom-scrollbar">
+
+                      <div class="h-auto">
+                        <!-- Media -->
+                        <a href="javascript:void(0)" class="media">
+
+                          <!-- Avatar -->
+                          <img class="dt-avatar mr-3" src="https://via.placeholder.com/150x150" alt="User">
+                          <!-- avatar -->
+
+                          <!-- Media Body -->
+                          <span class="media-body">
+                            <span class="message">
+                              <span class="user-name">Stella Johnson</span> and <span class="user-name">Chris
+                                Harris</span>
+                              have birthdays today. Help them celebrate!
+                            </span>
+                            <span class="meta-date">8 hours ago</span>
+                          </span>
+                          <!-- /media body -->
+
+                        </a>
+                        <!-- /media -->
+
+                        <!-- Media -->
+                        <a href="javascript:void(0)" class="media">
+
+                          <!-- Avatar -->
+                          <img class="dt-avatar mr-3" src="https://via.placeholder.com/150x150" alt="User">
+                          <!-- avatar -->
+
+                          <!-- Media Body -->
+                          <span class="media-body">
+                            <span class="message">
+                              <span class="user-name">Jonathan Madano</span> commented on your post.
+                            </span>
+                            <span class="meta-date">9 hours ago</span>
+                          </span>
+                          <!-- /media body -->
+
+                        </a>
+                        <!-- /media -->
+
+                        <!-- Media -->
+                        <a href="javascript:void(0)" class="media">
+
+                          <!-- Avatar -->
+                          <img class="dt-avatar mr-3" src="https://via.placeholder.com/150x150" alt="User">
+                          <!-- avatar -->
+
+                          <!-- Media Body -->
+                          <span class="media-body">
+                            <span class="message">
+                              <span class="user-name">Chelsea Brown</span> sent a video recomendation.
+                            </span>
+                            <span class="meta-date">
+                              <i class="icon icon-play-circle text-primary icon-fw mr-1"></i>
+                              13 hours ago
+                            </span>
+                          </span>
+                          <!-- /media body -->
+
+                        </a>
+                        <!-- /media -->
+
+                        <!-- Media -->
+                        <a href="javascript:void(0)" class="media">
+
+                          <!-- Avatar -->
+                          <img class="dt-avatar mr-3" src="https://via.placeholder.com/150x150" alt="User">
+                          <!-- avatar -->
+
+                          <!-- Media Body -->
+                          <span class="media-body">
+                            <span class="message">
+                              <span class="user-name">Alex Dolgove</span> and <span class="user-name">Chris
+                                Harris</span>
+                              like your post.
+                            </span>
+                            <span class="meta-date">
+                              <i class="icon icon-like text-light-blue icon-fw mr-1"></i>
+                              yesterday at 9:30
+                            </span>
+                          </span>
+                          <!-- /media body -->
+
+                        </a>
+                        <!-- /media -->
+                      </div>
+
+                    </div>
+                    <!-- /dropdown menu body -->
+
+                    <!-- Dropdown Menu Footer -->
+                    <div class="dropdown-menu-footer">
+                      <a href="javascript:void(0)" class="card-link"> See All <i
+                          class="icon icon-arrow-right icon-fw"></i>
+                      </a>
+                    </div>
+                    <!-- /dropdown menu footer -->
+                  </div>
+                  <!-- /dropdown option -->
+
+                </li>
+
+                <li class="dt-nav__item dt-notification dropdown">
+
+                  <!-- Dropdown Link -->
+                  <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"> <i class="icon icon-open-mail icon-fw"></i> </a>
+                  <!-- /dropdown link -->
+
+                  <!-- Dropdown Option -->
+                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-media">
+                    <!-- Dropdown Menu Header -->
+                    <div class="dropdown-menu-header">
+                      <h4 class="title">Messages (6)</h4>
+
+                      <div class="ml-auto action-area">
+                        <a href="javascript:void(0)">Mark All Read</a> <a class="ml-2" href="javascript:void(0)">
+                          <i class="icon icon-settings icon-lg text-light-gray"></i></a>
+                      </div>
+                    </div>
+                    <!-- /dropdown menu header -->
+
+                    <!-- Dropdown Menu Body -->
+                    <div class="dropdown-menu-body ps-custom-scrollbar">
+
+                      <div class="h-auto">
+
+                        <!-- Media -->
+                        <a href="javascript:void(0)" class="media">
+
+                          <!-- Avatar -->
+                          <img class="dt-avatar mr-3" src="https://via.placeholder.com/150x150" alt="User">
+                          <!-- avatar -->
+
+                          <!-- Media Body -->
+                          <span class="media-body text-truncate">
+                            <span class="user-name mb-1">Chris Mathew</span>
+                            <span class="message text-light-gray text-truncate">Okay.. I will be waiting for
+                              your...</span>
+                          </span>
+                          <!-- /media body -->
+
+                          <span class="action-area h-100 min-w-80 text-right">
+                            <span class="meta-date mb-1">8 hours ago</span>
+                            <!-- Toggle Button -->
+                            <span class="toggle-button" data-toggle="tooltip" data-placement="left"
+                              title="Mark as read">
+                              <span class="show"><i class="icon icon-dot-o icon-fw f-10 text-light-gray"></i></span>
+                              <span class="hide"><i class="icon icon-dot icon-fw f-10 text-light-gray"></i></span>
+                            </span>
+                            <!-- /toggle button -->
+                          </span> </a>
+                        <!-- /media -->
+
+                        <!-- Media -->
+                        <a href="javascript:void(0)" class="media">
+
+                          <!-- Avatar -->
+                          <img class="dt-avatar mr-3" src="https://via.placeholder.com/150x150" alt="User">
+                          <!-- avatar -->
+
+                          <!-- Media Body -->
+                          <span class="media-body text-truncate">
+                            <span class="user-name mb-1">Alia Joseph</span>
+                            <span class="message text-light-gray text-truncate">
+                              Alia Joseph just joined Messenger! Be the first to send a welcome message or sticker.
+                            </span>
+                          </span>
+                          <!-- /media body -->
+
+                          <span class="action-area h-100 min-w-80 text-right">
+                            <span class="meta-date mb-1">9 hours ago</span>
+                            <!-- Toggle Button -->
+                            <span class="toggle-button" data-toggle="tooltip" data-placement="left"
+                              title="Mark as read">
+                              <span class="show"><i class="icon icon-dot-o icon-fw f-10 text-light-gray"></i></span>
+                              <span class="hide"><i class="icon icon-dot icon-fw f-10 text-light-gray"></i></span>
+                            </span>
+                            <!-- /toggle button -->
+                          </span> </a>
+                        <!-- /media -->
+
+                        <!-- Media -->
+                        <a href="javascript:void(0)" class="media">
+
+                          <!-- Avatar -->
+                          <img class="dt-avatar mr-3" src="https://via.placeholder.com/150x150" alt="User">
+                          <!-- avatar -->
+
+                          <!-- Media Body -->
+                          <span class="media-body text-truncate">
+                            <span class="user-name mb-1">Joshua Brian</span>
+                            <span class="message text-light-gray text-truncate">
+                              Alex will explain you how to keep the HTML structure and all that.
+                            </span>
+                          </span>
+                          <!-- /media body -->
+
+                          <span class="action-area h-100 min-w-80 text-right">
+                            <span class="meta-date mb-1">12 hours ago</span>
+                            <!-- Toggle Button -->
+                            <span class="toggle-button" data-toggle="tooltip" data-placement="left"
+                              title="Mark as read">
+                              <span class="show"><i class="icon icon-dot-o icon-fw f-10 text-light-gray"></i></span>
+                              <span class="hide"><i class="icon icon-dot icon-fw f-10 text-light-gray"></i></span>
+                            </span>
+                            <!-- /toggle button -->
+                          </span> </a>
+                        <!-- /media -->
+
+                        <!-- Media -->
+                        <a href="javascript:void(0)" class="media">
+
+                          <!-- Avatar -->
+                          <img class="dt-avatar mr-3" src="https://via.placeholder.com/150x150" alt="User">
+                          <!-- avatar -->
+
+                          <!-- Media Body -->
+                          <span class="media-body text-truncate">
+                            <span class="user-name mb-1">Domnic Brown</span>
+                            <span class="message text-light-gray text-truncate">Okay.. I will be waiting for
+                              your...</span>
+                          </span>
+                          <!-- /media body -->
+
+                          <span class="action-area h-100 min-w-80 text-right">
+                            <span class="meta-date mb-1">yesterday</span>
+                            <!-- Toggle Button -->
+                            <span class="toggle-button" data-toggle="tooltip" data-placement="left"
+                              title="Mark as read">
+                              <span class="show"><i class="icon icon-dot-o icon-fw f-10 text-light-gray"></i></span>
+                              <span class="hide"><i class="icon icon-dot icon-fw f-10 text-light-gray"></i></span>
+                            </span>
+                            <!-- /toggle button -->
+                          </span> </a>
+                        <!-- /media -->
+
+                      </div>
+
+                    </div>
+                    <!-- /dropdown menu body -->
+
+                    <!-- Dropdown Menu Footer -->
+                    <div class="dropdown-menu-footer">
+                      <a href="javascript:void(0)" class="card-link"> See All <i
+                          class="icon icon-arrow-right icon-fw"></i>
+                      </a>
+                    </div>
+                    <!-- /dropdown menu footer -->
+                  </div>
+                  <!-- /dropdown option -->
+
+                </li>
+              </ul>
+              <!-- /header menu -->
+              <!-- <h3 style="color: white;margin-top: 15px; margin-left: -300px;">UPSTEER TEK SOLUTIONS</h3> -->
+
+              <!-- Header Menu -->
+              <ul class="dt-nav"> 
+
+                <li class="dt-nav__item dropdown">
+
+                  <!-- Dropdown Link -->
+                  <a href="#" class="dt-nav__link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <i class="flag-icon flag-icon-us flag-icon-rounded flag-icon-lg"></i><span>English</span> </a>
+                  <!-- /dropdown link -->
+
+                  <!-- Dropdown Option -->
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      <i class="flag-icon flag-icon-in mr-2"></i><span>Hi-In</span> </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      <i class="flag-icon flag-icon-cn mr-2"></i><span>Chinese</span> </a>
+                    <a class="dropdown-item" href="javascript:void(0)">
+                      <i class="flag-icon flag-icon-es mr-2"></i><span>Spanish</span> </a>
+                  </div>
+                  <!-- /dropdown option -->
+
+                </li>
+                <li class="dt-nav__item dt-notification-app dropdown">
+
+                  <!-- Dropdown Link -->
+                  <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false"> <i class="icon icon-apps icon-sm icon-fw"></i>
+                  </a>
+                  <!-- /dropdown link -->
+
+                  <!-- Dropdown Option -->
+                  <div class="dropdown-menu dropdown-menu-right ps-custom-scrollbar">
+
+                    <!-- Apps -->
+                    <ul class="dt-app-list">
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-account.png" alt="Google Account">
+                          <span class="dt-app-list__text">Account</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-google.png" alt="Google Search">
+                          <span class="dt-app-list__text">Search</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-map.png" alt="Google Map">
+                          <span class="dt-app-list__text">Maps</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-youtube.png" alt="Youtube">
+                          <span class="dt-app-list__text">YouTube</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-playstore.png" alt="Play Store">
+                          <span class="dt-app-list__text">Play</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-news.png" alt="Google News">
+                          <span class="dt-app-list__text">News</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-gmail.png" alt="Google Drive">
+                          <span class="dt-app-list__text">Gmail</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-drive.png" alt="Google Drive">
+                          <span class="dt-app-list__text">Drive</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-calendar.png" alt="Calendar">
+                          <span class="dt-app-list__text">Calendar</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-google-plus.png" alt="Google Plus">
+                          <span class="dt-app-list__text">Google+</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-translate.png" alt="Translate">
+                          <span class="dt-app-list__text">Translate</span> </a>
+                      </li>
+                      <li class="dt-app-list__item">
+                        <a href="javascript:void(0)" class="dt-app-list__link">
+                          <img src="assets/images/icon/icon-photos.png" alt="Photos">
+                          <span class="dt-app-list__text">Photos</span> </a>
+                      </li>
+                    </ul>
+                    <!-- /apps -->
+
+                  </div>
+                  <!-- /dropdown option -->
+
+                </li>
+              </ul>
+              <!-- /header menu -->
+
+              <!-- Header Menu -->
+              <ul class="dt-nav">
+                <li class="dt-nav__item dropdown">
+
+                  <!-- Dropdown Link -->
+                  <a href="#" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <!-- <img class="dt-avatar size-50" src="https://via.placeholder.com/150x150" alt="Domnic Harris"> -->
+                    <span class="dt-avatar-info d-none d-sm-block">
+                      <span class="d-block text-light-primary mb-1" style="font-size: 15px;margin-top: 6px;"
+                        (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Logout</span>
+                    </span> </a>
+                  <!-- /dropdown link -->
+
+                  <!-- Dropdown Option -->
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dt-avatar-wrapper flex-nowrap p-6 mt-n2 bg-gradient-purple text-white rounded-top">
+                      <img class="dt-avatar" src="https://via.placeholder.com/150x150" alt="Domnic Harris">
+                      <span class="dt-avatar-info">
+                        <span class="dt-avatar-name">Bob Hyden</span>
+                        <span class="f-12">Administrator</span>
+                      </span>
+                    </div>
+                    <a class="dropdown-item" href="javascript:void(0)"> <i
+                        class="icon icon-user icon-fw mr-2 mr-sm-1"></i>Account
+                    </a> <a class="dropdown-item" href="javascript:void(0)">
+                      <i class="icon icon-settings icon-fw mr-2 mr-sm-1"></i>Setting </a>
+                    <a class="dropdown-item" href="page-login.html"> <i
+                        class="icon icon-editors icon-fw mr-2 mr-sm-1"></i>Logout
+                    </a>
+                  </div>
+                  <!-- /dropdown option -->
+
+                </li>
+              </ul>
+              <!-- /header menu -->
+            </div>
+            <!-- Header Menu Wrapper -->
+
+          </div>
+          <!-- /header toolbar -->
+
+        </div>
+        <!-- /header container -->
+
+      </header>
+      <!-- /header -->
+
+      <!-- Site Main -->
+
+     
+      <main class="dt-main" >
+       
+        <!-- Sidebar -->
+        <aside id="main-sidebar" class="dt-sidebar">
+         
+          <!-- Sidebar Notification -->
+          <div class="dt-sidebar__notification" >
+            <ul class="dt-list dt-list-xl d-none d-lg-flex">
+              <li class="dt-list__item" *ngIf="Managerlogin">
+ <a class="dt-fab-btn btn-shadow" (click)="getnoti()" title="Tasks"><i class="icon icon-notification2 icon-lg" style="margin-left: 5px;"></i><span class="badge ">{{noti}}</span></a>
+              </li>
+              <li class="dt-list__item"  *ngIf="Team_Lead">
+  <a class="dt-fab-btn btn-shadow"  (click)="getaln()" title="Tasks"><i class="icon icon-notification2 icon-lg" style="margin-left: 5px;"></i><span class="badge ">{{tto}}</span></a>
+              </li>
+              <li class="dt-list__item" *ngIf="adminlogin">
+<a class="dt-fab-btn btn-shadow "  (click)="get()" title="Tasks"><i class="icon icon-notification2 icon-lg" style="margin-left: 5px;"></i><span class="badge ">{{noti}}</span></a>
+              </li>
+              <li class="dt-list__item"  *ngIf="EmpLogin">
+<a class="dt-fab-btn btn-shadow"  (click)="getnoti()" title="Tasks"><i class="icon icon-notification2 icon-lg" style="margin-left: 5px;"></i><span class="badge ">{{ticnoti}}</span></a>
+              </li>
+              <!-- <li id="group"> 
+                <button type="button" class="btn btn-info">  
+                 <i class="fa fa-envelope"></i> 
+                </button> 
+                <span class="badge badge-light">5</span> 
+              </li>  -->
+              <li class="dt-list__item" *ngIf="Managerlogin">
+                <a class="dt-fab-btn btn-shadow"  title="Leaves" (click)="frtyu1()" ><i class="icon icon-message icon-lg"></i><span class="badge ">{{hhr}}</span></a>
+              </li>
+              <li class="dt-list__item" *ngIf="Team_Lead">
+                <a class="dt-fab-btn btn-shadow"  title="Leaves" (click)="frtyu()" ><i class="icon icon-message icon-lg"></i><span class="badge ">{{hh}}</span></a>
+              </li>
+              <li class="dt-list__item" *ngIf="adminlogin">
+                <a class="dt-fab-btn btn-shadow"  title="Leaves" (click)="frtyuad()" ><i class="icon icon-message icon-lg"></i><span class="badge ">{{hhad}}</span></a>
+              </li>
+              <li class="dt-list__item" *ngIf="EmpLogin">
+                <a class="dt-fab-btn btn-shadow"  title="Leaves" (click)="getnoti3()" ><i class="icon icon-message icon-lg"></i><span class="badge ">{{notleav}}</span></a>
+              </li>
+              <!--  -->
+              <!--  -->
+              <li class="dt-list__item" *ngIf="Managerlogin">
+                <a  class="dt-fab-btn btn-shadow"  title="Tickets" ><i class="icon icon-menu-lines-new icon-xl"></i><span class="badge ">{{notiEm}}</span></a>
+              </li>
+              <li class="dt-list__item" *ngIf="Team_Lead">
+                <a  class="dt-fab-btn btn-shadow" (click)="gettiol()" title="Tickets" ><i class="icon icon-menu-lines-new icon-xl"></i><span class="badge ">{{tio}}</span></a>
+              </li>
+              <li class="dt-list__item" *ngIf="adminlogin">
+                <a  class="dt-fab-btn btn-shadow"  title="Tickets" ><i class="icon icon-menu-lines-new icon-xl"></i><span class="badge ">{{notiEm}}</span></a>
+              </li>
+              <li class="dt-list__item" *ngIf="EmpLogin">
+                <a  class="dt-fab-btn btn-shadow" (click)="getnoti2()"  title="Tickets" ><i class="icon icon-menu-lines-new icon-xl"></i><span class="badge ">{{nottic}}</span></a>
+              </li>
+            </ul>
+            <span style="color: aliceblue;">{{today4e}}</span>
+          </div>
+          <!-- /sidebar notification -->
+
+          <div class="dt-sidebar__container"  style="position: relative; overflow: auto; display: inline-block;  width: 100%; height: 475px;">
+
+            <!-- Sidebar Navigation -->
+            <!-- <ul class="dt-side-nav" *ngIf="adminlogin" style="margin-top: -25px;" > -->
+            <ul class="dt-side-nav" *ngIf="Managerlogin" style="margin-top: -25px;" >
+
+              <!-- Menu Header -->
+              <li class="dt-side-nav__item dt-side-nav__header">
+                <span class="dt-side-nav__text">HR</span>
+              </li>
+              <!-- /menu header -->
+              <!-- Menu Item -->
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp1[0]" [routerLink]="['/Admin/admin-dashboard']" class="dt-side-nav__link" title="Dashboard">
+                   <i class="icon icon-dashboard icon-fw icon-lg"></i>
+                  <span class="dt-side-nav__text">{{hrmensp1[0]}}</span> </a>
+              </li> -->
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  [routerLink]="['/Admin/hrmanDashboard']" class="dt-side-nav__link" title="Dashboard"> <i class="icon icon-dashboard icon-fw icon-lg"></i>
+                  <span class="dt-side-nav__text">HR Dashboard</span> </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/empviewall']" class="dt-side-nav__link" title="Employee Register">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Employees </span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/shopping']" class="dt-side-nav__link" title="Employee Register">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">shopping </span>
+                </a>
+              </li>
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp2[0]" [routerLink]="['/Admin/transaction-list']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp2[0]}}</span>
+                </a>
+              </li> -->
+                    <!-- <i class="fa fa-user"></i> -->
+
+              <!-- <li>
+                <a href="#demo"  routerLinkActive="active"  data-toggle="collapse" >
+                  <i class="fa fa-user"></i>
+                  <span (click)="isShown = !isShown">Employees</span>
+                </a>
+                <ul  id="demo" class="collapse">
+                  <li  >  <a href="#" routerLink="/employee" routerLinkActive="active">
+                    <span>All Employees</span>
+                  </a></li>
+                  <li>  <a href="#" routerLink="/holidays" routerLinkActive="active">
+                    <span>Holidays</span>
+                  </a></li>
+                  <li >  <a href="#" routerLink="/leaverequest"  routerLinkActive="active">
+                    <span>Leave Requests</span>
+                  </a></li>
+                  <li >  <a href="#" routerLink="/attendance" routerLinkActive="active">
+                    <span>Attendance</span>
+                  </a></li>
+                  <li >  <a href="#" routerLink="/departments" routerLinkActive="active">
+                    <span>Departments</span>
+                  </a></li>
+                  <li >  <a href="#" routerLink="/designation" routerLinkActive="active">
+                    <span>Designation</span>
+                  </a></li>
+                </ul>
+        
+              </li> -->
+
+              <!-- <ngb-accordion #acc="ngbAccordion">
+                <ngb-panel id="toggle-1" title="All Employees" class="sdfg">
+                  <ng-template ngbPanelContent>
+                    <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                      <a [routerLink]="['/Admin/transaction-list']" class="dt-side-nav__link" title="Messages">
+                        <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Employee</span>
+                      </a>
+                    </li>
+                    <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                      <a [routerLink]="['/Admin/leaves']" class="dt-side-nav__link" title="Messages">
+                        <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">Leave Request</span>
+                      </a>
+                    </li>
+                    <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                      <a [routerLink]="['/Admin/holidays']" class="dt-side-nav__link" title="Messages">
+                        <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Holidays</span>
+                      </a>
+                    </li>
+                    
+                    <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                      <a [routerLink]="['/Admin/designations']" class="dt-side-nav__link" title="Messages">
+                        <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Designations</span>
+                      </a>
+                    </li>
+                    <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                      <a [routerLink]="['/Admin/department']" class="dt-side-nav__link" title="Messages">
+                        <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Department</span>
+                      </a>
+                    </li>
+                 
+
+                  </ng-template>
+                </ngb-panel>
+              
+              </ngb-accordion> -->
+             
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  [routerLink]="['/Admin/hrleaves']" class="dt-side-nav__link" title="Employee {{hrmensp21[0]}}">
+                  <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">Employee Leaves</span>
+                </a>
+              </li> -->
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  [routerLink]="['/Admin/Leaves_Hr_all']" class="dt-side-nav__link" title="Leaves">
+                  <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">Leaves</span>
+                </a>
+              </li>
+              
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  [routerLink]="['/Admin/hrapplyleaves']" class="dt-side-nav__link" title="HR Leaves">
+                  <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">HR Apply Leaves</span>
+                </a>
+              </li> -->
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/empbank']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Bank Details </span>
+                </a>
+              </li> -->
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/empregall']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Employee Register </span>
+                </a>
+              </li> -->
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp19[0]" [routerLink]="['/Admin/empsal']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-money fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp19[0]}}</span>
+                </a>
+              </li> -->
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']"> 
+                <a *ngIf="hrmensp20[0]" [routerLink]="['/Admin/emppayslip']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-money fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp20[0]}}</span>
+                </a>
+              </li> -->
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp4[0]" [routerLink]="['/Admin/empexpensives']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp4[0]}}</span>
+                </a>
+              </li>
+              
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp27[0]" [routerLink]="['/Admin/event']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-calendar icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp27[0]}}</span>
+                </a>
+              </li>
+           
+            
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp11[0]" [routerLink]="['/Admin/holidays']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp11[0]}}</span>
+                </a>
+              </li>
+             
+            
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/tasks']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-edit fa-fw fa-lg"></i> <span class="dt-side-nav__text">Tasks</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp12[0]" [routerLink]="['/Admin/dummy']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp12[0]}}</span>
+                </a>
+              </li>
+         
+           
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp24[0]" [routerLink]="['/Admin/tickets']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-message icon-fw icon-lg"></i><span class="dt-side-nav__text">{{hrmensp24[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp13[0]" [routerLink]="['/Admin/designations']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp13[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp10[0]" [routerLink]="['/Admin/department']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp10[0]}}</span>
+                </a>
+              </li>
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp14[0]" [routerLink]="['/Admin/projects']" class="dt-side-nav__link" title="Messages">
+                  
+                  <i class="fa fa-rocket fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp14[0]}}</span>
+                </a>
+              </li> -->
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp15[0]" [routerLink]="['/Admin/clients']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp15[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp32[0]" [routerLink]="['/Admin/contact']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-phone icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp32[0]}}</span>
+                </a>
+              </li>
+               <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  *ngIf="hrmensp16[0]" [routerLink]="['/Admin/leads']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-user-secret fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp16[0]}}</span>
+                </a>
+              </li> -->
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp17[0]" [routerLink]="['/Admin/managedjobs']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-building fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp17[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp18[0]" [routerLink]="['/Admin/appliedjobs']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-building fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp18[0]}}</span>
+                </a>
+              </li>
+            
+            
+             
+
+
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp21[0]" [routerLink]="['/Admin/leaves']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp21[0]}}</span>
+                </a>
+              </li> -->
+            
+              <!-- hrleaves -->
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp22[0]" [routerLink]="['/Admin/users']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp22[0]}}</span>
+                </a>
+              </li> -->
+
+              
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp23[0]" [routerLink]="['/Admin/timingsheet']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-time icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp23[0]}}</span>
+                </a>
+              </li>
+             
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp25[0]" [routerLink]="['/Admin/email']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-at fa-lg"></i> <span class="dt-side-nav__text"> {{hrmensp25[0]}}</span>
+                </a>
+              </li>
+            
+              
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp31[0]" [routerLink]="['/Admin/invoices']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp31[0]}}</span>
+                </a>
+              </li>
+              
+             
+              
+              <li  class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp5[0]" [routerLink]="['/Admin/Payments']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp5[0]}}</span>
+                </a>
+              </li>   
+         
+              <li  class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp6[0]" [routerLink]="['/Admin/pf']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp6[0]}}</span>
+                </a>
+              </li>
+              <li  class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp7[0]" [routerLink]="['/Admin/tax']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp7[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp9[0]" [routerLink]="['/Admin/invoicereport']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-pie-chart  fa-fw fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp9[0]}}</span>
+                </a>
+              </li>
+              
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp8[0]" [routerLink]="['/Admin/expensereport']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-pie-chart  fa-fw fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp8[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp26[0]" [routerLink]="['/Admin/assets']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-message icon-fw icon-lg"></i><span class="dt-side-nav__text">{{hrmensp26[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp3[0]" [routerLink]="['/Admin/estimates']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">{{hrmensp3[0]}}</span>
+                </a>
+              </li>
+              
+           
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp28[0]" [routerLink]="['/Admin/activities']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-notification2 icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp28[0]}}</span>
+                </a>
+              </li> -->
+
+
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp30[0]" [routerLink]="['/Admin/assets']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-ungroup icon-fw icon-lg"></i> <span class="dt-side-nav__text">Assets</span>
+                </a>
+              </li> -->
+            
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp29[0]" [routerLink]="['/Admin/hrmanprofile']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-user icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hrmensp29[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hrmensp30[0]" [routerLink]="['/Admin/manpassword']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-user icon-fw icon-lg"></i> <span class="dt-side-nav__text">Change Password</span>
+                </a>
+              </li>
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  [routerLink]="['/Admin/manlogin']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-user icon-fw icon-lg"></i> <span class="dt-side-nav__text">Login</span>
+                </a>
+              </li>
+             
+
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  [routerLink]="['/Admin/manregister']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-user icon-fw icon-lg"></i> <span class="dt-side-nav__text">Register</span>
+                </a>
+              </li> -->
+            
+              <!-- /menu item -->
+
+            </ul>
+            <!-- /sidebar navigation -->
+            <!-- Sidebar Navigation -->
+            <ul class="dt-side-nav" *ngIf="EmpLogin" style="margin-top: -25px;" >
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  *ngIf="zzz[0]"  [routerLink]="['/Admin/admin-dashboard']" class="dt-side-nav__link" title="Dashboard"> <i
+                    class="icon icon-dashboard icon-fw icon-lg"></i>
+                  <span class="dt-side-nav__text">{{zzz[0]}}</span> </a>
+              </li> -->
+              <li class="dt-side-nav__item dt-side-nav__header">
+                <span class="dt-side-nav__text">Employee</span>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  *ngIf="zzz[0]"  [routerLink]="['/Admin/empDashboard']" class="dt-side-nav__link" title="Dashboard"> <i
+                    class="icon icon-dashboard icon-fw icon-lg"></i>
+                  <span class="dt-side-nav__text">{{zzz[0]}}</span> </a>
+              </li>
+
+             
+            
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  *ngIf="llll[0]" [routerLink]="['/Admin/empviewleaves']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{llll[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/empexpensives']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">Expensives</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/empviewtasks']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-edit fa-fw fa-lg"></i> <span class="dt-side-nav__text">Tasks</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="hhh[0]" [routerLink]="['/Admin/holidays']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hhh[0]}}</span>
+                </a>
+              </li>
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/contact']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-phone icon-fw icon-lg"></i> <span class="dt-side-nav__text">Contacts</span>
+                </a>
+              </li> -->
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="ttt[0]" [routerLink]="['/Admin/empviewtickets']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{ttt[0]}}</span>
+                </a>
+              </li>
+             
+             
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/dummy']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">All Employees</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item"  [routerLinkActive]="['active']">
+                <a  *ngIf="eee[0]" [routerLink]="['/Admin/event']"   class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-calendar icon-fw icon-lg"></i><span class="dt-side-nav__text" >{{eee[0]}}</span>
+                </a>
+              </li>
+              <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="jjjj[0]" [routerLink]="['/Admin/jobs']" class="dt-side-nav__link" title="Messages">
+                  <i class="fa fa-building fa-lg"></i> <span class="dt-side-nav__text">{{jjjj[0]}}</span>
+                </a>
+              </li>
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  [routerLink]="['/Admin/manlogin']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-user icon-fw icon-lg"></i> <span class="dt-side-nav__text">Login</span>
+                </a>
+              </li> -->
+            
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a  [routerLink]="['/Admin/profile']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-user icon-fw icon-lg"></i> <span class="dt-side-nav__text">Profile</span>
+                </a>
+              </li> -->
+             <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a *ngIf="aaa[0]" [routerLink]="['/Admin/activities']" class="dt-side-nav__link" title="Messages">
+                  <i class="icon icon-notification2 icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{aaa[0]}}</span>
+                </a>
+              </li> -->
+              <!-- <i class="icon icon-message icon-fw icon-lg"></i> -->
+</ul>
+
+<ul class="dt-side-nav" *ngIf="adminlogin" style="margin-top: -25px;" >
+  
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a   [routerLink]="['/Admin/admin-dashboard']" class="dt-side-nav__link" title="Dashboard"> <i
+        class="icon icon-dashboard icon-fw icon-lg"></i>
+      <span class="dt-side-nav__text">Dashboard</span> </a>
+  </li> -->
+  <li class="dt-side-nav__item dt-side-nav__header">
+    <span class="dt-side-nav__text">Admin</span>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a   [routerLink]="['/Admin/maindashboard']" class="dt-side-nav__link" title="Dashboard"> <i
+        class="icon icon-dashboard icon-fw icon-lg"></i>
+      <span class="dt-side-nav__text">Dashboard</span> </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/permissions']" class="dt-side-nav__link" title="Messages">
+      <i class="fa fa-edit fa-fw fa-lg"></i> <span class="dt-side-nav__text">Permissions</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/empregall']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Employee Register </span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/hrman']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">HR </span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/hrbank']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">Bank Details </span>
+    </a>
+  </li>
+
+  
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/manviewleaves']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">HR Leaves</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/hrsalary']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">HR Salary</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/dummy']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">All Employees</span>
+    </a>
+  </li>
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/contact']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-phone icon-fw icon-lg"></i> <span class="dt-side-nav__text">Contacts</span>
+    </a>
+  </li> -->
+ 
+</ul>
+
+<ul class="dt-side-nav" *ngIf="Team_Lead" style="margin-top: -25px;" >
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/manlogin']" class="dt-side-nav__link" title="Messages">
+      <i class="fa fa-edit fa-fw fa-lg"></i> <span class="dt-side-nav__text">login</span>
+    </a>
+  </li> -->
+  <li class="dt-side-nav__item dt-side-nav__header">
+    <span class="dt-side-nav__text">Team_Lead</span>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a    [routerLink]="['/Admin/empDashboard']" class="dt-side-nav__link" title="Dashboard"> <i
+        class="icon icon-dashboard icon-fw icon-lg"></i>
+      <span class="dt-side-nav__text">Dashboard</span> </a>
+  </li>
+ 
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a  [routerLink]="['/Admin/leaves']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">Leaves</span>
+    </a>
+  </li>
+
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a  [routerLink]="['/Admin/projects']" class="dt-side-nav__link" title="Messages">
+      
+      <i class="fa fa-rocket fa-lg"></i> <span class="dt-side-nav__text">Projects</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/tasks']" class="dt-side-nav__link" title="Messages">
+      <i class="fa fa-edit fa-fw fa-lg"></i> <span class="dt-side-nav__text">Tasks</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/empexpensives']" class="dt-side-nav__link" title="Messages">
+      <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">Expensives</span>
+    </a>
+  </li>
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/contact']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-phone icon-fw icon-lg"></i> <span class="dt-side-nav__text">Contacts</span>
+    </a>
+  </li> -->
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a *ngIf="hhh[0]" [routerLink]="['/Admin/holidays']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hhh[0]}}</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/dummy']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">All Employees</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a *ngIf="ttt[0]" [routerLink]="['/Admin/tickets']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{ttt[0]}}</span>
+    </a>
+  </li>
+ 
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a *ngIf="jjjj[0]" [routerLink]="['/Admin/jobs']" class="dt-side-nav__link" title="Messages">
+      <i class="fa fa-building fa-lg"></i> <span class="dt-side-nav__text">{{jjjj[0]}}</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item"  [routerLinkActive]="['active']">
+    <a  *ngIf="eee[0]" [routerLink]="['/Admin/event']"   class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-calendar icon-fw icon-lg"></i><span class="dt-side-nav__text" >{{eee[0]}}</span>
+    </a>
+  </li>
+
+  
+</ul>
+<!-- Accounting_login -->
+<ul class="dt-side-nav" *ngIf="Accounting_login" style="margin-top: -25px;" >
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a  *ngIf="zzz[0]"  [routerLink]="['/Admin/admin-dashboard']" class="dt-side-nav__link" title="Dashboard"> <i
+        class="icon icon-dashboard icon-fw icon-lg"></i>
+      <span class="dt-side-nav__text">{{zzz[0]}}</span> </a>
+  </li> -->
+  <li class="dt-side-nav__item dt-side-nav__header">
+    <span class="dt-side-nav__text">Employee</span>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a  *ngIf="zzz[0]"  [routerLink]="['/Admin/empDashboard']" class="dt-side-nav__link" title="Dashboard"> <i
+        class="icon icon-dashboard icon-fw icon-lg"></i>
+      <span class="dt-side-nav__text">{{zzz[0]}}</span> </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/expenses']" class="dt-side-nav__link" title="Messages">
+      <i class="fa fa-clone  fa-fw fa-lg"></i> <span class="dt-side-nav__text">Expensives</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a *ngIf="hhh[0]" [routerLink]="['/Admin/holidays']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{hhh[0]}}</span>
+    </a>
+  </li>
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/contact']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-phone icon-fw icon-lg"></i> <span class="dt-side-nav__text">Contacts</span>
+    </a>
+  </li> -->
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a *ngIf="ttt[0]" [routerLink]="['/Admin/empviewtickets']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{ttt[0]}}</span>
+    </a>
+  </li>
+ 
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a *ngIf="jjjj[0]" [routerLink]="['/Admin/jobs']" class="dt-side-nav__link" title="Messages">
+      <i class="fa fa-building fa-lg"></i> <span class="dt-side-nav__text">{{jjjj[0]}}</span>
+    </a>
+  </li> -->
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a  *ngIf="llll[0]" [routerLink]="['/Admin/empviewleaves']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-message icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{llll[0]}}</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/dummy']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-users icon-fw icon-lg"></i> <span class="dt-side-nav__text">All Employees</span>
+    </a>
+  </li>
+  <li class="dt-side-nav__item"  [routerLinkActive]="['active']">
+    <a  *ngIf="eee[0]" [routerLink]="['/Admin/event']"   class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-calendar icon-fw icon-lg"></i><span class="dt-side-nav__text" >{{eee[0]}}</span>
+    </a>
+  </li>
+
+  
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a [routerLink]="['/Admin/empviewtasks']" class="dt-side-nav__link" title="Messages">
+      <i class="fa fa-edit fa-fw fa-lg"></i> <span class="dt-side-nav__text">Tasks</span>
+    </a>
+  </li> -->
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a  [routerLink]="['/Admin/manlogin']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-user icon-fw icon-lg"></i> <span class="dt-side-nav__text">Login</span>
+    </a>
+  </li> -->
+
+  <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a  [routerLink]="['/Admin/profile']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-user icon-fw icon-lg"></i> <span class="dt-side-nav__text">Profile</span>
+    </a>
+  </li> -->
+ <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+    <a *ngIf="aaa[0]" [routerLink]="['/Admin/activities']" class="dt-side-nav__link" title="Messages">
+      <i class="icon icon-notification2 icon-fw icon-lg"></i> <span class="dt-side-nav__text">{{aaa[0]}}</span>
+    </a>
+  </li> -->
+  <!-- <i class="icon icon-message icon-fw icon-lg"></i> -->
+</ul>
+          </div>
+        </aside>
+        <!-- /sidebar -->
+
+        <!-- Site Content Wrapper -->
+        <div class="dt-content-wrapper">
+
+          <!-- Site Content -->
+          <div class="dt-content">
+
+            <!-- Grid -->
+            <div class="row">
+
+              <!-- Grid Item -->
+              <div class="col-12">
+
+                <router-outlet></router-outlet>
+                <!-- /card -->
+
+              </div>
+              <!-- /grid item -->
+
+            </div>
+            <!-- /grid -->
+
+          </div>
+          <!-- /site content -->
+
+          <!-- Footer -->
+          <footer class="dt-footer">
+            Copyright Upsteer © 2019
+          </footer>
+          <!-- /footer -->
+
+        </div>
+        <!-- /site content wrapper -->
+
+      </main>
+      <!-- /site main -->
+
+    </div>
+
+
+
+  </div>
+</div>
+<!-- /root -->
+
+
+
+
+
+
+
+
+
+<!-- NO Use -->
+
+<!--               
+<li class="dt-side-nav__item"><a class="noti-dot null subdrop"><i  class="icon icon-user icon-fw icon-lg"></i>
+  <span  class="dt-side-nav__text"> Employees</span>
+  <span  class="menu-arrow"></span></a>
+  <ul  class="list-unstyled dsply-none" style="display: block;">
+  <li>
+  <a  routerlink="employees/all-employees" class="null" href="/demo/smarthr-angular/orange/employees/all-employees">All Employees</a></li>
+  <li ><a  routerlink="employees/holidays" class="null" href="/demo/smarthr-angular/orange/employees/holidays">Holidays</a></li>
+  <li ><a  routerlink="employees/leaves" class="null" href="/demo/smarthr-angular/orange/employees/leaves">
+  <span class="dt-side-nav__text">Leave Requests</span>
+  <span  class="badge bg-primary pull-right">1</span>
+</a></li>
+  <li ><a  routerlink="employees/attendance" class="null" href="/demo/smarthr-angular/orange/employees/attendance">Attendance</a></li>
+  <li ><a  routerlink="employees/departments" class="null" href="/demo/smarthr-angular/orange/employees/departments">Departments</a></li>
+  <li >
+  <a routerlink="employees/designations" class="null" href="/demo/smarthr-angular/orange/employees/designations">Designations</a></li></ul></li>
+  
+  
+  
+  <li class="submenu">
+      <a style="cursor:pointer;" class="null subdrop">
+          <i class="la la-phone"></i>
+          <span class="dt-side-nav__text"> Calls</span>
+          <span class="menu-arrow"></span></a>
+          <ul class="list-unstyled dsply-none" style="display: block;">
+              <li ><a routerlink="calls/voice-call" class="null" href="/demo/smarthr-angular/orange/calls/voice-call">Voice Call</a></li>
+              <li ><a routerlink="calls/video-call" class="null" href="/demo/smarthr-angular/orange/calls/video-call">Video Call</a></li>
+          </ul>
+      </li>
+   -->
+  
+  
+              <!-- <li class="dt-side-nav__item" [routerLinkActive]="['active']">
+                <a [routerLink]="['/Admin/employee-reg']" class="dt-side-nav__link" title="Layouts"> <i
+                    class="icon icon-layout icon-fw icon-lg"></i>
+                  <span class="dt-side-nav__text">Officer Registration</span> </a>
+              </li> -->
+
+
+
+
+

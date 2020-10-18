@@ -1,0 +1,1194 @@
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <!-- <h1>View Profile</h1> -->
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <!-- <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i> -->
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                     <!-- <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="editprofile()"> Edit Profile</button> -->
+
+                </div>
+
+            </div>
+
+
+
+<div  class="content container-fluid"   *ngIf="Team_Lead">
+    <div  class="row"><div  class="col-sm-8"><h4  class="page-title"  >My Profile</h4></div>
+<div  class="col-sm-4 text-right m-b-30">
+    <!-- <a style="color: white;" class="btn btn-primary rounded"  (click)="editprofile()">
+    <i  class="fa fa-plus"></i> Edit Profile</a> -->
+    
+</div>
+</div><div  class="card-box">
+        <div  class="row"  ><div  class="col-md-12" ><div  class="profile-view">
+<div >
+    <div  class="profile-img-wrap"><div  class="profile-img"><a  href="javascript:" *ngFor="let x of profile"><img  alt="" class="avatar" src="{{x.file}}"></a></div></div>
+ <div  class="profile-basic"><div  class="row"><div  class="col-md-5"><div  class="profile-info-left" *ngFor="let x of profile">
+     <h3  class="user-name m-t-0 m-b-0" style="color: black;">{{x.firstname}} {{x.lastname}} </h3>
+        <!-- <small  class="text-muted"><h5>{{x.designation}}</h5></small> -->
+        <div  class="staff-id">Designation : {{x.designation}}</div>
+
+        <div  class="staff-id">Employee ID : {{x.employeeid}}</div>
+        <div  class="staff-id">Gender : {{x.Gender}}</div>
+     
+
+
+<div  class="staff-msg">
+    <!-- <a  class="btn btn-primary" routerlink="../chat" href="/demo/smarthr-angular/orange/chat">Send Message</a> -->
+</div></div></div>
+<div  class="col-md-7"><ul  *ngFor="let x of profile" class="personal-info"><li >
+    <span  class="title">Phone:</span><span  class="text"><a style="color: black;" href="javascript:">{{x.phone}}</a></span></li>
+  <li ><span  class="title">Email:</span><span  class="text"><a  href="javascript:">{{x.email}}</a></span></li>
+<li ><span  class="title">Birthday:</span><span  class="text">{{x.Birthday}}</span></li>
+<li ><span  class="title">Office Address:</span><span  class="text"> <li style="margin-bottom: -4px;">UPSTEER TEK SOLUTIONS</li>
+    <li style="margin-bottom: -4px;">Banjara Hills, Hyderabad,</li>
+    <li style="margin-bottom: -4px;">Telangana, India - 500034</li></span></li>
+<!-- <li ><span  class="title">Gender:</span><span  class="text">{{x.Gender}}</span></li> -->
+</ul></div>
+</div></div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- <div  class="row">
+    <div  class="col-md-3">
+        <div  class="card-box m-b-0">
+            <h3  class="card-title">Skills</h3>
+    <div  class="skills"><span >IOS</span><span >Android</span><span >Html</span><span >CSS</span><span >Codignitor</span><span >Php</span><span >Javascript</span>
+ <span >Wordpress</span><span >Jquery</span></div></div>
+</div>
+ <div  class="col-md-9">
+     <div  class="card-box"><h3  class="card-title">Education Informations</h3>
+ 
+    <div  class="experience-box"><ul  class="experience-list">
+        <li>     
+    
+    <div  class="experience-user"><div  class="before-circle"></div></div>
+    <div  class="experience-content">
+        <div  class="timeline-content"><a  class="name" href="javascript:">International College of Arts and Science (UG)</a>
+    <div >Bsc Computer Science</div><span  class="time">2000 - 2003</span></div></div></li>
+
+    <li>
+        
+        <div  class="experience-user">
+    <div  class="before-circle"></div></div>
+    
+    <div  class="experience-content">
+     <div  class="timeline-content"><a  class="name" href="javascript:">International College of Arts and Science (PG)</a><div >Msc Computer Science</div>
+     <span  class="time">2000 - 2003</span></div></div></li></ul></div></div><div  class="card-box m-b-0"><h3  class="card-title">Experience</h3>
+        <div  class="experience-box"><ul  class="experience-list"><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+ <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Zen Corporation</a>
+  <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+   <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Ron-tech</a>
+    <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+   <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Dalt Technology</a>
+  <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li></ul></div></div>
+</div>
+
+
+</div> -->
+<div  class="card-box">
+    <div  class="row">
+        <div  class="col-sm-8"><h4  class="page-title"  >Account Details</h4></div>
+    <div  class="col-sm-4 text-right m-b-30">
+        <!-- <a style="color: white;" class="btn btn-primary rounded"  (click)="editprofile()">
+        <i  class="fa fa-plus"></i> Edit Profile</a> -->
+    </div>
+</div>
+    <div  class="row shadow bg-white rounded" style="margin: 0px 20px;"  >
+        <div class="col-lg-6 col-md-6">
+        <div *ngFor="let x of bankempdata" style="padding: 10px 20px;"  class="staff-id">
+            <span style="color: black;"> BANK NAME &nbsp; : {{x.Bank_name}} </span><br>
+            <span style="color: black;"> ACCOUNT NO : {{x.Emp_Bank_no}} </span><br>
+             <span style="color: black;">  BRANCH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{x.Branch}}</span><br>
+              <span style="color: black;">IFSC NO  &nbsp; &nbsp; &nbsp; &nbsp; : {{x.Ifsc_Code}} </span>
+        </div></div> 
+        <div class="col-lg-6 col-md-6">
+            <div *ngFor="let x of bankempdata"  style="padding: 10px 20px;"  class="staff-id">
+                <span style="color: black;"> UAN NO : {{x.UAN_NO}} </span><br>
+                <span style="color: black;"> PF NO &nbsp;&nbsp;&nbsp;: {{x.PF_NO}} </span><br>
+                 <span style="color: black;">  PAN NO : {{x.PAN_NO}}</span><br>
+                  <span style="color: black;">ESI NO &nbsp; : {{x.ESI_NO}} </span>
+            </div>    
+</div>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-6">
+
+        <!-- Card -->
+        <div class="dt-card dt-card__full-height">
+
+            <!-- Card Header -->
+            <div class="dt-card__header">
+
+                <!-- Card Heading -->
+                <div class="dt-card__heading">
+                    <h3 class="dt-card__title">Leaves &amp; Results</h3>
+                </div>
+                <!-- /card heading -->
+
+            </div>
+            <!-- /card header -->
+
+            <!-- Card Body -->
+            <div class="dt-card__body pb-3">
+
+                <!-- Campaigns Widget -->
+                <div class="campaigns-widget">
+
+                    <!-- Grid -->
+                    <div class="row no-gutters pb-3 mb-1 border-bottom">
+
+                        <!-- Grid Item -->
+                        <div class="col-4 col-sm-4 text-truncate pr-2">
+                            Leaves
+                        </div>
+                        <!-- /grid item -->
+
+                        <!-- Grid Item -->
+                        <div class="col-4 col-sm-4">
+                           Available
+                        </div>
+                        <div class="col-4 col-sm-4">
+                            Used
+                         </div>
+                        <!-- /grid item -->
+
+                    </div>
+                    <!-- /grid -->
+
+                    <!-- Widget -->
+                    <div class="dt-widget dt-widget-hover-bg">
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate">casual_leaves </p>
+                                    
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" *ngFor="let x of profile" style="margin-left:-70px">
+         
+            <span class="text-success">8</span> out of <span class="text-danger">{{x.casual_lev}} </span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger"> {{cauused}}</span>
+                                        </div>
+                                        <!-- <div class="col-sm-2 col-1 text-right">
+                                           
+                                            <div class="dropdown d-inline-block">
+                                                <a class="dropdown-toggle no-arrow" href="#"
+                                                   data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false">
+                                                    <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Another action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Something else
+                                                                                 here</a>
+                                                </div>
+                                            </div>
+                                           
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                        <!-- /widgets item -->
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate"> Sick Leaves</p>
+                                   
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" *ngFor="let x of profile" style="margin-left:-70px">
+             
+            <span class="text-success">7</span> out of <span class="text-danger">{{x.medical_lev}}</span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger">{{medused}}</span>
+                                        </div>
+                                        <div class="col-sm-2 col-1 text-right">
+                                            <!-- <div class="dropdown d-inline-block">
+                                                <a class="dropdown-toggle no-arrow" href="#"
+                                                   data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false">
+                                                    <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Another action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Something else
+                                                                                 here</a>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                        <!-- /widgets item -->
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate">Total Leaves</p>
+                                   
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" style="margin-left: -70px;">
+            <!-- {{sats4}} -->           
+            <span class="text-success">15</span> out of <span class="text-danger">{{totleaves}}</span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger">{{sats4}}</span>
+                                        </div>
+                                        <div class="col-sm-2 col-1 text-right">
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                  
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /card body -->
+
+        </div>
+        <!-- /card -->
+
+    </div>
+    <!-- /grid item -->
+
+    <!-- Grid Item -->
+    <div class="col-md-6">
+
+        <!-- Card -->
+        <div class="dt-card">
+
+            <div class="dt-card__header mb-3">
+
+                <div class="dt-card__heading">
+                    <!-- <h3 class="dt-card__title">Project Team</h3> -->
+                    <!-- <h3 class="dt-card__title">Reporting</h3> -->
+                    <h4 *ngFor="let x of pna">Current Projects : {{x}}</h4>
+
+                </div>
+
+            </div>
+
+            <div class="dt-card__body pb-2">
+
+                <div class="media border-bottom py-5">
+                    <i class="icon icon-user icon-4x mr-4 text-indigo"></i>                  
+                    <div class="media-body">
+                    <a class="dt-widget__title font-weight-500" >Reporting Manager</a>                  
+                    </div>     
+                <span class="d-block min-w-60 text-center mr-xl-10 mr-md-2 mr-sm-10 ml-2">
+<span class="d-block font-weight-500 mb-1 h4">{{repman}}</span>
+</span>      
+  </div>    
+       </div>
+       <div class="dt-card__body pb-2">
+
+        <div class="media border-bottom py-5">
+            <i class="icon icon-users icon-4x mr-4 text-indigo"></i>                  
+            <div class="media-body">
+            <a class="dt-widget__title font-weight-500" >Team</a>                  
+            </div>     
+        <span class="d-block min-w-60 text-center mr-xl-10 mr-md-2 mr-sm-10 ml-2">
+            <br>
+<span class="d-block font-weight-500 mb-1 h4">{{teamp}}</span>
+</span>      
+</div>    
+</div>
+          
+        </div>
+        
+    </div>
+    <div class="card text-white  mb-3" style="background-color: rgb(253, 224, 185);margin-right: 30px; " >
+        <div class="card-header" style="color: black;" > <span style="font-size: large;" >Your Tasks</span> </div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large; padding:0px 30px;color: black;" >Tasks Count :<span style="font-size:xx-large;">{{tasno}}</span>  </span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+      <div class="card text-white  mb-3" style="background-color: rgb(215, 243, 206) ;;margin-right: 30px;" >
+        <div class="card-header" style="color: black;color: black;" > <span style="font-size: large;" >Tickets</span> </div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large; padding:0px 30px;color: black;" >Tickets Count :<span style="font-size:xx-large;">{{ticno}}</span>  </span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+      <div class="card text-white  mb-3" style="background-color: rgb(248, 182, 187) " >
+        <div class="card-header" style="color: black;" > <span style="font-size: large;" >Today</span> : {{today2e}}</div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large;color: black; padding-left: 30px;" >CURRENT TIME :<span style="font-size:xx-large;">{{today3e}}</span>  <span style="font-size: small;">{{today4e}}</span></span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+      <!-- <div class="card text-white  mb-3" style="background-color: rgb(184, 164, 231) ;;margin-right: 1px;" >
+        <div class="card-header" style="color: black;" > <span style="font-size: large;" >Notifications</span> </div>
+     
+          <span style="font-size: large; padding:0px 30px;color: black;" >Notifications Count :<span style="font-size:xx-large;">{{noti}}</span>  </span>
+         
+      </div> -->
+</div>
+
+</div>
+
+
+<div  class="content container-fluid" *ngIf="EmpLogin">
+    <div  class="row"><div  class="col-sm-8"><h4  class="page-title"  >My Profile</h4></div>
+<div  class="col-sm-4 text-right m-b-30">
+    <!-- <a style="color: white;" class="btn btn-primary rounded"  (click)="editprofile()">
+    <i  class="fa fa-plus"></i> Edit Profile</a> -->
+    
+</div>
+</div><div  class="card-box">
+        <div  class="row"  ><div  class="col-md-12" ><div  class="profile-view">
+<div >
+    <div  class="profile-img-wrap"><div  class="profile-img"><a  href="javascript:" *ngFor="let x of profile"><img  alt="" class="avatar" src="{{x.file}}"></a></div></div>
+ <div  class="profile-basic"><div  class="row"><div  class="col-md-5"><div  class="profile-info-left" *ngFor="let x of profile">
+     <h3  class="user-name m-t-0 m-b-0" style="color: black;">{{x.firstname}} {{x.lastname}} </h3>
+        <!-- <small  class="text-muted"><h5>{{x.designation}}</h5></small> -->
+        <div  class="staff-id" style="color: black;">Designation : {{x.designation}}</div>
+        <div  class="staff-id" style="color: black;">Employee ID : {{x.employeeid}}</div>
+        <div  class="staff-id" style="color: black;">Gender : {{x.Gender}}</div>
+    
+
+<div  class="staff-msg">
+    <!-- <a  class="btn btn-primary" routerlink="../chat" href="/demo/smarthr-angular/orange/chat">Send Message</a> -->
+</div></div></div>
+<div  class="col-md-7"><ul  *ngFor="let x of profile" class="personal-info"><li >
+    <span  class="title">Phone:</span><span  class="text"><a style="color: black;" href="javascript:">{{x.phone}}</a></span></li>
+  <li ><span  class="title">Email:</span><span  class="text"><a  href="javascript:">{{x.email}}</a></span></li>
+<li ><span  class="title">Birthday:</span><span  class="text">{{x.Birthday}}</span></li>
+<li ><span  class="title">Office Address:</span><span  class="text"> <li style="margin-bottom: -4px;">UPSTEER TEK SOLUTIONS</li>
+    <li style="margin-bottom: -4px;">Banjara Hills, Hyderabad,</li>
+    <li style="margin-bottom: -4px;">Telangana, India - 500034</li></span></li>
+<!-- <li ><span  class="title">Gender:</span><span  class="text">{{x.Gender}}</span></li> -->
+</ul></div>
+</div></div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- <div  class="row">
+    <div  class="col-md-3">
+        <div  class="card-box m-b-0">
+            <h3  class="card-title">Skills</h3>
+    <div  class="skills"><span >IOS</span><span >Android</span><span >Html</span><span >CSS</span><span >Codignitor</span><span >Php</span><span >Javascript</span>
+ <span >Wordpress</span><span >Jquery</span></div></div>
+</div>
+ <div  class="col-md-9">
+     <div  class="card-box"><h3  class="card-title">Education Informations</h3>
+ 
+    <div  class="experience-box"><ul  class="experience-list">
+        <li>     
+    
+    <div  class="experience-user"><div  class="before-circle"></div></div>
+    <div  class="experience-content">
+        <div  class="timeline-content"><a  class="name" href="javascript:">International College of Arts and Science (UG)</a>
+    <div >Bsc Computer Science</div><span  class="time">2000 - 2003</span></div></div></li>
+
+    <li>
+        
+        <div  class="experience-user">
+    <div  class="before-circle"></div></div>
+    
+    <div  class="experience-content">
+     <div  class="timeline-content"><a  class="name" href="javascript:">International College of Arts and Science (PG)</a><div >Msc Computer Science</div>
+     <span  class="time">2000 - 2003</span></div></div></li></ul></div></div><div  class="card-box m-b-0"><h3  class="card-title">Experience</h3>
+        <div  class="experience-box"><ul  class="experience-list"><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+ <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Zen Corporation</a>
+  <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+   <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Ron-tech</a>
+    <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+   <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Dalt Technology</a>
+  <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li></ul></div></div>
+</div>
+
+
+</div> -->
+<div  class="card-box">
+    <div  class="row"><div  class="col-sm-8"><h4  class="page-title"  >Account Details</h4></div>
+    <div  class="col-sm-4 text-right m-b-30">
+        <!-- <a style="color: white;" class="btn btn-primary rounded"  (click)="editprofile()">
+        <i  class="fa fa-plus"></i> Edit Profile</a> -->
+    </div></div>
+    <div  class="row shadow bg-white rounded" style="margin: 0px 20px;"  >
+        <div class="col-lg-6 col-md-6">
+        <div *ngFor="let x of bankempdata" style="padding: 10px 20px;"  class="staff-id">
+            <span style="color: black;"> BANK NAME &nbsp; : {{x.Bank_name}} </span><br>
+            <span style="color: black;"> ACCOUNT NO : {{x.Emp_Bank_no}} </span><br>
+             <span style="color: black;">  BRANCH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{x.Branch}}</span><br>
+              <span style="color: black;">IFSC NO  &nbsp; &nbsp; &nbsp; &nbsp; : {{x.Ifsc_Code}} </span>
+        </div></div> 
+        <div class="col-lg-6 col-md-6">
+            <div *ngFor="let x of bankempdata"  style="padding: 10px 20px;"  class="staff-id">
+                <span style="color: black;"> UAN NO : {{x.UAN_NO}} </span><br>
+                <span style="color: black;"> PF NO &nbsp;&nbsp;&nbsp;: {{x.PF_NO}} </span><br>
+                 <span style="color: black;">  PAN NO : {{x.PAN_NO}}</span><br>
+                  <span style="color: black;">ESI NO &nbsp; : {{x.ESI_NO}} </span>
+            </div>    
+</div>
+        </div></div>
+
+<div class="row">
+    <div class="col-md-6">
+
+        <!-- Card -->
+        <div class="dt-card dt-card__full-height">
+
+            <!-- Card Header -->
+            <div class="dt-card__header">
+
+                <!-- Card Heading -->
+                <div class="dt-card__heading">
+                    <h3 class="dt-card__title">Leaves &amp; Results</h3>
+                </div>
+                <!-- /card heading -->
+
+            </div>
+            <!-- /card header -->
+
+            <!-- Card Body -->
+            <div class="dt-card__body pb-3">
+
+                <!-- Campaigns Widget -->
+                <div class="campaigns-widget">
+
+                    <!-- Grid -->
+                    <div class="row no-gutters pb-3 mb-1 border-bottom">
+
+                        <!-- Grid Item -->
+                        <div class="col-4 col-sm-4 text-truncate pr-2">
+                            Leaves
+                        </div>
+                        <!-- /grid item -->
+
+                        <!-- Grid Item -->
+                        <div class="col-4 col-sm-4">
+                           Available
+                        </div>
+                        <div class="col-4 col-sm-4">
+                            Used
+                         </div>
+                        <!-- /grid item -->
+
+                    </div>
+                    <!-- /grid -->
+
+                    <!-- Widget -->
+                    <div class="dt-widget dt-widget-hover-bg">
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate">casual_leaves </p>
+                                    
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" *ngFor="let x of profile" style="margin-left:-70px">
+         
+            <span class="text-success">8</span> out of <span class="text-danger">{{x.casual_lev}} </span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger"> {{cauused}}</span>
+                                        </div>
+                                        <!-- <div class="col-sm-2 col-1 text-right">
+                                           
+                                            <div class="dropdown d-inline-block">
+                                                <a class="dropdown-toggle no-arrow" href="#"
+                                                   data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false">
+                                                    <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Another action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Something else
+                                                                                 here</a>
+                                                </div>
+                                            </div>
+                                           
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                        <!-- /widgets item -->
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate"> Sick Leaves</p>
+                                   
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" *ngFor="let x of profile" style="margin-left:-70px">
+             
+            <span class="text-success">7</span> out of <span class="text-danger">{{x.medical_lev}}</span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger">{{medused}}</span>
+                                        </div>
+                                        <div class="col-sm-2 col-1 text-right">
+                                            <!-- <div class="dropdown d-inline-block">
+                                                <a class="dropdown-toggle no-arrow" href="#"
+                                                   data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false">
+                                                    <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Another action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Something else
+                                                                                 here</a>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                        <!-- /widgets item -->
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate">Total Leaves</p>
+                                   
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" style="margin-left: -70px;">
+            <!-- {{sats4}} -->           
+            <span class="text-success">15</span> out of <span class="text-danger">{{totleaves}}</span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger">{{sats4}}</span>
+                                        </div>
+                                        <div class="col-sm-2 col-1 text-right">
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                  
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /card body -->
+
+        </div>
+        <!-- /card -->
+
+    </div>
+    <!-- /grid item -->
+
+    <!-- Grid Item -->
+    <div class="col-md-6">
+
+        <!-- Card -->
+        <div class="dt-card">
+
+            <div class="dt-card__header mb-3">
+
+                <div class="dt-card__heading">
+                    <!-- <h3 class="dt-card__title">Project Team</h3> -->
+                    <h3 class="dt-card__title">Reporting</h3>
+
+                </div>
+
+            </div>
+
+            <div class="dt-card__body pb-2">
+
+                <div class="media border-bottom py-5">
+
+                    <i class="icon icon-user icon-4x mr-4 text-indigo"></i>
+                  
+                    <div class="media-body">
+                        <a class="dt-widget__title font-weight-500" >Reporting Manager</a>
+                  
+                    </div>
+                  
+
+                    <span class="d-block min-w-60 text-center mr-xl-10 mr-md-2 mr-sm-10 ml-2">
+<span class="d-block font-weight-500 mb-1 h4">{{repman}}</span>
+
+</span>
+
+                  
+
+                </div>
+             
+
+            </div>
+           
+        </div>
+        
+    </div>
+    <div class="card text-white  mb-3" style="background-color: rgb(253, 224, 185);margin-right: 30px; " >
+        <div class="card-header" style="color: black;" > <span style="font-size: large;" >Your Tasks</span> </div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large; padding:0px 30px;color: black;" >Tasks Count :<span style="font-size:xx-large;">{{tasno}}</span>  </span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+      <div class="card text-white  mb-3" style="background-color: rgb(215, 243, 206) ;;margin-right: 30px;" >
+        <div class="card-header" style="color: black;color: black;" > <span style="font-size: large;" >Tickets</span> </div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large; padding:0px 30px;color: black;" >Tickets Count :<span style="font-size:xx-large;">{{ticno}}</span>  </span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+      <div class="card text-white  mb-3" style="background-color: rgb(248, 182, 187) " >
+        <div class="card-header" style="color: black;" > <span style="font-size: large;" >Today</span> : {{today2e}}</div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large;color: black; padding-left: 30px;" >CURRENT TIME :<span style="font-size:xx-large;">{{today3e}}</span>  <span style="font-size: small;">{{today4e}}</span></span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+</div>
+
+</div>
+
+<!-- Accounting_login -->
+
+<div  class="content container-fluid" *ngIf="Accounting_login">
+    <div  class="row"><div  class="col-sm-8"><h4  class="page-title"  >My Profile</h4></div>
+<div  class="col-sm-4 text-right m-b-30">
+    <!-- <a style="color: white;" class="btn btn-primary rounded"  (click)="editprofile()">
+    <i  class="fa fa-plus"></i> Edit Profile</a> -->
+    
+</div>
+</div><div  class="card-box">
+        <div  class="row"  ><div  class="col-md-12" ><div  class="profile-view">
+<div >
+    <div  class="profile-img-wrap"><div  class="profile-img"><a  href="javascript:" *ngFor="let x of profile"><img  alt="" class="avatar" src="{{x.file}}"></a></div></div>
+ <div  class="profile-basic"><div  class="row"><div  class="col-md-5"><div  class="profile-info-left" *ngFor="let x of profile">
+     <h3  class="user-name m-t-0 m-b-0" style="color: black;">{{x.firstname}} {{x.lastname}} </h3>
+        <!-- <small  class="text-muted"><h5>{{x.designation}}</h5></small> -->
+        <div  class="staff-id" style="color: black;">Designation : {{x.designation}}</div>
+        <div  class="staff-id" style="color: black;">Employee ID : {{x.employeeid}}</div>
+        <div  class="staff-id" style="color: black;">Gender : {{x.Gender}}</div>
+    
+
+<div  class="staff-msg">
+    <!-- <a  class="btn btn-primary" routerlink="../chat" href="/demo/smarthr-angular/orange/chat">Send Message</a> -->
+</div></div></div>
+<div  class="col-md-7"><ul  *ngFor="let x of profile" class="personal-info"><li >
+    <span  class="title">Phone:</span><span  class="text"><a style="color: black;" href="javascript:">{{x.phone}}</a></span></li>
+  <li ><span  class="title">Email:</span><span  class="text"><a  href="javascript:">{{x.email}}</a></span></li>
+<li ><span  class="title">Birthday:</span><span  class="text">{{x.Birthday}}</span></li>
+<li ><span  class="title">Office Address:</span><span  class="text"> <li style="margin-bottom: -4px;">UPSTEER TEK SOLUTIONS</li>
+    <li style="margin-bottom: -4px;">Banjara Hills, Hyderabad,</li>
+    <li style="margin-bottom: -4px;">Telangana, India - 500034</li></span></li>
+<!-- <li ><span  class="title">Gender:</span><span  class="text">{{x.Gender}}</span></li> -->
+</ul></div>
+</div></div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- <div  class="row">
+    <div  class="col-md-3">
+        <div  class="card-box m-b-0">
+            <h3  class="card-title">Skills</h3>
+    <div  class="skills"><span >IOS</span><span >Android</span><span >Html</span><span >CSS</span><span >Codignitor</span><span >Php</span><span >Javascript</span>
+ <span >Wordpress</span><span >Jquery</span></div></div>
+</div>
+ <div  class="col-md-9">
+     <div  class="card-box"><h3  class="card-title">Education Informations</h3>
+ 
+    <div  class="experience-box"><ul  class="experience-list">
+        <li>     
+    
+    <div  class="experience-user"><div  class="before-circle"></div></div>
+    <div  class="experience-content">
+        <div  class="timeline-content"><a  class="name" href="javascript:">International College of Arts and Science (UG)</a>
+    <div >Bsc Computer Science</div><span  class="time">2000 - 2003</span></div></div></li>
+
+    <li>
+        
+        <div  class="experience-user">
+    <div  class="before-circle"></div></div>
+    
+    <div  class="experience-content">
+     <div  class="timeline-content"><a  class="name" href="javascript:">International College of Arts and Science (PG)</a><div >Msc Computer Science</div>
+     <span  class="time">2000 - 2003</span></div></div></li></ul></div></div><div  class="card-box m-b-0"><h3  class="card-title">Experience</h3>
+        <div  class="experience-box"><ul  class="experience-list"><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+ <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Zen Corporation</a>
+  <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+   <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Ron-tech</a>
+    <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li><li ><div  class="experience-user"><div  class="before-circle"></div></div>
+   <div  class="experience-content"><div  class="timeline-content"><a  class="name" href="javascript:">Web Designer at Dalt Technology</a>
+  <span  class="time">Jan 2013 - Present (5 years 2 months)</span></div></div></li></ul></div></div>
+</div>
+
+
+</div> -->
+<div  class="card-box">
+    <div  class="row"><div  class="col-sm-8"><h4  class="page-title"  >Account Details</h4></div>
+    <div  class="col-sm-4 text-right m-b-30">
+        <!-- <a style="color: white;" class="btn btn-primary rounded"  (click)="editprofile()">
+        <i  class="fa fa-plus"></i> Edit Profile</a> -->
+    </div></div>
+    <div  class="row shadow bg-white rounded" style="margin: 0px 20px;"  >
+        <div class="col-lg-6 col-md-6">
+        <div *ngFor="let x of bankempdata" style="padding: 10px 20px;"  class="staff-id">
+            <span style="color: black;"> BANK NAME &nbsp; : {{x.Bank_name}} </span><br>
+            <span style="color: black;"> ACCOUNT NO : {{x.Emp_Bank_no}} </span><br>
+             <span style="color: black;">  BRANCH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{x.Branch}}</span><br>
+              <span style="color: black;">IFSC NO  &nbsp; &nbsp; &nbsp; &nbsp; : {{x.Ifsc_Code}} </span>
+        </div></div> 
+        <div class="col-lg-6 col-md-6">
+            <div *ngFor="let x of bankempdata"  style="padding: 10px 20px;"  class="staff-id">
+                <span style="color: black;"> UAN NO : {{x.UAN_NO}} </span><br>
+                <span style="color: black;"> PF NO &nbsp;&nbsp;&nbsp;: {{x.PF_NO}} </span><br>
+                 <span style="color: black;">  PAN NO : {{x.PAN_NO}}</span><br>
+                  <span style="color: black;">ESI NO &nbsp; : {{x.ESI_NO}} </span>
+            </div>    
+</div>
+        </div></div>
+
+<div class="row">
+    <div class="col-md-6">
+
+        <!-- Card -->
+        <div class="dt-card dt-card__full-height">
+
+            <!-- Card Header -->
+            <div class="dt-card__header">
+
+                <!-- Card Heading -->
+                <div class="dt-card__heading">
+                    <h3 class="dt-card__title">Leaves &amp; Results</h3>
+                </div>
+                <!-- /card heading -->
+
+            </div>
+            <!-- /card header -->
+
+            <!-- Card Body -->
+            <div class="dt-card__body pb-3">
+
+                <!-- Campaigns Widget -->
+                <div class="campaigns-widget">
+
+                    <!-- Grid -->
+                    <div class="row no-gutters pb-3 mb-1 border-bottom">
+
+                        <!-- Grid Item -->
+                        <div class="col-4 col-sm-4 text-truncate pr-2">
+                            Leaves
+                        </div>
+                        <!-- /grid item -->
+
+                        <!-- Grid Item -->
+                        <div class="col-4 col-sm-4">
+                           Available
+                        </div>
+                        <div class="col-4 col-sm-4">
+                            Used
+                         </div>
+                        <!-- /grid item -->
+
+                    </div>
+                    <!-- /grid -->
+
+                    <!-- Widget -->
+                    <div class="dt-widget dt-widget-hover-bg">
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate">casual_leaves </p>
+                                    
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" *ngFor="let x of profile" style="margin-left:-70px">
+         
+            <span class="text-success">8</span> out of <span class="text-danger">{{x.casual_lev}} </span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger"> {{cauused}}</span>
+                                        </div>
+                                        <!-- <div class="col-sm-2 col-1 text-right">
+                                           
+                                            <div class="dropdown d-inline-block">
+                                                <a class="dropdown-toggle no-arrow" href="#"
+                                                   data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false">
+                                                    <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Another action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Something else
+                                                                                 here</a>
+                                                </div>
+                                            </div>
+                                           
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                        <!-- /widgets item -->
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate"> Sick Leaves</p>
+                                   
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" *ngFor="let x of profile" style="margin-left:-70px">
+             
+            <span class="text-success">7</span> out of <span class="text-danger">{{x.medical_lev}}</span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger">{{medused}}</span>
+                                        </div>
+                                        <div class="col-sm-2 col-1 text-right">
+                                            <!-- <div class="dropdown d-inline-block">
+                                                <a class="dropdown-toggle no-arrow" href="#"
+                                                   data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false">
+                                                    <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Another action</a>
+                                                    <a class="dropdown-item"
+                                                       href="javascript:void(0)">Something else
+                                                                                 here</a>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                        <!-- /widgets item -->
+
+                        <!-- Widget Item -->
+                        <div class="dt-widget__item">
+
+                            <!-- Grid -->
+                            <div class="row no-gutters">
+
+                                <!-- Grid Item -->
+                                <div class="col-5 col-sm-6 pr-2">
+                                    <p class="dt-widget__title mb-0 text-truncate">Total Leaves</p>
+                                   
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-7 col-sm-6">
+                                    <div class="row no-gutters">
+                                        <div class="col-sm-6 col-7">
+          <span class="d-inline-block text-nowrap" style="margin-left: -70px;">
+            <!-- {{sats4}} -->           
+            <span class="text-success">15</span> out of <span class="text-danger">{{totleaves}}</span>
+          </span>
+                                        </div>
+                                        <div class="col-sm-4 col-4 text-center" style="margin-left: -40px;">
+                                            <span class="d-inline-block text-danger">{{sats4}}</span>
+                                        </div>
+                                        <div class="col-sm-2 col-1 text-right">
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+                        </div>
+                  
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /card body -->
+
+        </div>
+        <!-- /card -->
+
+    </div>
+    <!-- /grid item -->
+
+    <!-- Grid Item -->
+    <div class="col-md-6">
+
+        <!-- Card -->
+        <div class="dt-card">
+
+            <div class="dt-card__header mb-3">
+
+                <div class="dt-card__heading">
+                    <!-- <h3 class="dt-card__title">Project Team</h3> -->
+                    <h3 class="dt-card__title">Reporting</h3>
+
+                </div>
+
+            </div>
+
+            <div class="dt-card__body pb-2">
+
+                <div class="media border-bottom py-5">
+
+                    <i class="icon icon-user icon-4x mr-4 text-indigo"></i>
+                  
+                    <div class="media-body">
+                        <a class="dt-widget__title font-weight-500" >Reporting Manager</a>
+                  
+                    </div>
+                  
+
+                    <span class="d-block min-w-60 text-center mr-xl-10 mr-md-2 mr-sm-10 ml-2">
+<span class="d-block font-weight-500 mb-1 h4">{{repman}}</span>
+
+</span>
+
+                  
+
+                </div>
+             
+
+            </div>
+           
+        </div>
+        
+    </div>
+    <div class="card text-white  mb-3" style="background-color: rgb(253, 224, 185);margin-right: 30px; " >
+        <div class="card-header" style="color: black;" > <span style="font-size: large;" >Your Tasks</span> </div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large; padding:0px 30px;color: black;" >Tasks Count :<span style="font-size:xx-large;">{{tasno}}</span>  </span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+      <div class="card text-white  mb-3" style="background-color: rgb(215, 243, 206) ;;margin-right: 30px;" >
+        <div class="card-header" style="color: black;color: black;" > <span style="font-size: large;" >Tickets</span> </div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large; padding:0px 30px;color: black;" >Tickets Count :<span style="font-size:xx-large;">{{ticno}}</span>  </span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+      <div class="card text-white  mb-3" style="background-color: rgb(248, 182, 187) " >
+        <div class="card-header" style="color: black;" > <span style="font-size: large;" >Today</span> : {{today2e}}</div>
+        <!-- <div class="card-body"> -->
+          <!-- <h5 class="card-title" style="color: aliceblue; padding-left: 30px;"> CURRENT TIME</h5> -->
+          <span style="font-size: large;color: black; padding-left: 30px;" >CURRENT TIME :<span style="font-size:xx-large;">{{today3e}}</span>  <span style="font-size: small;">{{today4e}}</span></span>
+          <!-- <hr  > -->
+          <!-- <p class="card-text" style="padding-left: 30px;">{{today3e}}</p> -->
+        <!-- </div> -->
+      </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+  </div></div>

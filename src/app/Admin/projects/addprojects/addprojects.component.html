@@ -1,0 +1,367 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Create Project</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #createproject="ngForm" (ngSubmit)="createproject.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="projectname">Project Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="projectname" name="projectname" class="form-control form_color"
+                                [(ngModel)]="ServiceData.projectname" #projectname="ngModel" placeholder="Enter First Name"
+                                [ngClass]="{'is-invalid': createproject.submitted && projectname.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="createproject.submitted && projectname.invalid">
+                                <div *ngIf="projectname.errors.required">First Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>                                 
+                  
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="startdate">Start Date<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="date" id="startdate" name="startdate" placeholder="Enter Employee ID"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.startdate" #startdate="ngModel"
+                                        [ngClass]="{'is-invalid': createproject.submitted && startdate.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="createproject.submitted && startdate.invalid">
+                                        <div *ngIf="startdate.errors.required">Employee ID* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="projectid">Project Id<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="projectid" name="projectid" placeholder="Project ID"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.projectid" #projectid="ngModel"
+                                        [ngClass]="{'is-invalid': createproject.submitted && projectid.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="createproject.submitted && projectid.invalid">
+                                        <div *ngIf="projectid.errors.required">Employee ID* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+<!--                           
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="rate">Rate</label>
+                                            <input type="text" id="rate" name="rate" placeholder="$50"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.rate" #rate="ngModel"
+                                        [ngClass]="{'is-invalid': rate.submitted && rate.invalid}" required />
+                                          
+                                            <div class="invalid-feedback" *ngIf="rate.submitted && rate.invalid">
+                                                <div *ngIf="rate.errors.required">rate* is Required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                        <label for="time"></label>
+                                    
+                                        <select name="time" id="time" class="form-control form_color"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.time" #time="ngModel"
+                                        [ngClass]="{'is-invalid': time.submitted && time.invalid}"
+                                        >
+                                            <option value="hourly">Hourly</option>
+                                            <option value="fixed">Fixed</option>
+                                        </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div> -->
+
+
+<!-- 
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="projectleader"> Add ProjectLeader<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="projectleader" name="projectleader" placeholder="projectleader"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.projectleader" #projectleader="ngModel"
+                                        [ngClass]="{'is-invalid': projectleader.submitted && projectleader.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="projectleader.submitted && projectleader.invalid">
+                                        <div *ngIf="projectleader.errors.required">Add Project Leader* is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="col-md-12">     
+                                <div class="form-group">
+                                    <label for="projectleader">Add projectleader<span style="color: red;font-size: 18px;">*</span></label>
+                                    <select name="projectleader" id="projectleader" class="form-control form_color"
+                                                class="form-control form_color" [(ngModel)]="ServiceData.projectleader" #projectleader="ngModel"
+                                                [ngClass]="{'is-invalid': createproject.submitted && projectleader.invalid}">
+        
+                                                    <option >Select Team Leader </option>
+                                                    <!-- <option >this.empteml </option> -->
+
+                                                    <option *ngFor="let x of empteml">{{x}}</option>
+                                                    <!-- <option value="fixed">client3</option> -->
+        
+                                                </select>
+                                    <div class="invalid-feedback" *ngIf="createproject.submitted && client.invalid">
+                                        <div *ngIf="projectleader.errors.required">projectleader* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="addteam"> Add Team<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="addteam" name="addteam" placeholder="addteam"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.addteam" #addteam="ngModel"
+                                        [ngClass]="{'is-invalid': addteam.submitted && addteam.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="addteam.submitted && addteam.invalid">
+                                        <div *ngIf="addteam.errors.required">Addteam* is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+
+
+                           
+
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+
+                    <div class="col-md-12">     
+                        <div class="form-group">
+                            <label for="client">Select Client<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="client" id="client" class="form-control form_color"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.client" #client="ngModel"
+                                        [ngClass]="{'is-invalid': client.submitted && client.invalid}">
+
+                                            <option >Select Client</option>
+                                            <option *ngFor="let x of clients">{{x.company_name}}</option>
+                                            <!-- <option value="fixed">client3</option> -->
+
+                                        </select>
+                            <div class="invalid-feedback" *ngIf="createproject.submitted && client.invalid">
+                                <div *ngIf="client.errors.required">client* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="form-group  cal">
+                            <label for="to">To<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="date"  id="to" name="to" placeholder="To"
+                                class="form-control form_color" [(ngModel)]="ServiceData.to" #to="ngModel"
+                                [ngClass]="{'is-invalid': createproject.submitted && to.invalid}" required />
+                                <!-- <i class="fa fa-calendar"></i> -->
+                            <div class="invalid-feedback" *ngIf="createproject.submitted && to.invalid">
+                                <div *ngIf="to.errors.required">to* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="priority">Priority<span style="color: red;font-size: 18px;"></span></label>
+                            <select name="priority" id="priority"  class="form-control form_color" [(ngModel)]="ServiceData.priority">
+                                <option value=""></option>
+                                <option value="high">High</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                            </select>
+      
+                            <!-- <div class="invalid-feedback" *ngIf="createproject.submitted && leavereason.invalid">
+                                <div *ngIf="leavereason.errors.required">leavereason is Required</div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="priority">Team Leader<span style="color: red;font-size: 18px;"></span></label>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img  alt="Jeffery Lalor" class="avatar  rounded-circle" height="40" src="../../../assets/user.png" width="50">
+
+                                </div>
+                             
+                                
+
+                            </div>
+      
+                           
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="priority" class="ml-auto">Team Members<span style="color: red;font-size: 18px;"></span></label>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img  alt="Jeffery Lalor" class="avatar  rounded-circle" height="40" src="../../../assets/user.png" width="50">
+
+                                </div>
+                                <div class="col-md-2">
+                                    <img  alt="Jeffery Lalor" class="avatar  rounded-circle" height="40" src="../../../assets/user.png" width="50">
+
+                                </div>
+                                <div class="col-md-2">
+                                    <img  alt="Jeffery Lalor" class="avatar  rounded-circle" height="40" src="../../../assets/user.png" width="50">
+
+                                </div>
+
+                            </div>
+      
+                           
+                        </div>
+                    </div> -->
+                   
+                 
+                   
+                    <!-- <div class="col-md-12" hidden>
+                                <div class="form-group">
+                                    <label for="registerPassword">Password</label>
+                                    <input type="text" id="registerPassword" name="password" placeholder="Password"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.password" #password="ngModel"
+                                        [ngClass]="{'is-invalid': createproject.submitted && password.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="createproject.submitted && password.invalid">
+                                        <div *ngIf="password.errors.required">password field is Required</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                    
+                  
+                 
+            </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="description"> Description<span style="color: red;font-size: 18px;">*</span></label>
+                        <input type="text" id="description" name="description" placeholder="description"
+                            class="form-control form_color" [(ngModel)]="ServiceData.description" #description="ngModel"
+                            [ngClass]="{'is-invalid': description.submitted && description.invalid}" required />
+                        <div class="invalid-feedback" *ngIf="createproject.submitted && description.invalid">
+                            <div *ngIf="description.errors.required">description* is Required</div>
+                        </div>
+                    </div>
+                </div>
+                <mat-form-field style="width: 500px; margin-left: 10px;" appearance="outline">
+                    <mat-label>Add Team</mat-label>
+                    <mat-select name="addteam" [(ngModel)]="ServiceData.addteam" multiple>
+                      <mat-option *ngFor="let x of list" [value]="x.firstname">{{x.firstname}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+
+
+                <!-- <ng-select [items]="list" [(ngModel)]="selectedCity">
+                </ng-select> -->
+                  <!-- <label>Multiselect with custom bindings</label>
+                  <ng-select [items]="items"
+                  bindLabel="name"
+                  placeholder="Select item"
+                  appendTo="body"
+                  multiple="true"
+                  [(ngModel)]="selected">
+       </ng-select>
+        <p>
+            Selected cities: {{selectedCityIds}}
+        </p>
+        <hr /> -->
+
+
+
+        <!-- <ng-select bindLabel="name"
+                placeholder="Select item"
+                appendTo="body"
+                multiple="true"
+                [searchable]="true" 
+                [clearable]="true"
+                [(ngModel)]="selected">
+                <ng-option [value]="item.id" [disabled]="item.disabled" *ngFor="let item of items">
+                    <img src="./assets/{{item.image}}" width="20px" height="20px"/>{{item.name}}
+                </ng-option>
+    </ng-select> -->
+                <!-- <div class="col-md-12">
+                    <div (mouseleave)="showDropDown = false">
+                        <button class="drop-toggle btn flat" (click)="showDropDown=!showDropDown">
+                            <span *ngIf="checkedList.length<=0">Select</span>
+                            <span *ngIf="checkedList.length>0">{{checkedList.join(', ')}}</span>
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="drop-show" *ngIf="showDropDown">
+                            <label *ngFor="let a of list">
+                                <input type="checkbox" [(ngModel)]="a.checked" 
+                                    (change)="getSelectedValue(a.checked,a.name)" />
+                                <span>{{a.name}}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <ng-select [items]="testitems" [hideSelected]="true" multiple="true" bindLabel="text1"></ng-select> -->
+                <!-- <app-multi-select-dropdown
+  [list]="list"
+ (shareCheckedList)="shareCheckedList($event)" 
+ (shareIndividualCheckedList)="shareIndividualCheckedList($event)">
+</app-multi-select-dropdown> -->
+<!-- <angular2-multiselect [list]="list" [(ngModel)]="selectedItems" 
+[settings]="settings" 
+(onSelect)="onItemSelect($event)"
+(onDeSelect)="OnItemDeSelect($event)" 
+(onSelectAll)="onSelectAll($event)" 
+(onDeSelectAll)="onDeSelectAll($event)" >
+</angular2-multiselect> -->
+<!-- <ng-select [searchable]="false" [clearable]="false"  name="multi"  >
+    <ng-option [value]="'test1'"> Test1</ng-option>
+    <ng-option [value]="'test2'"> Test2</ng-option>
+</ng-select> -->
+                <div class="col-md-12">
+                    <div class="form-group">
+                <label for="uploadlogo">Upload Files<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="file" class="input form-control" name="file" (change)="incomingFile($event)"
+                ngModel required />
+                </div>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <button type="submit" (click)='sendProjectData(createproject.value)' class="btn btn-primary btn-sm text-uppercase mt-5" style="float: right;">Submit</button>
+                    <button type="reset"  style="float: right;" class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+                    (click)="d('Cross click');clear(ServiceData)">Cancel</button>
+                </div>
+            
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

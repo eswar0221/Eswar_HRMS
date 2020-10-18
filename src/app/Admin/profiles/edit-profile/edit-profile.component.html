@@ -1,0 +1,366 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Edit Profile</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+
+                     <!-- <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="addcontact()">+ Add Payments</button> -->
+                </div>
+
+
+            <!-- <div  class="pull-left user-img m-r-10"><a href="#" ><img  alt="wwesa" class="w-40 img-circle" src="assets/img/collge.jpg"><span  class="status online"></span></a></div> -->
+
+            </div>
+            <!--second row-->
+<div>
+     
+  <form  #empRegistrationForm="ngForm" (ngSubmit)="empRegistrationForm.form.valid" >
+    <!--this is for no data found table-->
+    <div class="shadow p-3 mb-5 bg-white rounded" style="margin: 0px 20px;">
+    <h4>Basic Informations</h4>
+      
+      <div class="row  ">
+  
+  
+  <div class="col-md-12 text-center middle">
+  
+        <div class=" row">
+  
+    <!--Category Name--> 
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+            <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+                [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+                <div *ngIf="firstname.errors.required">First Name* is Required</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="registerUsername">User Name<span style="color: red;font-size: 18px;">*</span></label>
+            <input type="text" id="username" name="username"
+                placeholder="Enter User Name" class="form-control form_color"
+                [(ngModel)]="ServiceData.username" #username="ngModel"
+                [ngClass]="{'is-invalid': empRegistrationForm.submitted && username.invalid}"
+                required />
+            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && username.invalid">
+                <div *ngIf="username.errors.required">UserName* is Required</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="registerPassword">Password<span style="color: red;font-size: 18px;">*</span></label>
+            <input type="text" id="password" name="password" placeholder="Enter Password"
+                class="form-control form_color" [(ngModel)]="ServiceData.password" #password="ngModel"
+                [ngClass]="{'is-invalid': empRegistrationForm.submitted && password.invalid}" required minlength="8" maxlength="15"/>
+            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && password.invalid">
+                <div *ngIf="password.errors.required">Password* is Required</div>
+                <div *ngIf="password.errors.minlength" class="text-danger">*Confirm password should be minimum 8 characters</div>
+  
+            </div>
+        </div>
+    </div>
+  
+
+  
+  </div>
+ 
+
+
+  </div>
+  
+  
+  
+  <div class="shadow p-3 mb-5 bg-white rounded" style="margin: 0px 20px;">
+    <h4>Contact Informations</h4>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+            <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+            <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+                [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+            <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+                <div *ngIf="firstname.errors.required">First Name* is Required</div>
+            </div>
+        </div>
+    </div>
+      <div class="col-md-6 text-center middle">
+            <div class=" row">
+        <!--Category Name-->
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                    [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+                    [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+                <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+                    <div *ngIf="firstname.errors.required">First Name* is Required</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="registerUsername">User Name<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="text" id="username" name="username"
+                    placeholder="Enter User Name" class="form-control form_color"
+                    [(ngModel)]="ServiceData.username" #username="ngModel"
+                    [ngClass]="{'is-invalid': empRegistrationForm.submitted && username.invalid}"
+                    required />
+                <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && username.invalid">
+                    <div *ngIf="username.errors.required">UserName* is Required</div>
+                </div>
+            </div>
+        </div>
+  </div>
+  
+  
+  
+  
+  </div>
+  <div class="col-md-6 text-center middle">
+    
+    <div class=" row">
+  <!--Category Name-->
+  <div class="col-md-12">
+    <div class="form-group">
+        <label for="regsiterLastname">Last Name<span style="color: red;font-size: 18px;"></span></label>
+        <input type="text" id="registerLastname" name="lastname" class="form-control form_color"
+            [(ngModel)]="ServiceData.lastname" #lastname="ngModel" placeholder="Enter Last Name"
+            [ngClass]="{'is-invalid': empRegistrationForm.submitted && lastname.invalid}" required />
+        <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && lastname.invalid">
+            <div *ngIf="lastname.errors.required">Lastname is Required</div>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group">
+        <label for="registerEmail">Email<span style="color: red;font-size: 18px;">*</span></label>
+        <input type="email" id="registerEmail" name="email" placeholder="Enter Email"
+            class="form-control form_color" [(ngModel)]="ServiceData.email" #email="ngModel"
+            [ngClass]="{'is-invalid': empRegistrationForm.submitted && email.invalid}" required />
+        <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && email.invalid">
+            <div *ngIf="email.errors.required">Email field is Required</div>
+        </div>
+    </div>
+  </div></div>
+  
+  </div>
+  </div></div>
+  <!-- End of Contact -->
+  
+  <!-- Start of Education -->
+  <div class="shadow p-3 mb-5 bg-white rounded" style="margin: 0px 20px;">
+    <h4>Education Informations</h4>
+    <div class="row">
+      <div class="col-md-6 text-center middle">
+    <br>
+  
+            <div class=" row">
+        <!--Category Name-->
+        <div class="col-md-12">
+          <div class="form-group">
+              <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+              <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                  [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+                  [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+              <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+                  <div *ngIf="firstname.errors.required">First Name* is Required</div>
+              </div>
+          </div>
+      </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                    [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+                    [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+                <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+                    <div *ngIf="firstname.errors.required">First Name* is Required</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="registerUsername">User Name<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="text" id="username" name="username"
+                    placeholder="Enter User Name" class="form-control form_color"
+                    [(ngModel)]="ServiceData.username" #username="ngModel"
+                    [ngClass]="{'is-invalid': empRegistrationForm.submitted && username.invalid}"
+                    required />
+                <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && username.invalid">
+                    <div *ngIf="username.errors.required">UserName* is Required</div>
+                </div>
+            </div>
+        </div>
+  </div>
+  
+  
+  
+  
+  </div>
+  <div class="col-md-6 text-center middle">
+    <br>
+    
+    <div class=" row">
+  <!--Category Name-->
+  <div class="col-md-12">
+    <div class="form-group">
+        <label for="regsiterLastname">Last Name<span style="color: red;font-size: 18px;"></span></label>
+        <input type="text" id="registerLastname" name="lastname" class="form-control form_color"
+            [(ngModel)]="ServiceData.lastname" #lastname="ngModel" placeholder="Enter Last Name"
+            [ngClass]="{'is-invalid': empRegistrationForm.submitted && lastname.invalid}" required />
+        <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && lastname.invalid">
+            <div *ngIf="lastname.errors.required">Lastname is Required</div>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group">
+        <label for="registerEmail">Email<span style="color: red;font-size: 18px;">*</span></label>
+        <input type="email" id="registerEmail" name="email" placeholder="Enter Email"
+            class="form-control form_color" [(ngModel)]="ServiceData.email" #email="ngModel"
+            [ngClass]="{'is-invalid': empRegistrationForm.submitted && email.invalid}" required />
+        <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && email.invalid">
+            <div *ngIf="email.errors.required">Email field is Required</div>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group">
+        <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+        <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+            [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+            [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+        <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+            <div *ngIf="firstname.errors.required">First Name* is Required</div>
+        </div>
+    </div>
+  </div>
+  </div>
+  
+  </div>
+  <button type="submit"  class="" mat-raised-button color="primary" (click)="addmore()">+Add More Institute</button>
+  
+  </div></div>
+  
+  <!-- End of Education  -->
+  <!-- Start of Experience -->
+  <div class="shadow p-3 mb-5 bg-white rounded" style="margin: 0px 20px;">
+    <h4>Experience Informations</h4>
+    <div class="row">
+      <div class="col-md-6 text-center middle">
+    <br>
+  
+            <div class=" row">
+        <!--Category Name-->
+        <div class="col-md-12">
+          <div class="form-group">
+              <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+              <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                  [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+                  [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+              <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+                  <div *ngIf="firstname.errors.required">First Name* is Required</div>
+              </div>
+          </div>
+      </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="regsiterFirstname">First Name<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="text" id="regsiterFirstname" name="firstname" class="form-control form_color"
+                    [(ngModel)]="ServiceData.firstname" #firstname="ngModel" placeholder="Enter First Name"
+                    [ngClass]="{'is-invalid': empRegistrationForm.submitted && firstname.invalid}" required />
+                <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && firstname.invalid">
+                    <div *ngIf="firstname.errors.required">First Name* is Required</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="registerUsername">User Name<span style="color: red;font-size: 18px;">*</span></label>
+                <input type="text" id="username" name="username"
+                    placeholder="Enter User Name" class="form-control form_color"
+                    [(ngModel)]="ServiceData.username" #username="ngModel"
+                    [ngClass]="{'is-invalid': empRegistrationForm.submitted && username.invalid}"
+                    required />
+                <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && username.invalid">
+                    <div *ngIf="username.errors.required">UserName* is Required</div>
+                </div>
+            </div>
+        </div>
+  </div>
+  
+  
+  
+  
+  </div>
+  <div class="col-md-6 text-center middle">
+    <br>
+    
+    <div class=" row">
+  <!--Category Name-->
+  <div class="col-md-12">
+    <div class="form-group">
+        <label for="regsiterLastname">Last Name<span style="color: red;font-size: 18px;"></span></label>
+        <input type="text" id="registerLastname" name="lastname" class="form-control form_color"
+            [(ngModel)]="ServiceData.lastname" #lastname="ngModel" placeholder="Enter Last Name"
+            [ngClass]="{'is-invalid': empRegistrationForm.submitted && lastname.invalid}" required />
+        <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && lastname.invalid">
+            <div *ngIf="lastname.errors.required">Lastname is Required</div>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group">
+        <label for="registerEmail">Email<span style="color: red;font-size: 18px;">*</span></label>
+        <input type="email" id="registerEmail" name="email" placeholder="Enter Email"
+            class="form-control form_color" [(ngModel)]="ServiceData.email" #email="ngModel"
+            [ngClass]="{'is-invalid': empRegistrationForm.submitted && email.invalid}" required />
+        <div class="invalid-feedback" *ngIf="empRegistrationForm.submitted && email.invalid">
+            <div *ngIf="email.errors.required">Email field is Required</div>
+        </div>
+    </div>
+  </div>
+  
+  </div>
+  
+  </div>
+  <button type="submit"  class="" mat-raised-button color="primary" (click)="addmore()">+Add More Experience</button>
+  <div class="col-md-12">
+    <button type="submit" mat-raised-button color="primary" (click)='register(empRegistrationForm.value)' class=" mt-5" >Register</button>&nbsp;&nbsp;
+    <button type="reset"   class=" mr-2 mt-5" mat-raised-button color="primary"
+    (click)="d('Cross click');clear(ServiceData)">Cancel</button>
+  </div>
+  </div>
+  
+  
+  </div>
+  
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+          </div></div>

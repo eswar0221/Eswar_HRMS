@@ -1,0 +1,330 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+.card {
+    font-family: Montserrat,sans-serif;
+    font-size: 13px;
+    color: #333;
+    background-color: #eff3f6;
+    overflow-x: hidden;
+}
+
+
+
+.page-wrapper .content {
+    padding: 30px;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col-xs-8 {
+    width: 66.66666667%;
+}
+
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    float: left;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.m-b-30 {
+    margin-bottom: 30px!important;
+}
+
+@media (min-width: 992px){
+.col-md-6 {
+    width: 50%;
+}}
+@media (min-width: 992px){
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: left;
+}
+}
+
+@media (min-width: 768px){
+.col-sm-4 {
+    width: 33.33333333%;
+}}
+@media (min-width: 768px){
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+    float: left;
+}}
+
+
+
+.text-right {
+    text-align: right;
+}
+@media (min-width: 992px){
+.col-md-12 {
+    width: 100%;
+}
+}
+
+.card-box {
+    background-color: #fff;
+    border: 1px solid #ededed;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.payslip-title {
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}
+.h4, h4 {
+    font-size: 18px;
+}
+.h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+.m-b-0 {
+    margin-bottom: 0!important;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+@media (min-width: 1200px){
+.col-lg-12 {
+    width: 100%;
+}}
+.m-b-10 {
+    margin-bottom: 10px!important;
+}
+
+.table {
+    color: #000;
+}
+
+/* .table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #ddd;
+} */
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    /* border-spacing: 2px; */
+    border-color: grey;
+}
+
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.table>tbody>tr>td {
+    font-weight: 300;
+}
+
+/* .table-bordered, .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+    border: 1px solid #ddd;
+} */
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+td, th {
+    padding: 0;
+}
+
+b, optgroup, strong {
+    font-weight: 700;
+}
+.pull-right {
+    float: right!important;
+}
+
+.invoice-details, .invoice-payment-details>li span {
+    float: right;
+    text-align: right;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.fghj{
+    display: block;
+    width: 300px;
+    /* height: calc(1.4em + 2.12rem + 2px); */
+    padding: 1.06rem 1.7rem;
+    /* margin-left: -10px; */
+    /* font-size: 1.4rem; */
+    /* font-weight: 400; */
+    /* line-height: 1.4; */
+    color: #757575;
+    background-color: #fff;
+    background-clip: padding-box;
+    /* border: 1px solid #ced4da; */
+    border-radius: .4rem;
+    /* box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); */
+    /* transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* awesdrfgbuhimok, */
+
+.salary-slip{
+    margin: 15px;}
+    .empDetail {
+      width: 100%;
+      text-align: left;
+      /* border: 2px solid black; */
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    
+    .head {
+      margin: 10px;
+      margin-bottom: 50px;
+      width: 100%;
+    }
+    
+    .companyName {
+      text-align: right;
+      font-size: 25px;
+      font-weight: bold;
+    }
+    
+    .salaryMonth {
+      text-align: center;
+    }
+    
+    .table-border-bottom {
+      border-bottom: 1px solid;
+    }
+    
+    .table-border-right {
+      border-right: 1px solid;
+    }
+    
+    .myBackground {
+      padding-top: 10px;
+      text-align: left;
+      border: 1px solid black;
+      height: 40px;
+    }
+    
+    .myAlign {
+      text-align: center;
+      border-right: 1px solid black;
+    }
+    
+    .myTotalBackground {
+      padding-top: 10px;
+      text-align: left;
+      background-color: #EBF1DE;
+      border-spacing: 0px;
+    }
+    
+    .align-4 {
+      width: 25%;
+      float: left;
+    }
+    
+    .tail {
+      margin-top: 35px;
+    }
+    
+    .align-2 {
+      margin-top: 25px;
+      width: 50%;
+      float: left;
+    }
+    
+    .border-center {
+      text-align: center;
+    }
+    .border-center th, .border-center td {
+      border: 1px solid black;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+

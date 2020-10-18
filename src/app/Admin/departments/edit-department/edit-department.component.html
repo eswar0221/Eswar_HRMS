@@ -1,0 +1,44 @@
+
+<div class="card rows">
+    <div class="card-body ">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows ">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Edit Department</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="tmpe1()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            
+                <form  #DepartmentForm="ngForm" (ngSubmit)="DepartmentForm.form.valid">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="department">Department<span style="color: red;font-size: 18px;">*</span></label>
+                        <input type="text" id="department" name="department" placeholder="Enter Department"
+                            class="form-control form_color" [(ngModel)]="ServiceData.department" #department="ngModel"
+                            [ngClass]="{'is-invalid': DepartmentForm.submitted && department.invalid}" required />
+                        <div class="invalid-feedback" *ngIf="DepartmentForm.submitted && department.invalid">
+                            <div *ngIf="department.errors.required">*department is Required</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 text-center" >
+                    <button type="submit" (click)='update(DepartmentForm.value)' class="btn btn-primary btn-sm text-uppercase mt-5" >Update Department</button>
+                   
+                </div>
+                    </form>
+                        
+           
+
+
+
+</div></div>

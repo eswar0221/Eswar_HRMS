@@ -1,0 +1,195 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Edit Provident Fund</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #PfForm="ngForm" (ngSubmit)="PfForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+
+                       <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Employee_Name"> Employee Name<span style="color: red;font-size: 18px;">*</span></label>
+                        <input type="text" id="Employee_Name" name="Employee_Name" placeholder="Employee_Name"
+                            class="form-control form_color" [(ngModel)]="ServiceData.Employee_Name" #Employee_Name="ngModel"
+                            [ngClass]="{'is-invalid': PfForm.submitted && Employee_Name.invalid}" required />
+                        <div class="invalid-feedback" *ngIf="PfForm.submitted && Employee_Name.invalid">
+                            <div *ngIf="Employee_Name.errors.required">Employee_Name* is Required</div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- <div class="col-md-12">     
+                        <div class="form-group">
+                            <label for="Employee_Name">Employee Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="Employee_Name" id="Employee_Name" class="form-control form_color"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Employee_Name" #Employee_Name="ngModel"
+                                        [ngClass]="{'is-invalid': PfForm.submitted && Employee_Name.invalid}">
+
+                                        <option>Select Employee_Name</option>
+
+                                            <option *ngFor="let x of empid">{{x.firstname}}</option>
+                                          
+
+                                        </select>
+                            <div class="invalid-feedback" *ngIf="PfForm.submitted && Employee_Name.invalid">
+                                <div *ngIf="Employee_Name.errors.required">Employee_Name* is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Empl_Share_Amo">Employee Share (Amount)<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Empl_Share_Amo" name="Empl_Share_Amo" placeholder="Employee Share (Amount)"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Empl_Share_Amo" #Empl_Share_Amo="ngModel"
+                                [ngClass]="{'is-invalid': PfForm.submitted && Empl_Share_Amo.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="PfForm.submitted && Empl_Share_Amo.invalid">
+                                <div *ngIf="Empl_Share_Amo.errors.required">Empl_Share_Amo* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Empl_Share_Per">Employee Share (%)<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Empl_Share_Per" name="Empl_Share_Per" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Empl_Share_Per" #Empl_Share_Per="ngModel" placeholder="Enter Employee Share (%)"
+                                [ngClass]="{'is-invalid': PfForm.submitted && Empl_Share_Per.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="PfForm.submitted && Empl_Share_Per.invalid">
+                                <div *ngIf="Empl_Share_Per.errors.required">Empl_Share_Per* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                 
+                  
+                           
+
+
+
+
+                           
+
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+
+                    <div class="col-md-12">     
+                        <div class="form-group">
+                            <label for="Provident_Fund_Type">Provident Fund Type<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="Provident_Fund_Type" id="Provident_Fund_Type" class="form-control form_color"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Provident_Fund_Type" #Provident_Fund_Type="ngModel"
+                                        [ngClass]="{'is-invalid': PfForm.submitted && Provident_Fund_Type.invalid}">
+
+                                        <option  disabled="" selected="selected" value="">Select Fund Type</option>
+                                        <option  value="Fixed Amount">Fixed Amount</option>
+                                        <option  value="Percentage of Basic Salary">Percentage of Basic Salary</option>
+
+                                        </select>
+                            <div class="invalid-feedback" *ngIf="PfForm.submitted && Provident_Fund_Type.invalid">
+                                <div *ngIf="Provident_Fund_Type.errors.required">Provident_Fund_Type* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Organi_Share_amo">Organization Share (Amount)<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Organi_Share_amo" name="Organi_Share_amo" placeholder="Organization Share (Amount)"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Organi_Share_amo" #Organi_Share_amo="ngModel"
+                                [ngClass]="{'is-invalid': PfForm.submitted && Organi_Share_amo.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="PfForm.submitted && Organi_Share_amo.invalid">
+                                <div *ngIf="Organi_Share_amo.errors.required">Organi_Share_amo* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Organi_Share_per">Organization Share (%)<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Organi_Share_per" name="Organi_Share_per" placeholder="Organization Share (%)"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Organi_Share_per" #Organi_Share_per="ngModel"
+                                [ngClass]="{'is-invalid': PfForm.submitted && Organi_Share_per.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="PfForm.submitted && Organi_Share_per.invalid">
+                                <div *ngIf="Organi_Share_per.errors.required">Organi_Share_per* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+              
+                 
+                   
+              
+                    
+                  
+                 
+            </div>
+                </div>
+
+
+                <!-- <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="description"> Description<span style="color: red;font-size: 18px;">*</span></label>
+                        <input type="text" id="description" name="description" placeholder="description"
+                            class="form-control form_color" [(ngModel)]="ServiceData.description" #description="ngModel"
+                            [ngClass]="{'is-invalid': description.submitted && description.invalid}" required />
+                        <div class="invalid-feedback" *ngIf="addteam.submitted && addteam.invalid">
+                            <div *ngIf="description.errors.required">description* is Required</div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Description">Description<span style="color: red;font-size: 18px;"></span></label>
+
+<textarea name="Description"  id="Description" cols="10" rows="3" required   class="form-control form_color" [(ngModel)]="ServiceData.Description" ></textarea>
+  
+                        <!-- <div class="invalid-feedback" *ngIf="PfForm.submitted && Description.invalid">
+                            <div *ngIf="description.errors.required">description* is Required</div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <button type="submit" (click)='sendPfData(PfForm.value)' class="btn btn-primary btn-sm text-uppercase mt-5" style="float: right;">Submit</button>
+                    <!-- <button type="reset"  style="float: right;" class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+                    (click)="d('Cross click');clear(ServiceData)">Cancel</button> -->
+                </div>
+            
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

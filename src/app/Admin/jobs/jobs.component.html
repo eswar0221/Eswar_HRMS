@@ -1,0 +1,160 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <!-- <h1>Tickets</h1> -->
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                     <!-- <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="jobs()">Apply Job</button> -->
+                </div>
+            </div>
+            <!--second row-->
+<!-- Tickets Start -->
+<div  >
+
+ 
+<div class="row" style="width: 100%;">
+
+    <div  *ngFor="let x of JOBS">
+   
+
+    <!----><div class="col-md-6" >
+        
+        <a class="job-list" routerlink="../job-details" (click)="applyjo(x.Job_Id)" style="width: 400px;cursor: pointer;">
+    <div class="job-list-det">
+        <div class="job-list-desc">
+            <h3 class="job-list-title">{{x.Job_Title}}</h3>
+            <h4 class="job-department">{{x.Department}}</h4></div>
+        <!-- <span class="job-types" style="margin-left: 50px;">Part Time</span> -->
+
+    <div class="job-type-info">
+        <span class="job-types">{{x.Job_Type}}</span>
+    </div>
+  
+
+</div>
+    <div class="job-list-footer">
+        <ul>
+            <li><i class="fa fa-map-signs"></i> {{x.Job_Location}}</li>
+            <li><i class="fa fa-money"></i> ${{x.Salary_From}}-${{x.Salary_To}}</li>
+            <li><i class="fa fa-clock-o"></i> {{x.Expired_Date}}</li>
+            <li>Job ID:{{x.Job_Id}}</li>
+
+        </ul>
+    </div>
+</a>
+</div>
+        
+    </div>
+        
+<!--         
+        <div class="col-md-6">
+            <a class="job-list" routerlink="../job-details" (click)="applyjo()">
+                <div class="job-list-det"><div class="job-list-desc"><h3 class="job-list-title">Android Developer</h3>
+                    <h4 class="job-department">Development</h4></div><div class="job-type-info"><span class="job-types">Part Time</span></div></div>
+                    <div class="job-list-footer"><ul><li><i class="fa fa-map-signs"></i> California</li><li><i class="fa fa-money"></i> $35000-$38000</li><li>
+                        <i class="fa fa-clock-o"></i> 2 days ago</li></ul></div></a></div>
+                        
+               
+
+                                       
+                                    
+ <div class="col-md-6">
+        
+    <a class="job-list" routerlink="../job-details" href="/demo/smarthr-angular/orange/career/job-details">
+        <div class="job-list-det"><div class="job-list-desc"><h3 class="job-list-title">Web Developer</h3><h4 class="job-department">Development</h4></div>
+        <div class="job-type-info"><span class="job-types">Part Time</span></div></div>
+        <div class="job-list-footer"><ul><li><i class="fa fa-map-signs"></i> California</li><li><i class="fa fa-money"></i> $35000-$38000</li><li>
+            <i class="fa fa-clock-o"></i> 2 days ago</li></ul></div></a></div>
+            
+            
+            
+            
+            <div class="col-md-6">
+                <a class="job-list" routerlink="../job-details" href="/demo/smarthr-angular/orange/career/job-details">
+                    <div class="job-list-det"><div class="job-list-desc"><h3 class="job-list-title">Android Developer</h3>
+                        <h4 class="job-department">Development</h4></div><div class="job-type-info"><span class="job-types">Part Time</span></div></div>
+                        <div class="job-list-footer"><ul><li><i class="fa fa-map-signs"></i> California</li><li><i class="fa fa-money"></i> $35000-$38000</li><li>
+                            <i class="fa fa-clock-o"></i> 2 days ago</li></ul></div></a></div>                                          
+ -->
+
+</div>
+ 
+</div>
+
+              
+        
+
+            <div class="text-center" id="secondTable" *ngIf="secondTable">
+                <div class="text-center">Hellow world !!</div>
+            </div>
+        
+            
+    </div>
+     
+</div>
+  
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,235 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Bank Details</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #Emp_Bank_Form="ngForm" (ngSubmit)="Emp_Bank_Form.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <!-- <div class="col-md-12">     
+                        <div class="form-group">
+                            <label for="Employee_Name">Employee Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <select name="Employee_Name" id="Employee_Name" class="form-control form_color" (change)="onChange1($event);"
+                                        class="form-control form_color" [(ngModel)]="ServiceData.Employee_Name" #Employee_Name="ngModel"      >
+                                        <option>Select Employee_Name</option>
+                                            <option *ngFor="let x of empid">{{x.firstname}}</option>
+                                         </select>
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && Employee_Name.invalid">
+                                <div *ngIf="Employee_Name.errors.required">Employee_Name* is Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="firstname">Employee Name</label>
+                            <select  class="form-control" name="firstname" 
+                            id="firstname" [(ngModel)]="ServiceData.firstname" #firstname="ngModel"
+                           (change)="onChange($event);"  
+                           [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && firstname.invalid}" required>
+                          <option > select Employee_Name</option>
+                           <option *ngFor="let schools of empid" >
+                               {{schools.firstname}}</option>
+                       </select>                           
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && firstname.invalid">
+                                <div *ngIf="firstname.errors.required">Employee Name is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                  <!-- Employee_Name  email employeeid phone Emp_Bank_no Branch Ifsc_Code  designation   -->
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="email">Email<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="email" name="email" placeholder="Employee Email"
+                                class="form-control form_color" [(ngModel)]="ServiceData.email" #email="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && email.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && email.invalid">
+                                <div *ngIf="email.errors.required">email* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="employeeid">Employee ID<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="employeeid" name="employeeid" class="form-control form_color"
+                                [(ngModel)]="ServiceData.employeeid" #employeeid="ngModel" placeholder="Enter employeeid"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && employeeid.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && employeeid.invalid">
+                                <div *ngIf="employeeid.errors.required">employeeid* is Required</div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registerdesignation">designation<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="designation" name="designation" placeholder="Enter designation "
+                                class="form-control form_color" [(ngModel)]="ServiceData.designation" #designation="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && designation.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && designation.invalid">
+                                <div *ngIf="designation.errors.required">designation* is Required</div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="PF_NO">PF_NO<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="PF_NO" name="PF_NO"  placeholder="Enter PF NO"
+                                class="form-control form_color"  [(ngModel)]="ServiceData.PF_NO" #PF_NO="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && PF_NO.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && PF_NO.invalid">
+                                <div *ngIf="PF_NO.errors.required">PF_NO* is Required</div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="ESI_NO">ESI_NO<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="ESI_NO" name="ESI_NO"   placeholder="Enter ESI NO"
+                                class="form-control form_color"  [(ngModel)]="ServiceData.ESI_NO" #ESI_NO="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && ESI_NO.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && ESI_NO.invalid">
+                                <div *ngIf="ESI_NO.errors.required">ESI_NO* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="PAN_NO">PAN_NO<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="PAN_NO" name="PAN_NO"  placeholder="Enter PAN NO"
+                                class="form-control form_color"  [(ngModel)]="ServiceData.PAN_NO" #PAN_NO="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && PAN_NO.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && PAN_NO.invalid">
+                                <div *ngIf="PAN_NO.errors.required">PAN_NO* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                </div>
+                <!-- column right 2 -->
+                <div class="col-md-6 text-center middle">
+                    
+                        <div class=" row">
+                    <!--Category Name-->
+                              
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="phone">phone<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="phone" name="phone" placeholder="Enter Emp Phone Number"
+                                class="form-control form_color" [(ngModel)]="ServiceData.phone" #phone="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && phone.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && phone.invalid">
+                                <div *ngIf="phone.errors.required">phone* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="UAN_NO">UAN NO<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="UAN_NO" name="UAN_NO" placeholder="Enter Emp UAN Number"
+                                class="form-control form_color" [(ngModel)]="ServiceData.UAN_NO" #UAN_NO="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && UAN_NO.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && UAN_NO.invalid">
+                                <div *ngIf="UAN_NO.errors.required">UAN_NO* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Bank_name">Bank Name <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Bank_name" name="Bank_name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Bank_name" #Bank_name="ngModel" placeholder="Enter Branch"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && Bank_name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && Bank_name.invalid">
+                                <div *ngIf="Bank_name.errors.required">Bank_name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Emp_Bank_no"> Emp_Bank_No<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Emp_Bank_no" name="Emp_Bank_no" placeholder=" Enter Emp_Bank_no"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Emp_Bank_no" #Emp_Bank_no="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && Emp_Bank_no.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && Emp_Bank_no.invalid">
+                                <div *ngIf="Emp_Bank_no.errors.required">Emp_Bank_no* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Ifsc_Code">Ifsc Code<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Ifsc_Code" name="Ifsc_Code" placeholder="Organization Share (%)"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Ifsc_Code" #Ifsc_Code="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && Ifsc_Code.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && Ifsc_Code.invalid">
+                                <div *ngIf="Ifsc_Code.errors.required">Ifsc_Code* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+              
+                 
+                   
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Branch">Branch <span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Branch" name="Branch" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Branch" #Branch="ngModel" placeholder="Enter Branch"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && Branch.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && Branch.invalid">
+                                <div *ngIf="Branch.errors.required">Branch* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="EPS_No">EPS_No<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="EPS_No" name="EPS_No"   placeholder="Enter EPS NO"
+                                class="form-control form_color"  [(ngModel)]="ServiceData.EPS_No" #EPS_No="ngModel"
+                                [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && EPS_No.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && EPS_No.invalid">
+                                <div *ngIf="EPS_No.errors.required">EPS_No* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                 
+            </div>
+                </div>    
+
+                <div class="col-md-12 text-center">
+                    <button type="submit" (click)='sendbankdata(Emp_Bank_Form.value)' class="btn btn-primary btn-sm text-uppercase mt-5" style="float: right;">Submit</button>
+                    <!-- <button type="reset"  style="float: right;" class="btn btn-sm btn-primary text-uppercase mr-2 mt-5"
+                    (click)="d('Cross click');clear(ServiceData)">Cancel</button> -->
+                </div>
+            
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

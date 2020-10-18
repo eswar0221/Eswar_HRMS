@@ -1,0 +1,115 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <!-- <h1>Tickets</h1> -->
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                     <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="jobs()">Apply Job</button>
+                </div>
+            </div>
+            <!--second row-->
+<!-- Tickets Start -->
+<div class="col-md-12 text-center middle">
+
+ 
+    <form  #empRegistrationForm="ngForm" (ngSubmit)="search.form.valid" >
+
+        <div class="login-page" >
+            <div class="row justify-content-md-center">
+                <div class="col-md-4">
+                    <div  class="account-wrapper">
+                    <h1>Management Login</h1>
+                    <img src="../../../assets/uplogou.png" width="200px" class="user-avatar"  style="padding-bottom: 18px;">
+
+                    <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit(user)">
+
+                        <!-- Form Group -->
+                        
+                        <div class="form-group">
+                            <label class="sr-only" for="email-1">Email address</label>
+                            <input type="email" class="form-control" id="email-1" aria-describedby="email-1"
+                                [(ngModel)]="user.email" #email="ngModel" [ngModelOptions]="{standalone: true}"
+                                [ngClass]="{'is-invalid': loginForm.submitted && email.invalid}"
+                                placeholder="Enter email" required />
+                            <div class="invalid-feedback" *ngIf="loginForm.submitted && email.invalid">
+                                <div *ngIf="email.errors.required">Email is Required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="sr-only" for="password-1">Password</label>
+                            <input type="password" class="form-control" id="password-1" [(ngModel)]="user.password"
+                                #password="ngModel" [ngModelOptions]="{standalone: true}"
+                                [ngClass]="{'is-invalid': loginForm.submitted && password.invalid}"
+                                placeholder="Password" required />
+                            <div class="invalid-feedback" *ngIf="loginForm.submitted && password.invalid">
+                                <div *ngIf="password.errors.required">Password is Required</div>
+                            </div>
+                        </div>
+                        <!-- /form group -->
+
+                        <!-- Form Group -->
+                   
+                        <!-- /form group -->
+
+                        <!-- Form Group -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary text-uppercase">Login</button>
+                            <button type="button" class="btn btn-primary text-uppercase" (click)="regi()">Register</button>
+                            <br>
+                           <a (click)="forg()">Forgot your password?</a>
+                        </div>
+                        <!-- /form group -->
+
+                  
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+</form>
+
+</div>
+
+              
+        
+
+            <div class="text-center" id="secondTable" *ngIf="secondTable">
+                <div class="text-center">Hellow world !!</div>
+            </div>
+        
+            
+    </div>
+     
+</div>
+  
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+

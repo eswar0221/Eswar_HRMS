@@ -1,0 +1,149 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Task</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #DesignationForm="ngForm" (ngSubmit)="DesignationForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                   
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Task_Name">Task Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Task_Name" name="Task_Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Task_Name" disabled #Task_Name="ngModel" placeholder="Enter Task_Name"
+                                [ngClass]="{'is-invalid': DesignationForm.submitted && Task_Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="DesignationForm.submitted && Task_Name.invalid">
+                                <div *ngIf="Task_Name.errors.required">Task_Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Departments">Departments</label>
+                            <select class="form-control form_color" placeholder="Select Departments" id="Departments"  name="Departments" [(ngModel)]="ServiceData.Departments">
+                                 <option  value="Web Development">Web Development</option>
+                                 <option  value="IT Management">IT Management</option>
+                                 <option  value="Support Management">Support Management</option>
+                                 <option  value="Application Development">Application Development</option>
+                                 <option  value="Marketing">Marketing</option>
+                             </select>
+                            
+                        </div>
+                    </div> -->
+<!--             
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Description">Description<span style="color: red;font-size: 18px;">*</span></label>
+                            <textarea id="Description" class="form-control form_color" rows="3" cols="50" id="Description"  #Description="ngModel"  name="Description" [(ngModel)]="ServiceData.Description"
+                             [ngClass]="{'is-invalid': DesignationForm.submitted && Description.invalid}">
+                              
+                                </textarea>
+                            <div class="invalid-feedback" *ngIf="DesignationForm.submitted && Description.invalid">
+                                <div *ngIf="Description.errors.required">Description field is Required</div>
+                            </div>
+                        </div>
+                    </div>   -->
+
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Employeeid">Employee ID</label>
+                            <select class="form-control form_color"(ngModelChange)="getEmpname($event)" placeholder="Select Employeeid" id="Employeeid"  name="Employeeid" [(ngModel)]="ServiceData.Employeeid">
+
+                                <option  >Select Emp ID</option>
+
+                                 <option   *ngFor="let x of empid">{{x.employeeid}}</option>
+
+                                
+                             </select>
+                            
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Employeeid">Employee ID<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Employeeid" disabled name="Employeeid" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Employeeid" #Employeeid="ngModel" placeholder="Enter Employeeid"
+                                [ngClass]="{'is-invalid': DesignationForm.submitted && Employeeid.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="DesignationForm.submitted && Employeeid.invalid">
+                                <div *ngIf="Employeeid.errors.required">Employeeid* is Required</div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="email">Email ID<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="email" disabled name="email" class="form-control form_color"
+                                [(ngModel)]="ServiceData.email" #email="ngModel" placeholder="Enter email"
+                                [ngClass]="{'is-invalid': DesignationForm.submitted && email.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="DesignationForm.submitted && email.invalid">
+                                <div *ngIf="email.errors.required">email* is Required</div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Employee_Name">Employee Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Employee_Name" disabled name="Employee_Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Employee_Name" #Employee_Name="ngModel" placeholder="Enter Employee_Name"
+                                [ngClass]="{'is-invalid': DesignationForm.submitted && Employee_Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="DesignationForm.submitted && Employee_Name.invalid">
+                                <div *ngIf="Employee_Name.errors.required">Employee_Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>  -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select class="form-control form_color" placeholder="Select Status"  name="status" [(ngModel)]="ServiceData.status">
+                                 <option value="open">open</option>
+                                 
+                                 <option value="Pending">Pending</option>
+                                 <option value="Close">Close</option>
+                           
+            
+                             </select>
+                            
+                        </div>
+                    </div>   
+            </div>
+                </div>
+                <!-- column right 2 -->
+              
+           
+                    
+              
+                <div class="col-md-12 text-center">
+                    <button type="submit"  (click)='register(ServiceData)'
+                    class="btn btn-primary btn-sm text-uppercase mt-5" >Assigne Task</button>
+                  
+                </div>
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

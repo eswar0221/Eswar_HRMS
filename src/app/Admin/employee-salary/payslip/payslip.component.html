@@ -1,0 +1,543 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <!-- <h1>Payslip</h1> -->
+                </div>
+                <div class="col-md-5"></div>
+                <!-- <div class="col-md-3">
+                    <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span>
+                     <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="addcontact()">+ Add Contacts</button>
+                </div> -->
+
+
+            <!-- <div  class="pull-left user-img m-r-10"><a href="#" ><img  alt="wwesa" class="w-40 img-circle" src="assets/img/collge.jpg"><span  class="status online"></span></a></div> -->
+
+            </div>
+            <!--second row-->
+
+<div class="content container-fluid">
+    <div class="row">
+        <div class="col-xs-8">
+            <h1 class="page-title">Payslip</h1></div>
+        <div class="col-sm-4 text-right m-b-30">
+            <div class="btn-group btn-group-sm">
+                
+                <!-- <button class="btn btn-default">CSV</button> -->
+                <button class="btn btn-primary" (click)="pdf()">PDF</button>
+                <!-- <button class="btn btn-default"><i class="fa fa-print fa-lg"></i> Print</button> -->
+            
+            </div></div>
+        </div>
+                <div class="row" id="pdff" *ngIf="ghjklj">
+                    
+                    <div class="col-md-12">
+                        
+                        <div class="card-box">
+                            
+                            <h4 class="payslip-title">Payslip for the month of {{mon}} {{mon1}}</h4>
+
+                    <div class="row">
+                        
+                        
+                        <div class="col-md-6 m-b-20">
+                            
+                            <img alt="" class="m-b-20" src="../../../assets/uplogo.jpg" style="width: 100px;">
+
+
+                        <ul class="list-unstyled m-b-0">
+                            <li>UPSTEER TEK SOLUTIONS</li>
+                            <li>Banjara Hills, Hyderabad,</li>
+                            <li>Telangana, India - 500034</li>
+                        </ul>
+                    </div>
+                        <div class="col-md-6 m-b-20">
+                            <div class="invoice-details">
+                                <h3 class="text-uppercase" *ngFor="let x of Edata " >Payslip ID :{{x.PAYSLIP_ID}} </h3>
+
+                            <ul class="list-unstyled">
+                                <li>Salary Month: <span> {{mon}} {{mon1}}</span></li>
+                            </ul></div>
+                        </div>
+                        </div>
+                        <br>
+                        <table class="empDetail" style="border: black 1px solid;">
+                          
+                          <tr *ngFor="let x of ddfgf" style="border: black 1px solid;" class="border-center">
+                            <th style="width:14%;text-align: left; padding-left: 10px;" >
+                              Name
+                  </th>
+                            <td style="width:24%; text-align: left;padding-left: 10px;">
+                              {{x.firstname}} 
+                              {{x.lastname}}
+                  </td>
+                            <!-- <td></td> -->
+                            <th style="width:14%;text-align: left; padding-left: 10px;">
+                              <!-- Bank Code -->
+                              Employee ID
+                  </th>
+                            <td style="width:17%;text-align: left;padding-left: 10px;">
+                              {{x.employeeid}}
+                  </td>
+                            <!-- <td></td> -->
+                            <th style="width:14%;text-align: left; padding-left: 10px;">
+                              <!-- Branch Name -->
+                              Date of Joining
+                  </th>
+                            <td style="width:17%;text-align: left;padding-left: 10px;">
+                              {{x.Joining_Date}}
+                  </td>
+                          </tr>
+                          <tr  *ngFor="let x of ddfgf"  style="border: black 1px solid;" class="border-center" >
+                            <th style="text-align: left; padding-left: 10px;">
+                              Designation
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.designation}}
+                  </td>
+                            <!-- <td></td> -->
+                            <th style="text-align: left; padding-left: 10px;">
+                             Gender
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.Gender}}
+                  </td>
+                            <!-- <td></td> -->
+                            <th style="text-align: left; padding-left: 10px;">
+                              Date of Birth
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.Birthday}}
+                  </td>
+                          </tr>
+                          <tr *ngFor="let x of gghjgjhj"  style="border: black 1px solid;" class="border-center" >
+                            <th style="text-align: left; padding-left: 10px;">
+                             Branch Name
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                             {{x.Branch}}
+                  </td>
+                  <!-- <td></td> -->
+                            <th style="text-align: left; padding-left: 10px;">
+                              Bank A/C no.
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.Emp_Bank_no}}
+                  </td>
+                  <!-- <td></td> -->
+                            <th style="text-align: left; padding-left: 10px;">
+                              Pay Period
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                             {{paidperiod}}
+                  </td>
+                          </tr>
+                          <tr *ngFor="let x of gghjgjhj" style="border: black 1px solid;" class="border-center">
+                            <th style="text-align: left; padding-left: 10px;">
+                             UAN:
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.UAN_NO}}
+                  </td>
+                
+                            <th style="text-align: left; padding-left: 10px;">
+                             PAN NO:
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.PAN_NO}}
+                  </td>
+               
+                            <th style="text-align: left; padding-left: 10px;">
+                             PF NO:
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.PF_NO}}
+                  </td>
+                          </tr> 
+                          <tr *ngFor="let x of gghjgjhj" style="border: black 1px solid;" class="border-center">
+                            <th style="text-align: left; padding-left: 10px;">
+                              ESI NO:
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                             {{x.ESI_NO}}
+                  </td>
+                  <!-- <td></td> -->
+                            <th style="text-align: left; padding-left: 10px;">
+                              EPS No:
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.EPS_No}}
+                  </td>
+                  <!-- <td></td> -->
+                            <th style="text-align: left;padding-left: 10px;"> 
+                             Bank Name
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                              {{x.Bank_name}}
+                  </td>
+                          </tr>
+                          <tr style="border: black 1px solid;" class="border-center">
+                            <th style="text-align: left; padding-left: 10px;">
+                           .
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                            
+                  </td>
+                  <!-- <td></td> -->
+                            <th style="text-align: left; padding-left: 10px;">
+                             
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                         
+                  </td>
+                  <th style="text-align: left; padding-left: 10px;">
+                             
+                  </th>
+                            <td style="text-align: left;padding-left: 10px;">
+                         
+                  </td>
+                  <!-- <td></td> -->
+                        
+                          </tr>
+                          </table>
+                         
+                          <table class="empDetail" style="border: black 1px solid;" >
+                          
+                              <tr  class="border-center">
+                                <th style="width: 15%; text-align: left; padding-left: 10px;">
+                                  Attend/ Absence
+                    </th>
+                                <th style="width: 13%; text-align: left; padding-left: 10px;">
+                                  Days in Month
+                    </th>
+                                <th style="width: 12%;text-align: left; padding-left: 9px;">
+                                  Days Paid
+                    </th>
+                                <th style="width: 14%;text-align: left; padding-left: 9px;">
+                                  Days Not Paid
+                    </th>
+                                <th style="width: 14%;text-align: left; padding-left: 10px;">
+                                  Leave Position
+                    </th>
+                            
+                                <th style="width: 11%;text-align: left; padding-left: 9px;">
+                                  Sick Leave
+                    </th>
+                                <th style="width: 12%;text-align: left; padding-left: 10px;">
+                                  Casual Leave
+                    </th>
+                    <th style="width: 12%;">
+                      <!-- Available Leave -->
+                    <!-- Available Leave casual / Sick -->
+                    LOP Leaves
+        </th>  </tr>
+                              <tr>
+                           
+                                <!-- <td>0.0</td> -->
+                              </tr >
+                              <tr  class="border-center">
+                                <th >Current Month</th>
+                                <td >{{noofdays}}</td>
+                                <td >{{paiddays}}</td>
+                                <td >{{daysnopay}}</td>
+                                <td>Used This Month</td>
+                                <td>{{sickleaves}}</td> 
+                                <td>{{causuleave}}</td>
+                                <!-- <td>{{cau_leaves}} / {{medi_leaves}}</td> -->
+<td> {{lospay1}}</td>
+                              </tr >
+                            
+                         
+                            
+
+                          </table>
+                      
+                          <table class="empDetail" style="border: black 1px solid;"  *ngFor="let x of Edata ">
+                            <tr  style="border: black 1px solid;" class="border-center">
+                            .</tr>
+                            <tr  style="border: black 1px solid;" class="border-center">
+                              <th  style="text-align: left;padding-left: 10px;">
+                                <h3  style="padding-top: 5px; margin-bottom: -0.5px;"> <strong> Earnings</strong> </h3>
+                              
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                           
+                                <h3  style="padding-top: 5px; margin-bottom: -0.5px;"> <strong>Amount</strong> </h3>
+                               
+                    </td>
+                              <!-- <td></td> -->
+                              <th style="text-align: left;padding-left: 10px;">
+                                <!-- Bank Code -->
+                                <h3  style="padding-top: 5px; margin-bottom: -0.5px"> <strong>Deducted</strong> </h3>
+                              
+                               
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                             
+                                <h3  style="padding-top: 5px; margin-bottom: -0.5px"> <strong>Amount</strong> </h3>
+                               
+                    </td>
+                              <!-- <td></td> -->
+                             
+                            </tr>
+                            <tr    style="border: black 1px solid;" class="border-center" >
+                              <th style="text-align: left; padding-left: 10px;">
+                            Basic Salary
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​ {{x.Basic}}
+                    </td>
+                              <!-- <td></td> -->
+                              <th style="text-align: left; padding-left: 10px;">
+                                Tax Deducted at Source (T.D.S.)
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​ {{x.TDS}}
+                    </td>
+                           
+                            </tr>
+                            <tr   style="border: black 1px solid;" class="border-center" >
+                              <th style="text-align: left; padding-left: 10px;">
+                                Dearness Allowance (D.A.)
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹ ​{{x.DA}}
+                    </td>
+                    <!-- <td></td> -->
+                              <th style="text-align: left; padding-left: 10px;">
+                                Provident Fund
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​{{x.PF}}
+                    </td>
+                 
+                            </tr>
+                            <tr style="border: black 1px solid;" class="border-center">
+                              <th style="text-align: left; padding-left: 10px;">
+                                House Rent Allowance (H.R.A.)
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​{{x.HRA}}
+                    </td>
+                  
+                              <th style="text-align: left; padding-left: 10px;">
+                                ESI
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​{{x.ESI}}
+                    </td>
+                 
+                            
+                            </tr> 
+                            <tr   style="border: black 1px solid;" class="border-center" >
+                              <th style="text-align: left; padding-left: 10px;">
+                                Allowance
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​{{x.Allowance}}
+                    </td>
+                              <!-- <td></td> -->
+                              <th style="text-align: left; padding-left: 10px;">
+                                Leaves
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​{{Leave}}
+                    </td>
+                           
+                            </tr>
+                            <tr    style="border: black 1px solid;" class="border-center" >
+                              <th style="text-align: left; padding-left: 10px;">
+                                Medical Allowance
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​{{x.Medical_Allowance}}
+                    </td>
+                              <!-- <td></td> -->
+                              <th style="text-align: left; padding-left: 10px;">
+                                <h3  style="padding-top: 5px; margin-bottom: -0.5px"> <strong> Total Deductions</strong> </h3>
+                               
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                <h3  style="padding-top: 5px; margin-bottom: -0.5px"> <strong>₹​{{Total_Deductions}}</strong> </h3>  
+                    </td>
+                           
+                            </tr>
+                            <tr    style="border: black 1px solid;" class="border-center" >
+                              <th style="text-align: left; padding-left: 10px;">
+                                Other Allowance
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                ₹​{{x.Earnings_Others}}
+                    </td>
+                              <!-- <td></td> -->
+                              <th style="text-align: left; padding-left: 10px;">
+                               <!-- gfgg -->
+                    </th>
+                              <td style="text-align: left;padding-left: 10px;">
+                            <!-- dfgdfhdh -->
+                    </td>
+                           
+                            </tr>
+                            <tr style="border: black 1px solid;" class="border-center">
+                              <th style="text-align: left; padding-left: 10px;">
+                               <h3 style="padding-top: 5px; margin-bottom: -0.5px"> <strong>Total Earnings</strong> </h3>
+                    </th>
+                              <td style="text-align: left;padding-left: 30px;">
+                                <h3  style="padding-top: 5px; margin-bottom: -0.5px"> <strong>₹​{{x.Total_Earnings}}</strong> </h3>  
+                    </td>
+                    <!-- <td></td> -->
+                              <th style="text-align: left; padding-left: 10px;">
+                                <!-- EPS No: -->
+                    </th>
+                              <td style="text-align: left;padding-left: 10px;">
+                             <!-- xxxxxx -->
+                    </td>
+                 
+                            </tr>
+                          
+              
+                        
+                            </table>
+                            <table  style="width: 100%;border: black 1px solid;" >
+                              <tr >
+                                
+                                <td style="width: 100%;border: black 1px solid;">
+                                .
+                                </td>
+                              </tr>
+                              <tr>
+                             
+                                <td style="width: 100%;border: black 1px solid;">
+                                  <h4><strong style="display: inline-block;">Net Pay (In Rupees): ₹​ {{salIDnet}}</strong></h4>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="width: 100%;border: black 1px solid;">
+                                  <h5 style="font-weight:bold;"> Net Pay (In Words): {{convertNumberToWords(salIDnet)}} Rupees Only</h5>
+                                </td>
+                              </tr>
+                              <tr>
+                                
+                                <td>
+                                  <h6>This is a computer generated document, hence no signature is required</h6>
+                                </td>
+                              </tr>
+                            </table>
+                            <div class="row">
+                                <div class="col-lg-12 m-b-20">
+
+                                <!-- <ul class="list-unstyled" *ngFor="let x of Edata ">
+                                    <li><h5 class="m-b-0"><strong>{{x.firstname}}</strong></h5></li>
+                                    <li><span></span></li>
+                                    <li>Employee ID: {{x.employee_id}}</li>
+                                    <li>Joining Date: {{x.Joining_Date}}</li>
+                                
+
+                                </ul> -->
+                            </div>
+                            </div>
+                                    <!-- <div class="row">
+                                        <div class="col-sm-6"><h4 class="m-b-10"><strong>Earnings</strong></h4>
+                                            <table class="table table-bordered">
+                                                <tbody  *ngFor="let x of Edata ">
+                                                  <tr class="border-center"><td><strong>Earnings</strong><span class="pull-right">Amount</span></td></tr>
+
+                                                    <tr class="border-center"><td><strong>Basic Salary</strong><span class="pull-right">₹​{{x.Basic}}</span></td></tr>
+                                                    <tr class="border-center"><td><strong>Dearness Allowance (D.A.)</strong><span class="pull-right">₹​{{x.DA}}</span></td></tr>
+                                                    <tr class="border-center"><td><strong>House Rent Allowance (H.R.A.)</strong><span class="pull-right">₹​{{x.HRA}}</span></td></tr>
+                                                    <tr class="border-center"><td><strong>Allowance</strong><span class="pull-right">₹​{{x.Allowance}}</span></td></tr>
+                                                    <tr class="border-center"><td><strong>Medical Allowance</strong><span class="pull-right">₹​{{x.Medical_Allowance}}</span></td></tr>
+                                                    <tr class="border-center"><td><strong>Other Allowance</strong><span class="pull-right">₹​{{x.Earnings_Others}}</span></td></tr>
+                                                    <tr class="border-center"><td><strong>Total Earnings</strong><span class="pull-right"><strong>₹​{{x.Total_Earnings}}</strong></span></td></tr></tbody>
+                                                </table></div>
+                                                <div class="col-sm-6"><h4 class="m-b-10"><strong>Deductions</strong></h4>
+                                                    
+                <table class="table table-bordered">
+                    <tbody  *ngFor="let x of Edata ">
+                    <tr><td><strong>Tax Deducted at Source (T.D.S.)</strong><span class="pull-right">{{x.TDS}}</span></td></tr>
+                    <tr><td><strong>Provident Fund</strong><span class="pull-right">₹​{{x.PF}}</span></td></tr>
+                    <tr><td><strong>ESI</strong><span class="pull-right">₹​{{x.ESI}}</span></td></tr>
+
+                  
+                    <tr><td><strong>Leaves</strong><span class="pull-right">₹​{{Leave}}</span></td></tr>
+                   
+
+                    <tr><td><strong>Total Deductions</strong><span class="pull-right"><strong>₹​{{Total_Deductions}}</strong></span></td></tr></tbody>
+                </table></div>
+                
+                <div class="col-md-12"  >
+                  <h4><strong style="display: inline-block;">Net Pay (In Rupees): ₹​ {{salIDnet}}
+                   
+                  </strong>
+                  </h4>
+                 <h5 style="font-weight:bold;"> Net Pay (In Words): {{convertNumberToWords(salIDnet)}} Rupees Only</h5>
+                 <h6>This is a computer generated document, hence no signature is required</h6>
+                </div>
+            </div> -->
+          </div>
+
+        </div>
+    </div>
+    <div *ngIf="gtyu" style="background-color: white;">
+      
+        <!-- <input type="button" value="get" (click)="openLargeModalPopup(Yearmonth)"> -->
+        <!-- <ng-template #Yearmonth let-c="close" let-d="dismiss" > -->
+            <div>
+            <form  #Emp_Bank_Form="ngForm" >
+            <div style="padding: 50px;">
+             
+            
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="month">Select Month</label>
+                    <select name="month" id="month" [(ngModel)]="mon" required class="form-control form_color"  #month="ngModel"
+                    [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && month.invalid}" >
+                        <!-- <option value="">Select Leave Type </option> -->
+                        <option  *ngFor="let x of months">{{x}}</option>
+                      
+                    </select>
+                  
+                    <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && month.invalid">
+                        <div *ngIf="month.errors.required">month* is Required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="year">Select Year</label>
+                    <select name="year" id="year" [(ngModel)]="mon1" required class="form-control form_color"  #year="ngModel"
+                    [ngClass]="{'is-invalid': Emp_Bank_Form.submitted && year.invalid}" >
+                        <!-- <option value="">Select Leave Type </option> -->
+                        <option  *ngFor="let x of range">{{x}}</option>
+                      
+                    </select>
+                  
+                    <div class="invalid-feedback" *ngIf="Emp_Bank_Form.submitted && year.invalid">
+                        <div *ngIf="year.errors.required">year* is Required</div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <input type="submit" class="btn btn-info" style="margin-left: 59px;margin-bottom: 20px;" value="View" [disabled]="Emp_Bank_Form.form.invalid" (click)="closing()">
+
+    </form>
+    <!-- </ng-template> -->
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+          </div></div>

@@ -1,0 +1,194 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Projects</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span>
+                     <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="navigate()">+ Add projects</button>
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              <div class="col-md-8">
+                  <div class="form-group has-search">
+                      <span class="fa fa-search form-control-feedback"></span>
+                      <input type="text" class="form-control btn-radius"
+                          placeholder="Search Ticket"
+                           [(ngModel)]="searchText" >
+                  </div>
+              </div>
+          </div>
+            <div>
+                <div class="table-responsive">
+                <table  class="table table-borderless table-condensed table-striped" [mfData]="sats" #mf="mfDataTable" [mfRowsOnPage]="5" id="tableSEcond_tab" *ngIf="tableSEcond_tab">
+                    <thead class="bg-primary">
+                    <tr >
+                      
+                        <th class="text-white">
+                            <mfDefaultSorter by="email">Project</mfDefaultSorter>
+                        </th>
+                        <th class="text-white">
+                            <mfDefaultSorter by="age">Project Id</mfDefaultSorter>
+                        </th>
+                        <th class="text-white">
+                            <mfDefaultSorter by="city">Leader</mfDefaultSorter>
+                        </th>
+                        <th class="text-white">
+                                <mfDefaultSorter by="city">Team</mfDefaultSorter>
+                      </th>
+                        <th class="text-white">
+                              <mfDefaultSorter by="age">DeadLine</mfDefaultSorter>
+                         </th>
+                         <th class="text-white">
+                          <mfDefaultSorter by="age">Priority</mfDefaultSorter>
+                     </th>
+                     <th class="text-white">
+                        <mfDefaultSorter by="age">Status</mfDefaultSorter>
+                   </th>
+                   <th class="text-white">
+                    <mfDefaultSorter by="age">Action</mfDefaultSorter>
+               </th>
+                    </tr>
+                    </thead>
+                    <tbody *ngIf="tabledata==true">
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                             
+                              <td>
+                                <div class="NoDataStyle">
+                                  <img src="assets/images/img_empty_status.png" height="90px" alt="No Data Image">
+                                  <h6>{{tabledatanotfound}}</h6>
+                                </div>
+                              </td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                          </tbody>
+                    <tbody>
+                    <tr *ngFor="let item of mf.data | filter : searchText;let i=index  ">
+                        <!-- <td>{{i + 1}}</td> -->
+                        <td  ><div style="width: 100px;color: black;">{{item.projectname}}</div></td>
+                        <td class="case">{{item.projectid}}</td>
+                        <td >{{item.projectleader}}</td>
+                        <td > <div style="width: 130px;color: black;">{{item.addteam}}</div></td> 
+                        <td>{{item.to}}</td>
+                        <td>{{item.priority}}</td>
+                        <td>{{item.status}}</td>
+
+                      
+                     
+                       
+                       <td>
+                        <div class="btn-group dropleft ml-5" style="cursor: pointer;">
+                            <a  class="fa fa-ellipsis-v" data-toggle="dropdown"  aria-expanded="false">
+                            </a>
+                            <div class="dropdown-menu">
+                                <a  class="dropdown-item" (click)="edit($event)"><i class="fa fa-pencil mr-4"></i>Edit</a>
+                                <a class="dropdown-item" (click)="del(item.projectid)"><i class="fa fa-trash-o mr-4"></i>Delete</a>
+    
+                            </div>
+                          </div>
+                       </td>
+    
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <mfBootstrapPaginator ></mfBootstrapPaginator>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+         
+
+            
+            <div class="text-center" id="secondTable" *ngIf="secondTable">
+                <!-- <ng-template #abc> -->
+
+           
+
+
+              <div class="row shadow p-3 mb-5 bg-white rounded">
+    
+                <section class="our-webcoderskull padding-lg">
+                <div class="container">
+                  <!-- <div class="row heading heading-icon">
+                      <h2>Contact</h2>
+                  </div> -->
+                  <div class="row">
+                  <ul  *ngFor="let x of sats | filter :searchText">
+                    <li class=" col-md-6 col-lg-4"  >
+                        
+                        <div class="cnt-block equal-hight" style="height: 330px;width: 240px;">
+            
+                            <!-- <div class="btn-group dropleft ml-5" style="cursor: pointer; float: right;">
+                                <a  class="fa fa-ellipsis-v" data-toggle="dropdown"  aria-expanded="false">
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a  class="dropdown-item" (click)=row($event)><i class="fa fa-pencil mr-4"></i>Edit</a>
+                                    <a class="dropdown-item" (click)="deleteRow($event)"><i class="fa fa-trash-o mr-4"></i>Delete</a>
+            
+                                </div>
+                              </div> -->
+                            
+                          <figure><img src="{{x.file}}" class="img-responsive" alt=""  height="80px" width="70px">
+                         
+                        </figure>
+                          <h3><a href="#">{{x.projectname}}</a></h3>
+           
+                          <div class="sdf">{{x.to}}</div>
+                          <div class="des">{{x.projectleader}}</div>
+                        <div class="sdf">{{x.addteam}}</div>
+
+                            <!-- <button class="btn  btn-primary btn-sm msg1 " style="padding: 4px;" style="display: inline-block;"  (click)="addclient1()">Message</button>
+                            <button class="btn  btn-primary btn-sm msg " style="padding: 4px;" style="display: inline-block;" (click)="addclient1()">View Profile</button>
+             -->
+                        </div>
+                    </li>
+             
+                   
+                  </ul>
+                </div>
+                </div>
+              </section>
+            </div>
+
+
+
+
+
+
+
+
+
+
+                    
+                    <!-- </ng-template> -->
+            </div>
+            
+    </div>
+     
+</div>
+  
+
+
+      

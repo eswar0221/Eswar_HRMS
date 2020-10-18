@@ -1,0 +1,142 @@
+@media (min-width: 992px){
+.col-md-4 {
+    width: 33.33333333%;
+}}
+
+@media (min-width: 992px){
+.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+    float: left;
+}}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+.card {
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 0 0 1px rgba(63,63,68,.1);
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.card-user .image {
+    height: 110px;
+}
+
+.card .image {
+    width: 100%;
+    overflow: hidden;
+    height: 260px;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.card .image img {
+    width: 100%;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+.card-user .content {
+    min-height: 240px;
+}
+
+.card .content {
+    padding: 15px 15px 10px;
+}
+
+.card-user .author {
+    text-align: center;
+    text-transform: none;
+    margin-top: -70px;
+}
+
+.card .author {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: #1dc7ea;
+}
+
+.alert, .brand, .btn-simple, .h1, .h2, .h3, .h4, .h5, .h6, .navbar, .td-name, a, body, button.close, h1, h2, h3, h4, h5, h6, p, td {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-weight: 400;
+}
+a {
+    background-color: transparent;
+}
+
+.card-user .avatar.border-gray {
+    border-color: #eee;
+}
+
+.card-user .avatar {
+    width: 124px;
+    height: 124px;
+    border: 5px solid #fff;
+    position: relative;
+    margin-bottom: 15px;
+}
+.card .avatar {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.card-user .title {
+    line-height: 24px;
+}
+
+.card .title {
+    margin: 0;
+    color: #333;
+    font-weight: 300;
+}
+.h4, h4 {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.small, small {
+    font-size: 85%;
+}
+.card .description {
+    font-size: 14px;
+    color: #333;
+}
+
+.text-center {
+    text-align: center;
+}
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+
+

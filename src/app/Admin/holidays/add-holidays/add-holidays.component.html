@@ -1,0 +1,78 @@
+<!-- <div class="col-md-4">
+
+
+    <div class="form-group">
+        <label >Date Created<span style="color: red;font-size: 18px;">*</span></label><br>
+        <ng-datepicker [(ngModel)]="DateCreated" name="DateCreated" [ngClass]="abc"   [options]="options"></ng-datepicker>
+
+     
+    </div>
+</div> -->
+
+
+<div class="card rows">
+    <div class="card-body ">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows ">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Holiday</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="tmpe1()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            
+                <form  #DepartmentForm="ngForm" (ngSubmit)="DepartmentForm.form.valid">
+                <div class="col-md-6 ">
+                    <div class="form-group">
+                        <label for="Holiday_Name">Holiday_Name<span style="color: red;font-size: 18px;">*</span></label>
+                        <input type="text" id="Holiday_Name" name="Holiday_Name" placeholder="Enter Holiday_Name"
+                            class="form-control form_color" [(ngModel)]="ServiceData.Holiday_Name" #Holiday_Name="ngModel"
+                            [ngClass]="{'is-invalid': DepartmentForm.submitted && Holiday_Name.invalid}" required />
+                        <div class="invalid-feedback" *ngIf="DepartmentForm.submitted && Holiday_Name.invalid">
+                            <div *ngIf="Holiday_Name.errors.required">*Holiday_Name is Required</div>
+                        </div>
+                    </div>
+                </div>
+<!-- <div class="col-md-12">
+   
+    <div class="form-group">
+        <label for="Holiday_Date" >Holiday_Date<span style="color: red;font-size: 18px;">*</span></label><br>
+        <ng-datepicker [(ngModel)]="ServiceData.Holiday_Date" name="Holiday_Date"   [ngClass]="abc" id="Holiday_Date" required  [options]="options"></ng-datepicker>
+        <div *ngIf=" DepartmentForm.submitted && Holiday_Date.invalid&&(Holiday_Date.dirty||Holiday_Date.touched)" >
+            <div *ngIf="Holiday_Date.errors.required" class="text-danger">Holiday_Date field is Required.</div>
+            <div *ngIf="Holiday_Date.errors.minlength" class="text-danger">*Please enter a min 4 characters</div>
+            </div>
+     
+    </div>
+</div>  -->
+
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="from">Holiday_Date<span style="color: red;font-size: 18px;">*</span></label>
+        <input type="date" id="from" name="Holiday_Date" placeholder="Enter Holiday_Date "
+            class="form-control form_color" [(ngModel)]="ServiceData.Holiday_Date" #Holiday_Date="ngModel"
+            [ngClass]="{'is-invalid': DepartmentForm.submitted && Holiday_Date.invalid}" required />
+        <div class="invalid-feedback" *ngIf="DepartmentForm.submitted && Holiday_Date.invalid">
+            <div *ngIf="Holiday_Date.errors.required">Holiday_Date * is Required</div>
+        </div>
+    </div>
+</div>
+
+                <div class="col-md-12 text-center" >
+                    <button type="submit" (click)='register(ServiceData)' class="btn btn-primary btn-sm text-uppercase mt-5" >Create Holiday</button>
+                   
+                </div>
+                    </form>
+                        
+           
+
+
+
+</div></div>

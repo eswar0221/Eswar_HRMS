@@ -1,0 +1,87 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Designations</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #TaxForm="ngForm" (ngSubmit)="TaxForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row"  style="margin: 0px 190px;">
+
+                <div class="col-md-12 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Tax_Name">Tax Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Tax_Name" name="Tax_Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Tax_Name" #Tax_Name="ngModel" placeholder="Enter Tax_Name"
+                                [ngClass]="{'is-invalid': TaxForm.submitted && Tax_Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="TaxForm.submitted && Tax_Name.invalid">
+                                <div *ngIf="Tax_Name.errors.required">Tax_Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Tax_Percentage">Tax Percentage (%)<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Tax_Percentage" name="Tax_Percentage" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Tax_Percentage" #Tax_Percentage="ngModel" placeholder="Enter Tax_Percentage"
+                                [ngClass]="{'is-invalid': TaxForm.submitted && Tax_Percentage.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="TaxForm.submitted && Tax_Percentage.invalid">
+                                <div *ngIf="Tax_Percentage.errors.required">Tax_Percentage* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Status">Status</label>
+                            <select class="form-control form_color" placeholder="Select Status" id="Status"  name="Status" [(ngModel)]="ServiceData.Status">
+            
+                               
+                           
+                                 <option  value="Active">Active</option>
+                                 <option  value="In Active">In Active</option>
+                                
+                             </select>
+                            
+                        </div>
+                    </div>
+            
+                         
+            </div>
+                </div>
+                <!-- column right 2 -->
+              
+           
+                    
+              
+                <div class="col-md-12 text-center">
+                    <button type="submit"  (click)='register(ServiceData)'
+                    class="btn btn-primary btn-sm text-uppercase mt-5" >Add Tax</button>
+                  
+                </div>
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

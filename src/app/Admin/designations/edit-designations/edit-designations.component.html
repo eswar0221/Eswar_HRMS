@@ -1,0 +1,79 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Edit Designations</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #DesignationForm="ngForm" (ngSubmit)="DesignationForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row">
+
+                <div class="col-md-6 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Designation_Name">Designation Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Designation_Name" name="Designation_Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Designation_Name" #Designation_Name="ngModel" placeholder="Enter Designation_Name"
+                                [ngClass]="{'is-invalid': DesignationForm.submitted && Designation_Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="DesignationForm.submitted && Designation_Name.invalid">
+                                <div *ngIf="Designation_Name.errors.required">Designation_Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Departments">Departments</label>
+                            <select class="form-control form_color" placeholder="Select Departments" id="Departments"  name="Departments" [(ngModel)]="ServiceData.Departments">
+            
+                               
+                           
+                                 <option  value="Web Development">Web Development</option>
+                                 <option  value="IT Management">IT Management</option>
+                                 <option  value="Support Management">Support Management</option>
+                                 <option  value="Application Development">Application Development</option>
+                                 <option  value="Marketing">Marketing</option>
+                             </select>
+                            
+                        </div>
+                    </div>
+            
+                         
+            </div>
+                </div>
+                <!-- column right 2 -->
+              
+           
+                    
+              
+                <div class="col-md-12 text-center">
+                    <button type="submit"  (click)='update(ServiceData)'
+                    class="btn btn-primary btn-sm text-uppercase mt-5" >Update Designations</button>
+                  
+                </div>
+            </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

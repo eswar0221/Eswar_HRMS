@@ -1,0 +1,625 @@
+
+<!-- Root -->
+<div class="card">
+    <div class="card-body">
+        <h1>Dashboard</h1>
+           <!-- Grid -->
+           <div class="row mb-sm-8">
+
+                <!-- Grid Item -->
+                <div class="col-12">
+
+                    <!-- Card -->
+                    <div class="dt-card">
+
+                        <!-- Card Header -->
+                        <div class="dt-card__header">
+
+                            <!-- Card Heading -->
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title">this year leads</h3>
+                            </div>
+                            <!-- /card heading -->
+
+                        </div>
+                        <!-- /card header -->
+
+                        <!-- Card Body -->
+                        <div class="dt-card__body">
+
+
+                            <!-- Grid -->
+                            <div class="row">
+
+                                <!-- Grid Item -->
+                                <div class="col-xl-4 col-md-6 mb-8 mb-xl-0">
+
+                                    <div class="row no-gutters mb-5 border-bottom">
+                                        <div class="col-6">
+                                            <!-- Chart -->
+                                            <canvas id="chart-leads" width="200" height="200"
+                                                    class="ml-n5 mt-n4"></canvas>
+                                            <!-- /chart -->
+                                        </div>
+
+                                        <div class="col-6 d-flex">
+                                            <div class="d-flex flex-column justify-content-end align-items-end flex-fill">
+                                                <a href="javascript:void(0)" id="toggle-view"
+                                                   class="dt-avatar bg-primary shadow-lg mb-10">
+                                                    <i class="icon icon-smart-phone text-white"></i> </a>
+
+                                                <div class="text-dark display-3 font-weight-500 mb-5"><span
+                                                        id="lead-number">8,789</span>
+                                                    <span class="h3">Lead</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <ul class="dt-list dtdt-list-col-4">
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <span class="dot-shape dot-shape-lg bg-sky-blue mr-2"></span>
+                                                <span class="d-inline-block">IE &Edge</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <span class="dot-shape dot-shape-lg bg-danger mr-2"></span>
+                                                <span class="d-inline-block">Firefox</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <span class="dot-shape dot-shape-lg bg-orange mr-2"></span>
+                                                <span class="d-inline-block">Safari</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <span class="dot-shape dot-shape-lg bg-yellow mr-2"></span>
+                                                <span class="d-inline-block">Chrome</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <span class="dot-shape dot-shape-lg bg-success mr-2"></span>
+                                                <span class="d-inline-block">Opera</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-xl-4 col-md-6 px-xl-10 pl-md-10 mb-8 mb-md-0">
+                                    <div class="h4 mb-2">Top Countries</div>
+                                    <p class="mb-sm-6 text-light-gray">List of countries with the best figure
+                                                                       lead generation.</p>
+
+                                    <ul class="dt-list flex-column">
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <i class="flag-icon flag-icon-gb flag-icon-rounded flag-icon-lg mr-5"></i>
+                                                <span class="text-dark mr-1">United Kingdom</span>
+                                                <span class="ml-auto">27</span>
+                                            </div>
+                                        </li>
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <i class="flag-icon flag-icon-mq flag-icon-rounded flag-icon-lg mr-5"></i>
+                                                <span class="text-dark mr-1">France</span>
+                                                <span class="ml-auto">81</span>
+                                            </div>
+                                        </li>
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <i class="flag-icon flag-icon-in flag-icon-rounded flag-icon-lg mr-5"></i>
+                                                <span class="text-dark mr-1">India</span>
+                                                <span class="ml-auto">89</span>
+                                            </div>
+                                        </li>
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <i class="flag-icon flag-icon-de flag-icon-rounded flag-icon-lg mr-5"></i>
+                                                <span class="text-dark mr-1">Germany</span>
+                                                <span class="ml-auto">33</span>
+                                            </div>
+                                        </li>
+                                        <li class="dt-list__item">
+                                            <div class="d-flex align-items-center">
+                                                <i class="flag-icon flag-icon-es flag-icon-rounded flag-icon-lg mr-5"></i>
+                                                <span class="text-dark mr-1">Spain</span>
+                                                <span class="ml-auto">79</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- /grid item -->
+
+                                <!-- Grid Item -->
+                                <div class="col-xl-4">
+                                    <div class="h4 mb-2">Monthly Leads</div>
+                                    <p class="mb-sm-6 text-light-gray">Bar chart based on monthly lead
+                                                                       generation.</p>
+
+                                    <!-- Chart -->
+                                    <canvas id="monthly-leads-bar"></canvas>
+                                    <!-- /chart -->
+
+                                </div>
+                                <!-- /grid item -->
+
+                            </div>
+                            <!-- /grid -->
+
+
+                        </div>
+                        <!-- /card body -->
+
+                    </div>
+                    <!-- /card -->
+
+                </div>
+                <!-- /grid item -->
+
+                <!-- Grid Item -->
+                <div class="col-md-6">
+
+                    <!-- Card -->
+                    <div class="dt-card dt-card__full-height">
+
+                        <!-- Card Header -->
+                        <div class="dt-card__header">
+
+                            <!-- Card Heading -->
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title">Campaigns &amp; Results</h3>
+                            </div>
+                            <!-- /card heading -->
+
+                        </div>
+                        <!-- /card header -->
+
+                        <!-- Card Body -->
+                        <div class="dt-card__body pb-3">
+
+                            <!-- Campaigns Widget -->
+                            <div class="campaigns-widget">
+
+                                <!-- Grid -->
+                                <div class="row no-gutters pb-3 mb-1 border-bottom">
+
+                                    <!-- Grid Item -->
+                                    <div class="col-5 col-sm-6 text-truncate pr-2">
+                                        Campaign Name
+                                    </div>
+                                    <!-- /grid item -->
+
+                                    <!-- Grid Item -->
+                                    <div class="col-7 col-sm-6">
+                                        Leads & Conversion
+                                    </div>
+                                    <!-- /grid item -->
+
+                                </div>
+                                <!-- /grid -->
+
+                                <!-- Widget -->
+                                <div class="dt-widget dt-widget-hover-bg">
+
+                                    <!-- Widget Item -->
+                                    <div class="dt-widget__item">
+
+                                        <!-- Grid -->
+                                        <div class="row no-gutters">
+
+                                            <!-- Grid Item -->
+                                            <div class="col-5 col-sm-6 pr-2">
+                                                <p class="dt-widget__title mb-0 text-truncate">Take Your Card
+                                                                                               Anywhere...</p>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                            <!-- Grid Item -->
+                                            <div class="col-7 col-sm-6">
+                                                <div class="row no-gutters">
+                                                    <div class="col-sm-6 col-7">
+                      <span class="d-inline-block text-nowrap">
+                        <span class="text-dark">97</span> out of <span class="text-dark">283</span>
+                      </span>
+                                                    </div>
+                                                    <div class="col-sm-4 col-4 text-center">
+                                                        <span class="d-inline-block text-success">60%</span>
+                                                    </div>
+                                                    <div class="col-sm-2 col-1 text-right">
+                                                        <!-- Dropdown -->
+                                                        <div class="dropdown d-inline-block">
+                                                            <a class="dropdown-toggle no-arrow" href="#"
+                                                               data-toggle="dropdown"
+                                                               aria-haspopup="true" aria-expanded="false">
+                                                                <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                            </a>
+
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Another action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Something else
+                                                                                             here</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /dropdown -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                        </div>
+                                        <!-- /grid -->
+
+                                    </div>
+                                    <!-- /widgets item -->
+
+                                    <!-- Widget Item -->
+                                    <div class="dt-widget__item">
+
+                                        <!-- Grid -->
+                                        <div class="row no-gutters">
+
+                                            <!-- Grid Item -->
+                                            <div class="col-5 col-sm-6 pr-2">
+                                                <p class="dt-widget__title mb-0 text-truncate">Fire Your Fox
+                                                                                               With Safari</p>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                            <!-- Grid Item -->
+                                            <div class="col-7 col-sm-6">
+                                                <div class="row no-gutters">
+                                                    <div class="col-sm-6 col-7">
+                      <span class="d-inline-block text-nowrap">
+                        <span class="text-dark">83</span> out of <span class="text-dark">279</span>
+                      </span>
+                                                    </div>
+                                                    <div class="col-sm-4 col-4 text-center">
+                                                        <span class="d-inline-block text-success">58%</span>
+                                                    </div>
+                                                    <div class="col-sm-2 col-1 text-right">
+                                                        <!-- Dropdown -->
+                                                        <div class="dropdown d-inline-block">
+                                                            <a class="dropdown-toggle no-arrow" href="#"
+                                                               data-toggle="dropdown"
+                                                               aria-haspopup="true" aria-expanded="false">
+                                                                <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                            </a>
+
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Another action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Something else
+                                                                                             here</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /dropdown -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                        </div>
+                                        <!-- /grid -->
+
+                                    </div>
+                                    <!-- /widgets item -->
+
+                                    <!-- Widget Item -->
+                                    <div class="dt-widget__item">
+
+                                        <!-- Grid -->
+                                        <div class="row no-gutters">
+
+                                            <!-- Grid Item -->
+                                            <div class="col-5 col-sm-6 pr-2">
+                                                <p class="dt-widget__title mb-0 text-truncate">Build With
+                                                                                               Dom</p>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                            <!-- Grid Item -->
+                                            <div class="col-7 col-sm-6">
+                                                <div class="row no-gutters">
+                                                    <div class="col-sm-6 col-7">
+                      <span class="d-inline-block text-nowrap">
+                        <span class="text-dark">03</span> out of <span class="text-dark">147</span>
+                      </span>
+                                                    </div>
+                                                    <div class="col-sm-4 col-4 text-center">
+                                                        <span class="d-inline-block text-danger">02%</span>
+                                                    </div>
+                                                    <div class="col-sm-2 col-1 text-right">
+                                                        <!-- Dropdown -->
+                                                        <div class="dropdown d-inline-block">
+                                                            <a class="dropdown-toggle no-arrow" href="#"
+                                                               data-toggle="dropdown"
+                                                               aria-haspopup="true" aria-expanded="false">
+                                                                <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                            </a>
+
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Another action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Something else
+                                                                                             here</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /dropdown -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                        </div>
+                                        <!-- /grid -->
+
+                                    </div>
+                                    <!-- /widgets item -->
+
+                                    <!-- Widget Item -->
+                                    <div class="dt-widget__item">
+
+                                        <!-- Grid -->
+                                        <div class="row no-gutters">
+
+                                            <!-- Grid Item -->
+                                            <div class="col-5 col-sm-6 pr-2">
+                                                <p class="dt-widget__title mb-0 text-truncate">A New Way To Live
+                                                                                               Life</p>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                            <!-- Grid Item -->
+                                            <div class="col-7 col-sm-6">
+                                                <div class="row no-gutters">
+                                                    <div class="col-sm-6 col-7">
+                      <span class="d-inline-block text-nowrap">
+                        <span class="text-dark">00</span> out of <span class="text-dark">07</span>
+                      </span>
+                                                    </div>
+                                                    <div class="col-sm-4 col-4 text-center">
+                                                        <span class="d-inline-block text-danger">00%</span>
+                                                    </div>
+                                                    <div class="col-sm-2 col-1 text-right">
+                                                        <!-- Dropdown -->
+                                                        <div class="dropdown d-inline-block">
+                                                            <a class="dropdown-toggle no-arrow" href="#"
+                                                               data-toggle="dropdown"
+                                                               aria-haspopup="true" aria-expanded="false">
+                                                                <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                            </a>
+
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Another action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Something else
+                                                                                             here</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /dropdown -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                        </div>
+                                        <!-- /grid -->
+
+                                    </div>
+                                    <!-- /widgets item -->
+
+                                    <!-- Widget Item -->
+                                    <div class="dt-widget__item">
+
+                                        <!-- Grid -->
+                                        <div class="row no-gutters">
+
+                                            <!-- Grid Item -->
+                                            <div class="col-5 col-sm-6 pr-2">
+                                                <p class="dt-widget__title mb-0 text-truncate">Fire Your Fox
+                                                                                               With Safari</p>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                            <!-- Grid Item -->
+                                            <div class="col-7 col-sm-6">
+                                                <div class="row no-gutters">
+                                                    <div class="col-sm-6 col-7">
+                      <span class="d-inline-block text-nowrap">
+                        <span class="text-dark">83</span> out of <span class="text-dark">279</span>
+                      </span>
+                                                    </div>
+                                                    <div class="col-sm-4 col-4 text-center">
+                                                        <span class="d-inline-block text-success">58%</span>
+                                                    </div>
+                                                    <div class="col-sm-2 col-1 text-right">
+                                                        <!-- Dropdown -->
+                                                        <div class="dropdown d-inline-block">
+                                                            <a class="dropdown-toggle no-arrow" href="#"
+                                                               data-toggle="dropdown"
+                                                               aria-haspopup="true" aria-expanded="false">
+                                                                <i class="icon icon-vertical-more icon-fw text-light-gray"></i>
+                                                            </a>
+
+                                                            <div class="dropdown-menu dropdown-menu-right">
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Another action</a>
+                                                                <a class="dropdown-item"
+                                                                   href="javascript:void(0)">Something else
+                                                                                             here</a>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /dropdown -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /grid item -->
+
+                                        </div>
+                                        <!-- /grid -->
+
+                                    </div>
+                                    <!-- /widgets item -->
+
+                                </div>
+                                <!-- /widget -->
+
+                            </div>
+                            <!-- /campaigns widget -->
+
+                        </div>
+                        <!-- /card body -->
+
+                    </div>
+                    <!-- /card -->
+
+                </div>
+                <!-- /grid item -->
+
+                <!-- Grid Item -->
+                <div class="col-md-6">
+
+                    <!-- Card -->
+                    <div class="dt-card">
+
+                        <!-- Card Header -->
+                        <div class="dt-card__header mb-3">
+
+                            <!-- Card Heading -->
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title">Social Media Advertising</h3>
+                            </div>
+                            <!-- /card heading -->
+
+                        </div>
+                        <!-- /card header -->
+
+                        <!-- Card Body -->
+                        <div class="dt-card__body pb-2">
+
+                            <!-- Media -->
+                            <div class="media border-bottom py-5">
+
+                                <!-- Icon -->
+                                <i class="icon icon-facebook icon-4x mr-4 text-indigo"></i>
+                                <!-- /icon -->
+
+                                <!-- Media Body -->
+                                <div class="media-body">
+                                    <a class="dt-widget__title font-weight-500" href="javascript:void(0)">Facebook
+                                                                                                          Ads</a>
+                                    <p class="dt-widget__subtitle">63 Likes, 387 Shares</p>
+                                </div>
+                                <!-- /media body -->
+
+                                <span class="d-block min-w-60 text-center mr-xl-10 mr-md-2 mr-sm-10 ml-2">
+           <span class="d-block font-weight-500 mb-1 h4">$570</span>
+           <span class="d-block f-12">Spent</span>
+         </span>
+
+                                <span class="d-block min-w-60 text-center ml-xl-10">
+            <span class="d-block text-success mb-1 h5"><i class="icon icon-profit icon-fw"></i>+20%</span>
+            <span class="d-block f-12">up</span>
+          </span>
+
+                            </div>
+                            <!-- /media -->
+
+                            <!-- Media -->
+                            <div class="media border-bottom py-5">
+
+                                <!-- Icon -->
+                                <i class="icon icon-twitter icon-4x mr-4 text-sky-blue"></i>
+                                <!-- /icon -->
+
+                                <!-- Media Body -->
+                                <div class="media-body">
+                                    <a class="dt-widget__title font-weight-500" href="javascript:void(0)">Twitter
+                                                                                                          Ads</a>
+                                    <p class="dt-widget__subtitle">63 Likes, 387 Shares</p>
+                                </div>
+                                <!-- /media body -->
+
+                                <span class="d-block min-w-60 text-center mr-xl-10 mr-md-2 mr-sm-10 ml-2">
+           <span class="d-block font-weight-500 mb-1 h4">$813</span>
+           <span class="d-block f-12">Spent</span>
+         </span>
+
+                                <span class="d-block min-w-60 text-center ml-xl-10">
+            <span class="d-block text-success mb-1 h5"><i class="icon icon-profit icon-fw"></i>+20%</span>
+            <span class="d-block f-12">up</span>
+          </span>
+
+                            </div>
+                            <!-- /media -->
+
+                            <!-- Media -->
+                            <div class="media py-5">
+
+                                <!-- Icon -->
+                                <i class="icon icon-instagram icon-4x mr-4 text-light-pink"></i>
+                                <!-- /icon -->
+
+                                <!-- Media Body -->
+                                <div class="media-body">
+                                    <a class="dt-widget__title font-weight-500" href="javascript:void(0)">Instagram
+                                                                                                          Ads</a>
+                                    <p class="dt-widget__subtitle">63 Likes, 387 Shares</p>
+                                </div>
+                                <!-- /media body -->
+
+                                <span class="d-block min-w-60 text-center mr-xl-10 mr-md-2 mr-sm-10 ml-2">
+             <span class="d-block font-weight-500 mb-1 h4">$2,813</span>
+             <span class="d-block f-12">Spent</span>
+           </span>
+
+                                <span class="d-block min-w-60 text-center ml-xl-10">
+          <span class="d-block text-success mb-1 h5"><i class="icon icon-profit icon-fw"></i>+20%</span>
+          <span class="d-block f-12">up</span>
+        </span>
+
+                            </div>
+                            <!-- /media -->
+
+                        </div>
+                        <!-- /card body -->
+
+                    </div>
+                    <!-- /card -->
+
+                </div>
+                <!-- /grid item -->
+
+            </div>
+            <!-- /grid -->
+
+    </div>
+</div>
+
+    <!-- /root -->

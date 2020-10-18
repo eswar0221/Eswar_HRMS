@@ -1,0 +1,30 @@
+.fa fa-calendar {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    pointer-events: none;
+    font-size: 1.5em;
+}
+.right-inner-addon {
+    position: relative;
+}
+
+/* .cal .fa-calendar{
+    position: relative;
+    top: -31px;
+    right: -253px;
+    font-size: 18px;
+} */
+[type="date"] {
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+  label{
+      float: left;
+  }

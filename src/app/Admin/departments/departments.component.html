@@ -1,0 +1,124 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+
+
+
+
+            <div class="row rows" *ngIf="tmp!=false; else abc ;">
+                <div class="col-md-4" >
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Department</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                     <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="tmpe()">+ Add New Department</button>
+                </div>
+
+<div>
+    <table  class="table table-striped " >
+        <thead class="text-white bg-primary" >
+
+
+
+        <tr style="color: aliceblue; ">
+            <th style="color: aliceblue;width:830px;">
+                S No
+            </th>
+            <th style="color: aliceblue;width:830px;">
+                Department
+            </th>
+            <th style="color: aliceblue;">
+               Action
+            </th>
+          
+        </tr>
+        </thead>
+      
+        <tbody>
+          
+            <!-- {{clients| json}} -->
+        <tr *ngFor="let item of Depar | filter:searchText;let i=index ">
+ <td>{{i+1}}</td>
+            <td class="case" >{{item.department}}</td>    
+
+        <td >
+            <div class="btn-group dropleft ml-5" style="cursor: pointer;">
+                <a  class="fa fa-ellipsis-v" data-toggle="dropdown"  aria-expanded="false">
+                </a>
+                <div class="dropdown-menu">
+                    <a  class="dropdown-item" (click)="row(item.department)"><i class="fa fa-pencil mr-4"></i>Edit</a>
+                    <a class="dropdown-item" (click)="deleteRow(item.department)"><i class="fa fa-trash-o mr-4"></i>Delete</a>
+
+                </div>
+              </div>
+           </td>
+        </tr>       
+     </tbody>    
+    </table>
+</div>
+</div>
+ 
+<ng-template #abc>
+
+<div class="card rows">
+    <div class="card-body ">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows ">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Department</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="tmpe1()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            
+                <form  #DepartmentForm="ngForm" (ngSubmit)="DepartmentForm.form.valid">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="department">Department<span style="color: red;font-size: 18px;">*</span></label>
+                        <input type="text" id="department" name="department" placeholder="Enter Department"
+                            class="form-control form_color" [(ngModel)]="ServiceData.department" #department="ngModel"
+                            [ngClass]="{'is-invalid': DepartmentForm.submitted && department.invalid}" required />
+                        <div class="invalid-feedback" *ngIf="DepartmentForm.submitted && department.invalid">
+                            <div *ngIf="department.errors.required">*department is Required</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 text-center" >
+                    <button type="submit" (click)='register(ServiceData)' class="btn btn-primary btn-sm text-uppercase mt-5" >Add Department</button>
+                   
+                </div>
+                    </form>
+                        
+           
+
+
+
+</div></div>
+
+
+</ng-template>
+
+
+
+
+
+
+</div></div>

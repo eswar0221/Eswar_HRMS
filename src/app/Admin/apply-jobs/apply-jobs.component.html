@@ -1,0 +1,132 @@
+
+<div class="card rows">
+    <div class="card-body ">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows ">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Apply Job</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <form  #applyjobForm="ngForm" (ngSubmit)="applyjobForm.form.valid" >
+                    <!--this is for no data found table-->
+            <div class="row   shadow p-3 mb-5 bg-white rounded" style="width: 600px;margin-left: 200px;margin-right: auto;">
+
+                <div class="col-md-12 text-center middle">
+                        <div class=" row">
+                    <!--Category Name-->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Job_Id">Job_Id<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Job_Id" name="Job_Id" placeholder="Enter Job_Id"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Job_Id" #Job_Id="ngModel" disabled
+                                [ngClass]="{'is-invalid': applyjobForm.submitted && Job_Id.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="applyjobForm.submitted && Job_Id.invalid">
+                                <div *ngIf="Job_Id.errors.required">Job_Id* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-12">
+                        <div class="form-group"> 
+                            <label for="Name">Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Name" name="Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Name" #Name="ngModel" placeholder="Enter Name"
+                                [ngClass]="{'is-invalid': applyjobForm.submitted && Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="applyjobForm.submitted && Name.invalid">
+                                <div *ngIf="Name.errors.required"> Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                  
+             
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Email">Email Address<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Email" name="Email" placeholder="Enter Email"
+                                class="form-control form_color" [(ngModel)]="ServiceData.Email" #Email="ngModel"
+                                [ngClass]="{'is-invalid': applyjobForm.submitted && Email.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="applyjobForm.submitted && Email.invalid">
+                                <div *ngIf="Email.errors.required">Email* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <div class="form-group"> 
+                            <label for="Phone">Phone<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Phone" name="Phone" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Phone" #Phone="ngModel" placeholder="Enter Phone"
+                                [ngClass]="{'is-invalid': applyjobForm.submitted && Phone.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="applyjobForm.submitted && Phone.invalid">
+                                <div *ngIf="Phone.errors.required"> Phone* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Message">Message<span style="color: red;font-size: 18px;"></span></label>
+
+                            <textarea name="Message"  id="Message" cols="10" rows="4"  class="form-control form_color"  #Message="ngModel" [(ngModel)]="ServiceData.Message" ></textarea>
+      
+                            <!-- <div class="invalid-feedback" *ngIf="addnewjobForm.submitted && leavereason.invalid">
+                                <div *ngIf="leavereason.errors.required">leavereason is Required</div>
+                            </div> -->
+                        </div>
+                    </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                            <label for="UploadFiles">Upload your CV<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="file" class="input form-control" name="file" (change)="incomingFile($event)"
+                            ngModel required />
+                            </div>
+                            </div>
+                            <!-- [(ngModel)]="ServiceData.Status" #Status="ngModel" -->
+                            <!-- <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="status">status<span style="color: red;font-size: 18px;">*</span></label>
+                                    <select class="form-control form_color" name="status" id="status" [(ngModel)]="ServiceData.status">
+                                        <option value="Active">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                        
+                                     </select>
+                                    
+                                </div>
+                            </div> -->
+            </div>
+                </div>
+                <!-- column right 2 -->
+            
+            
+            </div>
+
+
+<br>
+            
+
+      <div class="col-md-12 text-center" >
+        <button type="submit" (click)='Send(ServiceData)' class="btn btn-primary btn-sm text-uppercase mt-5" >Send Application</button>
+       
+    </div>
+        </form>
+            
+        
+            
+    </div>
+     
+</div>

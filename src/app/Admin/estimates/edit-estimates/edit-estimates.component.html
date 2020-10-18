@@ -1,0 +1,418 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                  
+                        <h1>Edit Estimate</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                   
+                    <i (click)="tmpe1()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i>
+
+                </div>
+
+            </div>
+         
+            <br>
+<div class="content container-fluid">
+       
+                 
+            
+            <div class="p-2" style="height:500px" >
+<div class="row">
+    <!-- (ngSubmit)="setData(estimatesForm.value)" -->
+    <form  #expensives="ngForm" (ngSubmit)="expensives.form.valid" >
+
+                 <div class="row">   
+                <div class="col-lg-4"  >
+                    <div class="card" style="padding: 15px;" >
+
+
+                <div class="row" style="margin-left: -5px;">
+                  
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Estimate_ID">Estimate ID<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="email" id="Estimate_ID" name="Estimate_ID" placeholder="Enter Estimate_ID"
+                                class="form-control form_color" formControlName="Estimate_ID" 
+                                [ngClass]="{'is-invalid': estimatesForm.submitted && Estimate_ID.invalid}" required />
+                           
+                            <div *ngIf="estimatesForm.submitted && Estimate_ID.invalid&&(Estimate_ID.dirty||Estimate_ID.touched)" >
+                                <div *ngIf="Estimate_ID.errors.required" class="text-danger">Estimate_ID field is Required.</div>
+                                </div>
+                        </div>
+                    </div>    -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Estimate_ID">Estimate_ID<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Estimate_ID" name="Estimate_ID" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Estimate_ID" #Estimate_ID="ngModel" placeholder="Enter Ticket Subject"
+                                [ngClass]="{'is-invalid': expensives.submitted && Estimate_ID.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="expensives.submitted && Estimate_ID.invalid">
+                                <div *ngIf="Estimate_ID.errors.required">Estimate_ID* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+              
+                <!-- <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Client ">Client <span style="color: red;font-size: 18px;">*</span></label>
+
+                        <select class="form-control form_color"  formControlName="Client"  name="Client"  > 
+                            
+                            <option  >advertising</option>
+                            <option>Vehicle Expenses</option>
+                            <option>Contractors</option>
+                         
+                            
+                        </select>
+                        <div class="invalid-feedback" *ngIf="estimatesForm.submitted && Client.invalid">
+                            <div *ngIf="Client.errors.required">Category Required</div>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="Client">Client<span style="color: red;font-size: 18px;">*</span></label>
+                        <input type="text" id="Client" name="Client" class="form-control form_color"
+                            [(ngModel)]="ServiceData.Client" #Client="ngModel" placeholder="Enter Ticket Subject"
+                            [ngClass]="{'is-invalid': expensives.submitted && Client.invalid}" required />
+                        <div class="invalid-feedback" *ngIf="expensives.submitted && Client.invalid">
+                            <div *ngIf="Client.errors.required">Client* is Required</div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Project">Project<span style="color: red;font-size: 18px;">*</span></label>
+
+                            <select class="form-control form_color" id="Project"  formControlName="Project"  name="Project" > 
+                                
+                                <option  >advertising</option>
+                                <option>Vehicle Expenses</option>
+                               
+                                <option>Employee Benefits</option>
+                           
+                                
+                            </select>
+                            <div class="invalid-feedback" *ngIf="estimatesForm.submitted && Project.invalid">
+                                <div *ngIf="Project.errors.required">Project Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Project">Project<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Project" name="Project" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Project" #Project="ngModel" placeholder="Enter Ticket Subject"
+                                [ngClass]="{'is-invalid': expensives.submitted && Project.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="expensives.submitted && Project.invalid">
+                                <div *ngIf="Project.errors.required">Project* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Client_Address">Client Address<span style="color: red;font-size: 18px;">*</span></label>
+                            <textarea type="text" id="Client_Address" name="Client_Address" placeholder="Client_Address"
+                            class="form-control form_color" formControlName="Client_Address"
+                           
+                            [ngClass]="{'is-invalid': estimatesForm.submitted && Client_Address.invalid}" required ></textarea>
+                           
+                            <div *ngIf="estimatesForm.submitted && Client_Address.invalid&&(Client_Address.dirty||Client_Address.touched)" >
+                                <div *ngIf="Client_Address.errors.required" class="text-danger">Client_Address field is Required.</div>
+                                </div>
+                        </div>
+                    </div> -->
+  <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Client_Address">Client_Address<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Client_Address" name="Client_Address" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Client_Address" #Client_Address="ngModel" placeholder="Enter Ticket Subject"
+                                [ngClass]="{'is-invalid': expensives.submitted && Client_Address.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="expensives.submitted && Client_Address.invalid">
+                                <div *ngIf="Client_Address.errors.required">Client_Address* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Billing_Address ">Billing Address <span style="color: red;font-size: 18px;">*</span></label>
+
+                            <textarea type="text" id="Billing_Address" name="Billing_Address" placeholder="Billing_Address"
+                            class="form-control form_color" formControlName="Billing_Address"
+                        
+                            [ngClass]="{'is-invalid': estimatesForm.submitted && Billing_Address.invalid}" required ></textarea>
+                            <div class="invalid-feedback" *ngIf="estimatesForm.submitted && Billing_Address.invalid">
+                                <div *ngIf="Billing_Address.errors.required">Billing_Address* Required</div>
+                            </div>
+                        </div>
+                    </div> -->
+  <div class="col-md-12">
+                              <div class="form-group">
+                            <label for="Billing_Address">Billing_Address<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Billing_Address" name="Billing_Address" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Billing_Address" #Billing_Address="ngModel" placeholder="Enter Ticket Subject"
+                                [ngClass]="{'is-invalid': expensives.submitted && Billing_Address.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="expensives.submitted && Billing_Address.invalid">
+                                <div *ngIf="Billing_Address.errors.required">Billing_Address* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+                </div>
+
+                  
+                </div>  
+             
+               
+    
+        <div class="col-lg-8" style="margin-left: -10px;margin-top:-10px;padding: 10px;">
+            <div class="card" style="padding: 15px;" >
+              
+           
+                  <div class="row">               
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="Estimate_Date ">Estimate Date <span style="color: red;font-size: 18px;">*</span></label>
+
+                            <input type="date" id="Estimate_Date"  placeholder="Enter Estimate_Date "
+                                    class="form-control form_color" name="Estimate_Date"  [(ngModel)]="ServiceData.Estimate_Date"
+                                    #Estimate_Date="ngModel"  [ngClass]="{'is-invalid': expensives.submitted && Estimate_Date.invalid}" required />
+                             
+                                
+                            <div class="invalid-feedback" *ngIf="expensives.submitted && Estimate_Date.invalid">
+                                <div *ngIf="Estimate_Date.errors.required">Estimate_Date Required</div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Expiry_Date">Expiry Date <span style="color: red;font-size: 18px;">*</span></label>
+
+                                <input type="date" id="Expiry_Date" placeholder="Enter Expiry_Date " #Expiry_Date="ngModel"
+                                    class="form-control form_color" name="Expiry_Date" [(ngModel)]="ServiceData.Expiry_Date"
+                                    [ngClass]="{'is-invalid': expensives.submitted && Expiry_Date.invalid}" required />
+                                <div class="invalid-feedback" *ngIf="expensives.submitted && Expiry_Date.invalid">
+                                    <div *ngIf="Expiry_Date.errors.required">Expiry_Date Required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="registerEmail">Email<span style="color: red;font-size: 18px;">*</span></label>
+                                <input type="email" id="registerEmail" name="email" placeholder="Enter Email"
+                                    class="form-control form_color"    #email="ngModel" [(ngModel)]="ServiceData.email" email
+                                    [ngClass]="{'is-invalid': expensives.submitted && email.invalid}" required />
+                               
+                                <div *ngIf="expensives.submitted && email.invalid&&(email.dirty||email.touched)" >
+                                    <div *ngIf="email.errors.required" class="text-danger">Email field is Required.</div>
+                                    <div *ngIf="email.errors.email" class="text-danger">*Please enter a valid email</div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="vat">Tax(%)<span style="color: red;font-size: 18px;">*</span></label>
+
+                                <input type="text" id="vat" name="vat" placeholder="Enter Tax % "
+                                    class="form-control form_color"  [(ngModel)]="ServiceData.vat" #vat="ngModel"
+                                    [ngClass]="{'is-invalid': expensives.submitted && vat.invalid}" required />
+                                <div class="invalid-feedback" *ngIf="expensives.submitted && vat.invalid">
+                                    <div *ngIf="vat.errors.required">vat Required</div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                    </div>
+                                         
+                 
+            
+    
+                <div class="row no-gutters">
+                    <div class="col-md-12">
+                            <div class="row justify-content-center">
+                              <div  class="col-md-12">
+
+                                    <section  >
+                                        <!-- <div formArrayName="Product"> -->
+                                            <!-- <div  *ngFor="let ServiceData of estimatesForm.get('Product').controls; let pointIndex=index" [formGroupName]="pointIndex"> -->
+                                    <div class="row" style="margin-left: -20px;">
+                                     
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="itemname">itemname <span style="color: red;font-size: 18px;">*</span></label>
+                                                <input type="text" id="itemname" name="itemname" placeholder="Enter itemname" 
+                                                    class="form-control form_color"   [(ngModel)]="ServiceData.itemname" #itemname="ngModel"
+                                                    [ngClass]="{'is-invalid': expensives.submitted && itemname.invalid}" required />
+                                               
+                                                <div *ngIf="expensives.submitted && email.invalid&&(itemname.dirty||itemname.touched)" >
+                                                    <div *ngIf="itemname.errors.required" class="text-danger">itemname field is Required.</div>
+                                                  
+                                                    </div>
+                                            </div>
+                                        </div>   
+                                      
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="itemcost">itemcost<span style="color: red;font-size: 18px;">*</span></label>
+                                                <input type="text"  id="itemcost" name="itemcost" placeholder="Enter Estimate_ID"  [(ngModel)]="ServiceData.itemcost"
+                                                    class="form-control form_color" #itemcost="ngModel"
+                                                    [ngClass]="{'is-invalid': expensives.submitted && itemcost.invalid}" required />
+                                               
+                                                <div *ngIf="expensives.submitted && itemcost.invalid&&(itemcost.dirty||itemcost.touched)" >
+                                                    <div *ngIf="itemcost.errors.required" class="text-danger">itemcot field is Required.</div>
+                                               
+                                                    </div>
+                                            </div>
+                                        </div>     <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="itemquan">itemquan<span style="color: red;font-size: 18px;">*</span></label>
+                                                <input type="text" id="itemquan" name="itemquan" placeholder="Enter itemquan"  [(ngModel)]="ServiceData.itemquan"
+                                                    class="form-control form_color"  (input)="getName(ServiceData)" #itemquan="ngModel"
+                                                    [ngClass]="{'is-invalid': expensives.submitted && itemquan.invalid}" required />
+                                               
+                                                <div *ngIf="expensives.submitted && itemquan.invalid&&(itemquan.dirty||itemquan.touched)" >
+                                                    <div *ngIf="itemquan.errors.required" class="text-danger">itemquan field is Required.</div>
+                                                 
+                                                    </div>
+                                            </div>
+                                        </div>   
+                                        <!-- <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="price">price<span style="color: red;font-size: 18px;">*</span></label>
+                                                <input type="text" id="price" name="price" placeholder="Enter price"   [(ngModel)]="ServiceData.price"
+                                                    class="form-control form_color" formControlName="price"  (blur)="getName(pointIndex)" #price="ngModel"
+                                                    [ngClass]="{'is-invalid': expensives.submitted && price.invalid}" required />
+                                        
+                                               
+                                                </div>
+                                        </div>    -->
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="price">Price<span style="color: red;font-size: 18px;">*</span></label>
+                                                <input type="text" id="price" name="price" class="form-control form_color" (blur)="cals(ServiceData)"
+                                                    [(ngModel)]="ServiceData.price" #price="ngModel" placeholder="Enter Ticket Subject"
+                                                    [ngClass]="{'is-invalid': expensives.submitted && price.invalid}" required />
+                                                <div class="invalid-feedback" *ngIf="expensives.submitted && price.invalid">
+                                                    <div *ngIf="price.errors.required">Price* is Required</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-1">
+                  <a (click)="deleteLINES(pointIndex,'estimatesForm')"> <i style="color: red;cursor: pointer; margin-top: 30px;" class="fa fa-trash"></i></a>
+                                             </div> -->
+                                    </div>
+                                <!-- </div> -->
+                        <!-- </div>   -->
+                     
+                                 
+                
+             <!-- <button type="button" class="btn btn-sm ml-2" (click)="addProduct1('estimatesForm')" style="background-color: #2f3e65 ;color: white;">Add row</button> -->
+                              
+                            
+<br><br>
+
+<div class="row">
+
+                            <div class="col-md-4 ">
+                                <div class="form-group">
+                                    <label for="subtotal">subtotal<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text"  id="subtotal" name="subtotal" placeholder="Enter subtotal"
+                                        class="form-control form_color"  [(ngModel)]="ServiceData.subtotal" #subtotal="ngModel"
+                                        [ngClass]="{'is-invalid': expensives.submitted && subtotal.invalid}" required />
+                                   
+                                    <div *ngIf="expensives.submitted && subtotal.invalid&&(subtotal.dirty||subtotal.touched)" >
+                                        <div *ngIf="subtotal.errors.required" class="text-danger">subtotal field is Required.</div>
+                                        </div>
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="col-md-4" >
+                                <div class="form-group">
+                                    <label for="vatper">Tax<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input  id="vatper" name="vatper" placeholder="Enter vatper"
+                                        class="form-control form_color" formControlName="vatper"
+                                        required />
+                                   
+                                    <div *ngIf="expensives.submitted && vatper.invalid&&(vatper.dirty||vatper.touched)" >
+                                        <div *ngIf="vatper.errors.required" class="text-danger">vatper field is Required.</div>
+                                        </div>
+                                </div>
+                            </div> -->
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="vatper">Tax<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="vatper" name="vatper" class="form-control form_color"
+                                        [(ngModel)]="ServiceData.vatper" #vatper="ngModel" placeholder="Enter Ticket Subject"
+                                        [ngClass]="{'is-invalid': expensives.submitted && vatper.invalid}" required />
+                                    <div class="invalid-feedback" *ngIf="expensives.submitted && vatper.invalid">
+                                        <div *ngIf="vatper.errors.required">Tax* is Required</div>
+                                    </div>
+                                </div>
+                            </div>
+ 
+                            <div class="col-md-4" >
+                                <div class="form-group">
+                                    <label for="total">Grand Total<span style="color: red;font-size: 18px;">*</span></label>
+                                    <input type="text" id="total" name="total" placeholder="Enter total" [(ngModel)]="ServiceData.total" #total="ngModel"
+                                        class="form-control form_color"   
+                                        [ngClass]="{'is-invalid': expensives.submitted && total.invalid}" required />
+                                   
+                                            <div class="invalid-feedback" *ngIf="expensives.total && total.invalid">
+                                            <div *ngIf="total.errors.required">total* is Required</div>
+                                        </div>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select class="form-control form_color" placeholder="Select Status"  name="status" [(ngModel)]="ServiceData.status">
+                                 <!-- <option value="open">open</option> -->
+                                 
+                                 <option value="Pending">Pending</option>
+                                 <option value="Close">Close</option>
+                           
+                                        </select>
+                            
+                        </div>
+                    </div>                  
+                    </section> 
+               
+                              </div>
+                            </div>    
+                    </div>
+                </div>
+                               
+               
+  <button  type="submit" (click)="asset(expensives.value)" class="btn btn-md"  style="background-color: #2f3e65 ;color: white;">Save</button>  
+                     
+               
+            </div>
+        </div></div>
+                </form>
+            </div>
+            </div>
+          
+          
+        
+
+             
+    
+
+
+
+</div>
+  
+  <!-- top End -->
+</div></div>

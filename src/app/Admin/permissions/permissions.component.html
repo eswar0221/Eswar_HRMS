@@ -1,0 +1,912 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">  
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Add Permissions</h1>
+                </div>
+                <div class="col-md-5"></div> 
+                <div class="col-md-3">
+                    <!-- <i (click)="back()"  class="fa fa-times-circle  text-primary" style="float: right;font-size:33px;cursor: pointer;" aria-hidden="true"></i> -->
+                    <!-- <a ><i style="font-size: 16px;" class="icon icon-apps mr-4"></i></a> -->
+                </div>
+            </div>
+            <!--second row-->
+            <div class="row">
+              
+            </div>
+            <div class="clearfix">&nbsp;</div>
+                <!-- <form  #DesignationForm="ngForm" (ngSubmit)="DesignationForm.form.valid" > -->
+                    <!--this is for no data found table-->
+         
+
+                <!-- <div class="col-md-12 text-center middle"> -->
+                        <div class=" row">
+
+
+                            <div class="card mt-3" *ngIf="opadmin" style="    padding-top: 2%; width: 100%; margin: auto; padding: 2%;">
+                                <div class="row">
+                                  <div class="col-3">
+                                     <button class="btn btn-sm btn-info" (click)="manage()">HR & Manager</button>
+                                  </div>
+                                  <!-- <div class="col-3">
+                                    <button class="btn btn-sm btn-info" (click)="hr()">HR</button>
+                                  </div>
+                                  <div class="col-3">
+                                    <button class="btn btn-sm btn-info" (click)="Engineer()">Engineering</button>
+                                  </div> -->
+                                  <div class="col-3">
+                                   <button class="btn btn-sm btn-info" (click)="emp()">Employee</button>
+                                  </div>
+                                </div>
+                           
+                           
+                                <!-- management -->
+                                <div class="alert alert-warning mt-2" role="alert" *ngIf="alert_success">
+                                 <strong>Successfully!</strong> Data submitted.
+                               </div>
+                           
+                                <div class="card mt-3" style="    margin-top: 5%; background-color: beige; padding: 2%;" *ngIf="managees">
+                                  <div class="text-center">Management</div>
+                                     
+                                  <form #HrmanpForm="ngForm" *ngIf ="dataem1">
+                                  
+                                    <table>
+                                          <tr>
+                                            <td>Dashboard</td>
+                                            <td>
+             <input type="checkbox" id="choosecert"  name="Dashboard"   class="form-control form_color" [(ngModel)]="hrmang.Dashboard" #Dashboard="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employee</td>
+                                            <td>
+                     <input type="checkbox" id="choosecert"  name="Employee"   class="form-control form_color" [(ngModel)]="hrmang.Employee" #Employee="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Estimates</td>
+                                            <td>
+                     <input type="checkbox" id="choosecert"  name="Estimates"   class="form-control form_color" [(ngModel)]="hrmang.Estimates" #Estimates="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Invoices</td>
+                                            <td>
+                       <input type="checkbox" id="choosecert"  name="Invoices"   class="form-control form_color" [(ngModel)]="hrmang.Invoices" #Invoices="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Expenses</td>
+                                            <td>
+                  <input type="checkbox" id="choosecert"  name="Expenses"   class="form-control form_color" [(ngModel)]="hrmang.Expenses" #Expenses="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                      
+                                        <tr>
+                                            <td>Payments</td>
+                                            <td>
+                     <input type="checkbox" id="choosecert"  name="Payments"   class="form-control form_color" [(ngModel)]="hrmang.Payments" #Payments="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Provident_Fund</td>
+                                            <td>
+                  <input type="checkbox" id="choosecert"  name="Provident_Fund"   class="form-control form_color" [(ngModel)]="hrmang.Provident_Fund" #Provident_Fund="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Taxes</td>
+                                            <td>
+                    <input type="checkbox" id="choosecert"  name="Taxes"   class="form-control form_color" [(ngModel)]="hrmang.Taxes" #Taxes="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Expenses_Reports</td>
+                                            <td>
+                   <input type="checkbox" id="choosecert"  name="Expenses_Reports"   class="form-control form_color" [(ngModel)]="hrmang.Expenses_Reports" #Expenses_Reports="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Invoice_Report</td>
+                                            <td>
+                       <input type="checkbox" id="choosecert"  name="Invoice_Report"   class="form-control form_color" [(ngModel)]="hrmang.Invoice_Report" #Invoice_Report="ngModel"/>
+
+                                            </td>
+                                        </tr>
+ 
+                                        <!-- <tr>
+                                            <td>Department</td>
+                                            <td>
+                          <input type="checkbox" id="choosecert"  name="Department"   class="form-control form_color" [(ngModel)]="hrmang.Department" #Department="ngModel"/>
+
+                                            </td>
+                                        </tr> -->
+                                        <tr>
+                                            <td>Holidays</td>
+                                            <td>
+                              <input type="checkbox" id="choosecert"  name="Holidays"   class="form-control form_color" [(ngModel)]="hrmang.Holidays" #Holidays="ngModel"/>
+
+                                            </td>
+                                        </tr> <tr>
+                                            <td>Dummy</td>
+                                            <td>
+                           <input type="checkbox" id="choosecert"  name="Dummy"   class="form-control form_color" [(ngModel)]="hrmang.Dummy" #Dummy="ngModel"/>
+
+                                            </td>
+                                        </tr>
+
+                                        
+                                        <tr>
+                                            <td>Designations</td>
+                                            <td>
+            <input type="checkbox" id="choosecert"  name="Designations"   class="form-control form_color" [(ngModel)]="hrmang.Designations" #Designations="ngModel"/>
+
+                                            </td>
+                                        </tr> <tr>
+                                            <td>Projects</td>
+                                            <td>
+                            <input type="checkbox" id="choosecert"  name="Projects"   class="form-control form_color" [(ngModel)]="hrmang.Projects" #Projects="ngModel"/>
+
+                                            </td>
+                                        </tr> 
+                                       
+                                        <tr>
+                                            <td>Clients</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Clients"   class="form-control form_color" [(ngModel)]="hrmang.Clients" #Clients="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Leads</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Leads"   class="form-control form_color" [(ngModel)]="hrmang.Leads" #Leads="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Managed_Jobs</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Managed_Jobs"   class="form-control form_color" [(ngModel)]="hrmang.Managed_Jobs" #Managed_Jobs="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Applied_Jobs</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Applied_Jobs"   class="form-control form_color" [(ngModel)]="hrmang.Applied_Jobs" #Applied_Jobs="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employee_Salary</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Employee_Salary"   class="form-control form_color" [(ngModel)]="hrmang.Employee_Salary" #Employee_Salary="ngModel"/>
+
+                                            </td>
+                                        </tr>
+  <!-- Dashboard      Employee        Estimates  Invoices    Expenses    Payments  Provident_Fund  Taxes  Expenses_Reports  Invoice_Report  Department Holidays Dummy  Designations
+    Projects   Clients  Leads   Managed_Jobs Applied_Jobs  Employee_Salary Payslip Leave_Request  Users  Timing_Sheet  Tickets  Email    Assets  Events Activities Assets
+                                     Profile    Forgot_Password  -->
+                                        <tr>
+                                            <td>Payslip</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Payslip"   class="form-control form_color" [(ngModel)]="hrmang.Payslip" #Payslip="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Leave_Request</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Leave_Request"   class="form-control form_color" [(ngModel)]="hrmang.Leave_Request" #Leave_Request="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Users</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Users"   class="form-control form_color" [(ngModel)]="hrmang.Users" #Users="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Timing_Sheet</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Timing_Sheet"   class="form-control form_color" [(ngModel)]="hrmang.Timing_Sheet" #Timing_Sheet="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Email"   class="form-control form_color" [(ngModel)]="hrmang.Email" #Email="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Assets</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Assets"   class="form-control form_color" [(ngModel)]="hrmang.Assets" #Assets="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Profile</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Profile"   class="form-control form_color" [(ngModel)]="hrmang.Profile" #Profile="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Forgot_Password</td>
+                                        <td>
+                               <input type="checkbox" id="choosecert"  name="Forgot_Password"   class="form-control form_color" [(ngModel)]="hrmang.Forgot_Password" #Forgot_Password="ngModel"/>
+        
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Holidays</td>
+                                        <td>
+                                            <input type="checkbox" id="choosecert"  name="Holidays"   class="form-control form_color" [(ngModel)]="hrmang.Holidays" #Holidays="ngModel"/>
+        
+                                        </td>
+                                        </tr>
+        
+                                        <tr>
+                                            <td>Tickets</td>
+                                            <td>
+                                              <input type="checkbox" id="choosecert" name="Tickets" style="width: 20px" class="form-control form_color" [(ngModel)]="hrmang.Tickets" #Tickets="ngModel"/>
+        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Activities</td>
+                                            <td>
+                                             <input type="checkbox" id="choosecert" name="Activities" style="width: 20px" class="form-control form_color" [(ngModel)]="hrmang.Activities" #Activities="ngModel"/>
+        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Events</td>
+                                            <td>
+                                           <input type="checkbox" id="choosecert" name="Events" style="width: 20px" class="form-control form_color" [(ngModel)]="hrmang.Events" #Events="ngModel"/>
+        
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contacts</td>
+                                            <td>
+                                           <input type="checkbox" id="choosecert" name="Contact" style="width: 20px" class="form-control form_color" [(ngModel)]="hrmang.Contact" #Contact="ngModel"/>
+        
+                                            </td>
+                                        </tr>
+                                   <!-- <button  type="button" class="btn btn-lg btn-primary " (click)="mangement_select_navbar(hrmang)">Ok</button> -->
+
+                                        <!-- <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr> -->
+                                       </table>
+                                   <!-- <div class="form-check">
+                                     <label class="form-check-label">
+                                       <input type="checkbox" class="form-check-input" formControlName="mang">
+                                        Management 
+                                     </label>
+                                   </div>
+                                   <div class="form-check">
+                                     <label class="form-check-label">
+                                       <input type="checkbox" class="form-check-input" formControlName="index">
+                                       Index
+                                     </label>
+                                   </div>
+                                   <div class="form-check">
+                                     <label class="form-check-label">
+                                       <input type="checkbox" class="form-check-input" formControlName="meeting">
+                                       Meetings
+                                     </label>
+                                   </div>
+                                   <div class="form-check">
+                                     <label class="form-check-label">
+                                       <input type="checkbox" class="form-check-input" formControlName="survey">
+                                       Survey
+                                     </label>
+                                   </div> -->
+                           
+                                   <button  type="button" class="btn btn-sm btn-primary float-right"  (click)="mangement_select_navbar(hrmang)">Ok</button>
+                                   <!-- <button  type="button" class="btn btn-sm btn-primary float-right" (click)="mangement_select_navbar()">Update</button> -->
+                           
+                                  </form>
+                                    <form #HrmanperForm="ngForm"  *ngIf ="dataemp1"    >
+                                    
+                                      <table style="margin-left: 10px;">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                            <tr>
+                                              <td>Dashboard</td>
+                                              <td>
+               <input type="checkbox" id="choosecert"  name="Dashboard" disabled  class="form-control form_color" [(ngModel)]="hrmangup.Dashboard" #Dashboard="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Employee</td>
+                                              <td>
+                       <input type="checkbox" id="choosecert"  name="Employee"   class="form-control form_color" [(ngModel)]="hrmangup.Employee" #Employee="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Estimates</td>
+                                              <td>
+                       <input type="checkbox" id="choosecert"  name="Estimates"   class="form-control form_color" [(ngModel)]="hrmangup.Estimates" #Estimates="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Invoices</td>
+                                              <td>
+                         <input type="checkbox" id="choosecert"  name="Invoices"   class="form-control form_color" [(ngModel)]="hrmangup.Invoices" #Invoices="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Expenses</td>
+                                              <td>
+                    <input type="checkbox" id="choosecert"  name="Expenses"   class="form-control form_color" [(ngModel)]="hrmangup.Expenses" #Expenses="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                        
+                                          <tr>
+                                              <td>Payments</td>
+                                              <td>
+                       <input type="checkbox" id="choosecert"  name="Payments"   class="form-control form_color" [(ngModel)]="hrmangup.Payments" #Payments="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Provident_Fund</td>
+                                              <td>
+                    <input type="checkbox" id="choosecert"  name="Provident_Fund"   class="form-control form_color" [(ngModel)]="hrmangup.Provident_Fund" #Provident_Fund="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Contacts</td>
+                                            <td>
+                                           <input type="checkbox" id="choosecert" name="Contact" style="width: 20px" class="form-control form_color" [(ngModel)]="hrmangup.Contact" #Contact="ngModel"/>
+        
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                              <td>Taxes</td>
+                                              <td>
+                      <input type="checkbox" id="choosecert"  name="Taxes"   class="form-control form_color" [(ngModel)]="hrmangup.Taxes" #Taxes="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Expenses_Reports</td>
+                                              <td>
+                     <input type="checkbox" id="choosecert"  name="Expenses_Reports"   class="form-control form_color" [(ngModel)]="hrmangup.Expenses_Reports" #Expenses_Reports="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Invoice_Report</td>
+                                              <td>
+                         <input type="checkbox" id="choosecert"  name="Invoice_Report"   class="form-control form_color" [(ngModel)]="hrmangup.Invoice_Report" #Invoice_Report="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+   
+                                          <!-- <tr>
+                                              <td>Department</td>
+                                              <td>
+                            <input type="checkbox" id="choosecert"  name="Department"   class="form-control form_color" [(ngModel)]="hrmang.Department" #Department="ngModel"/>
+  
+                                              </td>
+                                          </tr> -->
+                                          <tr>
+                                              <td>Holidays</td>
+                                              <td>
+                                <input type="checkbox" id="choosecert"  name="Holidays"   class="form-control form_color" [(ngModel)]="hrmangup.Holidays" #Holidays="ngModel"/>
+  
+                                              </td>
+                                          </tr> <tr>
+                                              <td>Dummy</td>
+                                              <td>
+                             <input type="checkbox" id="choosecert"  name="Dummy"   class="form-control form_color" [(ngModel)]="hrmangup.Dummy" #Dummy="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                           
+                                          
+                                         
+    <!-- Dashboard      Employee        Estimates  Invoices    Expenses    Payments  Provident_Fund  Taxes  Expenses_Reports  Invoice_Report  Department Holidays Dummy  Designations
+      Projects   Clients  Leads   Managed_Jobs Applied_Jobs  Employee_Salary Payslip Leave_Request  Users  Timing_Sheet  Tickets  Email    Assets  Events Activities Assets
+                                       Profile    Forgot_Password  -->
+                                          <tr>
+                                              <td>Payslip</td>
+                                              <td>
+                                                  <input type="checkbox" id="choosecert"  name="Payslip"   class="form-control form_color" [(ngModel)]="hrmangup.Payslip" #Payslip="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Leave_Request</td>
+                                              <td>
+                                                  <input type="checkbox" id="choosecert"  name="Leave_Request"   class="form-control form_color" [(ngModel)]="hrmangup.Leave_Request" #Leave_Request="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Users</td>
+                                              <td>
+                                                  <input type="checkbox" id="choosecert"  name="Users"   class="form-control form_color" [(ngModel)]="hrmangup.Users" #Users="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          
+
+
+</div>
+<div class="col-lg-6" >
+                                          <tr>
+                                              <td>Email</td>
+                                              <td>
+                                                  <input type="checkbox" id="choosecert"  name="Email"   class="form-control form_color" [(ngModel)]="hrmangup.Email" #Email="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Assets</td>
+                                              <td>
+                                                  <input type="checkbox" id="choosecert"  name="Assets"   class="form-control form_color" [(ngModel)]="hrmangup.Assets" #Assets="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Timing_Sheet</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Timing_Sheet"   class="form-control form_color" [(ngModel)]="hrmangup.Timing_Sheet" #Timing_Sheet="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                              <td>Profile</td>
+                                              <td>
+                                                  <input type="checkbox" id="choosecert"  name="Profile"   class="form-control form_color" [(ngModel)]="hrmangup.Profile" #Profile="ngModel"/>
+  
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Forgot_Password</td>
+                                          <td>
+                                 <input type="checkbox" id="choosecert"  name="Forgot_Password"   class="form-control form_color" [(ngModel)]="hrmangup.Forgot_Password" #Forgot_Password="ngModel"/>
+          
+                                          </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Holidays</td>
+                                          <td>
+                                              <input type="checkbox" id="choosecert"  name="Holidays"   class="form-control form_color" [(ngModel)]="hrmangup.Holidays" #Holidays="ngModel"/>
+          
+                                          </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Designations</td>
+                                            <td>
+            <input type="checkbox" id="choosecert"  name="Designations"   class="form-control form_color" [(ngModel)]="hrmangup.Designations" #Designations="ngModel"/>
+
+                                            </td>
+                                        </tr> <tr>
+                                            <td>Projects</td>
+                                            <td>
+                            <input type="checkbox" id="choosecert"  name="Projects"   class="form-control form_color" [(ngModel)]="hrmangup.Projects" #Projects="ngModel"/>
+
+                                            </td>
+                                        </tr> 
+                                       
+                                        <tr>
+                                            <td>Clients</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Clients"   class="form-control form_color" [(ngModel)]="hrmangup.Clients" #Clients="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Leads</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Leads"   class="form-control form_color" [(ngModel)]="hrmangup.Leads" #Leads="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Managed_Jobs</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Managed_Jobs"   class="form-control form_color" [(ngModel)]="hrmangup.Managed_Jobs" #Managed_Jobs="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Applied_Jobs</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Applied_Jobs"   class="form-control form_color" [(ngModel)]="hrmangup.Applied_Jobs" #Applied_Jobs="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Employee_Salary</td>
+                                            <td>
+                                                <input type="checkbox" id="choosecert"  name="Employee_Salary"   class="form-control form_color" [(ngModel)]="hrmangup.Employee_Salary" #Employee_Salary="ngModel"/>
+
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                              <td>Tickets</td>
+                                              <td>
+                                                <input type="checkbox" id="choosecert" name="Tickets" style="width: 20px" class="form-control form_color" [(ngModel)]="hrmangup.Tickets" #Tickets="ngModel"/>
+          
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Activities</td>
+                                              <td>
+                                               <input type="checkbox" id="choosecert" name="Activities" style="width: 20px" class="form-control form_color" [(ngModel)]="hrmangup.Activities" #Activities="ngModel"/>
+          
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Events</td>
+                                              <td>
+                                             <input type="checkbox" id="choosecert" name="Events" style="width: 20px" class="form-control form_color" [(ngModel)]="hrmangup.Events" #Events="ngModel"/>
+          
+                                              </td>
+                                          </tr>
+                                     <!-- <button  type="button" class="btn btn-md btn-primary float-right" (click)="mangement_select_navbar(hrmang)">Update</button> -->
+  
+                                          <!-- <tr>
+                                              <td></td>
+                                              <td></td>
+                                          </tr> -->
+
+</div>
+
+</div>
+
+                                         </table>
+                                     <!-- <div class="form-check">
+                                       <label class="form-check-label">
+                                         <input type="checkbox" class="form-check-input" formControlName="mang">
+                                          Management 
+                                       </label>
+                                     </div>
+                                     <div class="form-check">
+                                       <label class="form-check-label">
+                                         <input type="checkbox" class="form-check-input" formControlName="index">
+                                         Index
+                                       </label>
+                                     </div>
+                                     <div class="form-check">
+                                       <label class="form-check-label">
+                                         <input type="checkbox" class="form-check-input" formControlName="meeting">
+                                         Meetings
+                                       </label>
+                                     </div>
+                                     <div class="form-check">
+                                       <label class="form-check-label">
+                                         <input type="checkbox" class="form-check-input" formControlName="survey">
+                                         Survey
+                                       </label>
+                                     </div> -->
+                             
+                                     <!-- <button  type="button" class="btn btn-sm btn-primary float-right" (click)="mangement_select_navbar(hrmang)">Ok</button> -->
+                                     <button  type="button" class="btn btn-sm btn-primary float-right" (click)="hmperupdate(hrmangup)">Update</button>
+                             
+                                    </form>
+                              
+                                </div>
+                           
+                           <!-- hr -->
+                                <!-- <div class="card" style="    margin-top: 5%; background-color: beige; padding: 2%;" *ngIf="newhr">
+                                 <div class="text-center">HR</div>
+                                 <form [formGroup]="newhrForm">
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="hrhome">
+                                       Home 
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="Recruitment">
+                                      Recruitment
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="Campus">
+                                      Campus
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="Careers">
+                                      Careers
+                                    </label>
+                                  </div>
+                                  <button  type="button" class="btn btn-sm btn-primary float-right" (click)="HR_select_navbar()">Ok</button>
+                                  <button  type="button" class="btn btn-sm btn-primary float-right" (click)="updatehr()">Update</button>
+                           
+                                 </form>
+                               </div> -->
+                           
+                           <!-- Engineering -->
+                               <!-- <div class="card" style="    margin-top: 5%; background-color: beige; padding: 2%;" *ngIf="newengineer">
+                                 <div class="text-center">Engineer</div>
+                                 <div class="row">
+                                   <div class="col-lg-6">
+                                 <form [formGroup]="newengForm">
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="enghome">
+                                       Home 
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="Result">
+                                      Result
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="About">
+                                      About
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="Contact">
+                                      Contact
+                                    </label>
+                                  </div>
+                                  <button  type="button" class="btn btn-sm btn-primary float-right" (click)="eng_select_navbar()">Ok</button>
+                                  <button  type="button" class="btn btn-sm btn-primary float-right" (click)="updateengi()">Update</button>
+                           
+                                 </form>
+                                 </div>
+                                 <div class="col-lg-6">
+                                 
+                                     <form  #EngiForm="ngForm">
+                                       <div class="form-check">
+                                         <label class="form-check-label">
+                                             <input type="checkbox" id="choosecert" name="enghome" style="width: 20px" class="form-control form_color" [(ngModel)]="Engidata.enghome" #enghome="ngModel"/>
+                                   
+                                            Home 
+                                         </label>
+                                       </div>
+                                       <div class="form-check">
+                                         <label class="form-check-label">
+                                              <input type="checkbox" id="choosecert" name="Result" style="width: 20px" class="form-control form_color" [(ngModel)]="Engidata.Result" #Result="ngModel"/>
+                                   
+                                              Result
+                                         </label>
+                                       </div>
+                                       <div class="form-check">
+                                         <label class="form-check-label">
+                                             <input type="checkbox" id="choosecert" name="About" style="width: 20px" class="form-control form_color" [(ngModel)]="Engidata.About" #About="ngModel"/>
+                                   
+                                             About
+                                         </label>
+                                       </div>
+                                       <div class="form-check">
+                                         <label class="form-check-label">
+                                           <input type="checkbox" id="choosecert" name="Contact" style="width: 20px" class="form-control form_color" [(ngModel)]="Engidata.Contact" #Contact="ngModel"/>
+                                   
+                                           Contact
+                                         </label>
+                                       </div>
+                                       <button  type="button" class="btn btn-sm btn-primary float-right" (click)="updateengi(Engidata)">Update</button>
+                                   
+                                      </form>
+                                 </div>
+                                 </div>
+                               </div> -->
+                           
+                           <!-- doctor -->
+                               <div class="card" style="    margin-top: 5%; background-color: beige; padding: 2%;" *ngIf="newdoctor">
+                               
+                                 <div class="text-center">Employee</div>
+                                 <div class="row">   
+                                   <div class="col-lg-6" *ngIf ="dataem">
+                                 <form [formGroup]="newdocForm">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                          <input type="checkbox" class="form-check-input" disabled formControlName="home">
+                                          Home 
+                                        </label>
+                                      </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="Holidays">
+                                      Holidays 
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="Tickets">
+                                      Tickets
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input" formControlName="Activities">
+                                      Activities
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input"  formControlName="Events">
+                                      Events
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input"  formControlName="Leave_Request">
+                                      Leave_Request
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input type="checkbox" class="form-check-input"  formControlName="jobs">
+                                      Jobs
+                                    </label>
+                                  </div>
+                                  <button  type="button" class="btn btn-sm btn-primary float-right"  (click)="doctor_select_navbar()">Ok</button>
+                                  <!-- <button  type="button" class="btn btn-sm btn-primary float-right" (click)="updatedoc()">Update</button> -->
+                           
+                                 </form>
+                               </div>
+                           <div class="col-lg-6" *ngIf ="dataemp"> 
+                             <form  #clientForm="ngForm">
+                              
+                               <table>
+                                <tr>
+                                    <td>Home</td>
+                                <td>
+                       <input type="checkbox" id="choosecert"  name="home" disabled  class="form-control form_color" [(ngModel)]="ServiceData.home" #home="ngModel"/>
+
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td>Leave_Request</td>
+                                <td>
+                       <input type="checkbox" id="choosecert"  name="Leave_Request"   class="form-control form_color" [(ngModel)]="ServiceData.Leave_Request" #Leave_Request="ngModel"/>
+
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td>Jobs</td>
+                                <td>
+                       <input type="checkbox" id="choosecert"  name="jobs"   class="form-control form_color" [(ngModel)]="ServiceData.jobs" #jobs="ngModel"/>
+
+                                </td>
+                                </tr>
+                                <tr>
+                                    <td>Holidays</td>
+                                <td>
+                                    <input type="checkbox" id="choosecert"  name="Holidays"   class="form-control form_color" [(ngModel)]="ServiceData.Holidays" #Holidays="ngModel"/>
+
+                                </td>
+                                </tr>
+
+                                <tr>
+                                    <td>Tickets</td>
+                                    <td>
+                                      <input type="checkbox" id="choosecert" name="Tickets" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.Tickets" #Tickets="ngModel"/>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Activities</td>
+                                    <td>
+                                     <input type="checkbox" id="choosecert" name="Activities" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.Activities" #Activities="ngModel"/>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Events</td>
+                                    <td>
+                                   <input type="checkbox" id="choosecert" name="Events" style="width: 20px" class="form-control form_color" [(ngModel)]="ServiceData.Events" #Events="ngModel"/>
+
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr> -->
+                               </table>
+                            
+                               
+                               <!-- <button  type="button" class="btn btn-sm btn-primary float-right" (click)="doctor_select_navbar()">Ok</button> -->
+                               <button  type="button" class="btn btn-sm btn-primary float-right" (click)="updatedoc(ServiceData)">Update</button>
+                           
+                              </form>
+                           </div>
+                           
+                           
+                           
+                             </div>
+                             </div>
+                           
+                           </div>
+
+
+
+                    <!--Category Name-->
+                    <!-- <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Designation_Name">Designation Name<span style="color: red;font-size: 18px;">*</span></label>
+                            <input type="text" id="Designation_Name" name="Designation_Name" class="form-control form_color"
+                                [(ngModel)]="ServiceData.Designation_Name" #Designation_Name="ngModel" placeholder="Enter Designation_Name"
+                                [ngClass]="{'is-invalid': DesignationForm.submitted && Designation_Name.invalid}" required />
+                            <div class="invalid-feedback" *ngIf="DesignationForm.submitted && Designation_Name.invalid">
+                                <div *ngIf="Designation_Name.errors.required">Designation_Name* is Required</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="Departments">Departments</label>
+                            <select class="form-control form_color" placeholder="Select Departments" id="Departments"  name="Departments" [(ngModel)]="ServiceData.Departments">
+            
+                               
+                           
+                                 <option  value="Web Development">Web Development</option>
+                                 <option  value="IT Management">IT Management</option>
+                                 <option  value="Support Management">Support Management</option>
+                                 <option  value="Application Development">Application Development</option>
+                                 <option  value="Marketing">Marketing</option>
+                             </select>
+                            
+                        </div>
+                    </div> -->
+            
+                         
+            </div>
+                <!-- </div> -->
+                <!-- column right 2 -->
+              
+           
+                    
+<!--               
+                <div class="col-md-12 text-center">
+                    <button type="submit"  (click)='register(ServiceData)'
+                    class="btn btn-primary btn-sm text-uppercase mt-5" >Add Designations</button>
+                  
+                </div> -->
+    
+        <!-- </form> -->
+            
+        
+            
+    </div>
+     
+</div>

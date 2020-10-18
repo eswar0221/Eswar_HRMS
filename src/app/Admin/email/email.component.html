@@ -1,0 +1,520 @@
+
+<div class="card rows">
+    <div class="card-body">
+            <div class="clearfix">&nbsp;</div>
+            <div class="row rows">
+                <div class="col-md-4">
+                    <!-- <button class="btn btn-rounded btn-md text-white" style="background-color: #5c1ac7;"
+                        (click)="openMediumModalPopup(addUniversity)" title="click here for Registration">University
+                        Register</button> -->
+                        <h1>Inbox</h1>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <!-- <span class="nav-tabs tabs" role="tablist">
+                    <a (click)="FirstLogo()" data-toggle="tab" role="tab"><i style="font-size: 16px;cursor: pointer;" class="icon icon-apps mr-4" ></i></a>
+
+                    <a (click)="SecondLogo()"  class="active"   data-toggle="tab" role="tab"><i style="font-size: 20px;cursor: pointer;" class="icon icon-list mr-4" ></i></a>
+                    </span> -->
+                     <!-- <button class="btn  btn-primary btn-sm " style="padding: 6px;"  (click)="jobs()">Apply Job</button> -->
+                </div>
+            </div>
+            <!--second row-->
+<!-- Tickets Start -->
+<div class="row" >
+<div class="col-lg-2">
+    <!-- <h4  class="page-title">Inbox</h4> -->
+
+
+
+<div class="mail-navigation-container" ng-class="{'expanded' : !tabCtrl.navigationCollapsed}">
+    <div class="text-center"><button type="button" class="btn btn-default compose-button" ng-click="tabCtrl.showCompose('','','')">Compose</button>
+    </div><!-- ngRepeat: t in tabCtrl.tabs -->
+    <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation ng-binding ng-scope" ui-sref="components.mail.label({label: t.label})" ng-click="selectTab(t.label)" href="#">Inbox
+        <span class="new-mails ng-binding" ng-show="t.newMails">7</span></div>
+    <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation ng-binding ng-scope" ui-sref="components.mail.label({label: t.label})" ng-click="selectTab(t.label)" href="#">Sent Mail
+        <span class="new-mails ng-binding ng-hide" ng-show="t.newMails"></span></div>
+    <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation ng-binding ng-scope" ui-sref="components.mail.label({label: t.label})" ng-click="selectTab(t.label)" href="#">Important
+        <span class="new-mails ng-binding ng-hide" ng-show="t.newMails"></span></div>
+        <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation ng-binding ng-scope active" ui-sref="components.mail.label({label: t.label})" ng-click="selectTab(t.label)" href="#">Draft
+            <span class="new-mails ng-binding" ng-show="t.newMails">2</span></div>
+    <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation ng-binding ng-scope" ui-sref="components.mail.label({label: t.label})" ng-click="selectTab(t.label)" href="#">Spam
+        <span class="new-mails ng-binding ng-hide" ng-show="t.newMails"></span></div>
+    <div ng-repeat="t in tabCtrl.tabs" ui-sref-active="active" class="mail-navigation ng-binding ng-scope" ui-sref="components.mail.label({label: t.label})" ng-click="selectTab(t.label)" href="#">Trash
+        <span class="new-mails ng-binding ng-hide" ng-show="t.newMails"></span></div>
+    <div class="labels">
+        <div class="labels-title">
+
+        </div>
+        <div class="labels-container">
+            <div class="label-item"><span class="tag label work" style="color:black ;background-color: #81d1f3;" >Work</span></div>
+    <div class="label-item"><span class="tag label family"style="color:black ;background-color: #90b900;">Family</span></div>
+    <div class="label-item"><span class="tag label friend"style="color:black ;background-color: #e85656;">Friend</span></div>
+    <div class="label-item"><span class="tag label study"style="color:black ;background-color: #dfb81c;">Study</span></div>
+
+</div>
+</div>
+<div class="add-label-container">
+    <i class="fa fa-plus-circle"></i>
+    <span class="label-input-stub" style="cursor: pointer">Add new label</span>
+</div>
+</div>
+
+</div>
+ <div class="col-lg-10">
+<div class="row" style="width: 100%;">
+
+   
+<div  class="content container-fluid">
+    
+    <div  class="row">
+        <div  class="col-xs-12">
+    <!-- <h4  class="page-title">Inbox</h4> -->
+</div></div>
+    <div  class="row">
+        <div  class="col-md-12">
+            <div  class="card-box"
+            ><div  class="email-header">
+        <div  class="row">
+            <div  class="col-sm-9 col-md-8 col-xs-8 top-action-left">
+                <div  class="pull-left">
+                    <div  class="btn-group">
+            <a  class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:" style="border: 1px solid black; text-decoration: none;color: black;">Select <i  ></i></a>
+            <ul  class="dropdown-menu">
+                <li ><a  href="javascript:">All</a></li>
+                <li ><a  href="javascript:">None</a></li>
+                <li  class="divider"></li>
+                <li ><a  href="javascript:">Read</a></li>
+                <li ><a  href="javascript:">Unread</a></li>
+            </ul>
+        </div>
+        <div  class="btn-group m-l-5">
+                    <a  class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="javascript:" style="border: 1px solid black; text-decoration: none;color: black;"s>Actions <i  ></i></a>
+                    <ul  class="dropdown-menu">
+                        <li ><a  href="javascript:">Reply</a></li>
+                        <li ><a  href="javascript:">Forward</a></li>
+                        <li ><a  href="javascript:">Archive</a></li>
+                        <li  class="divider"></li>
+                        <li ><a  href="javascript:">Mark As Read</a></li>
+                        <li ><a  href="javascript:">Mark As Unread</a></li>
+                        <li  class="divider"></li><li ><a  href="javascript:">Delete</a></li>
+                    </ul>
+                </div>
+                        <div  class="btn-group m-l-5">
+                            <a  aria-expanded="false" class="btn btn-default dropdown-toggle" style="border: 1px solid black; text-decoration: none;" data-toggle="dropdown">
+                            <i  class="fa fa-folder"></i>
+                            <!-- <i  class="fa fa-angle-down"></i> -->
+                        </a>
+                            <ul  class="dropdown-menu dropdown-menu-right" role="menu">
+                                <li ><a class="sdf" href="javascript:">Social</a></li>
+                                <li ><a class="sdf" href="javascript:">Forums</a></li>
+                                <li ><a class="sdf" href="javascript:">Updates</a>
+                                </li>
+                                <li  class="divider"></li>
+                                <li ><a class="sdf" href="javascript:">Spam</a></li>
+                                <li ><a class="sdf" href="javascript:">Trash</a></li>
+                                <li  class="divider"></li>
+                                <li ><a class="sdf" href="javascript:">New</a></li></ul>
+                            </div>
+                            <div  class="btn-group m-l-5">
+                                <a  aria-expanded="false" class="btn btn-default dropdown-toggle" style="border: 1px solid black; text-decoration: none;" data-toggle="dropdown">
+                                    <i  class="fa fa-tags"></i>
+                                    <!-- <i  class="fa fa-angle-down"></i> -->
+                                </a>
+                                <ul  class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <li ><a  href="javascript:">Work</a></li>
+                                        <li ><a  href="javascript:">Family</a></li>
+                                        <li ><a  href="javascript:">Social</a> </li>
+                                       
+                                        <li  class="divider"></li>
+                                        <li ><a  href="javascript:">Primary</a></li>
+                                        <li ><a  href="javascript:">Promotions</a></li>
+                                        <li ><a  href="javascript:">Forums</a></li>
+                                    </ul>
+                                </div>
+                                </div>
+                                <div  class="pull-left hidden-xs">
+                                            
+                                            <input  class="form-control search-message" placeholder="Search Messages" type="text" style="width: 150px;">
+                                        </div></div>
+                                            
+                <div  class="col-sm-3 col-md-4 col-xs-4 top-action-right"><div  class="text-right">
+                          <span  class="text-muted hidden-xs">Showing 10 of 112 </span>
+                             <a  class="btn btn-default" data-toggle="tooltip" title="Refresh" style="border: 1px solid black; text-decoration: none;color: black;">
+                        <i  class="fa fa-refresh"></i>
+                    </a><div  class="btn-group">
+                     <a  class="btn btn-default" style="border: 1px solid black; text-decoration: none;color: black;"><i  class="fa fa-angle-left"></i>
+                                                        </a>
+                                                        
+            <a  class="btn btn-default" style="border: 1px solid black; text-decoration: none;color: black;">
+               <i  class="fa fa-angle-right" ></i>
+            </a>
+            </div></div></div></div></div>
+                                                            
+            <div  class="email-content">
+                <table  class="table table-inbox table-hover">
+                    <thead >
+                        <tr >
+                            <th  colspan="6">
+                
+                <input  class="checkbox-all" type="checkbox"></th>
+            </tr>
+        </thead>
+        <tbody ><!---->
+            <tr  class="clickable-row unread" (click)="viewmail()">
+                
+                <td ><input  class="checkmail" type="checkbox"></td>
+                <td ><span  class="mail-important"><i  class="fa fa-star"></i></span></td>
+                
+                <td  class="name hidden-xs" routerlink="view" tabindex="0">John Doe</td>
+                <td  class="subject" routerlink="view" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+                <td  class="hidden-xs" routerlink="view" tabindex="0"><i  class="fa fa-paperclip"></i></td>
+                <td  class="mail-date" routerlink="view" tabindex="0">13:14</td>
+            
+            </tr>
+                <tr  class="clickable-row unread" (click)="viewmail()">
+                    <td ><input  class="checkmail" type="checkbox"></td>
+                    <td ><span  class="mail-important">
+                        
+                        <i  class="fa fa-star-o"></i></span></td>
+                        <td  class="name hidden-xs" routerlink="view" tabindex="0">Code Canyon</td>
+                        
+                        <td  class="subject" routerlink="view" tabindex="0">Important account security update from Envato</td>
+                        <td  class="hidden-xs" routerlink="view" tabindex="0"><i  class="fa fa-paperclip"></i></td>
+                        <td  class="mail-date" routerlink="view" tabindex="0">30 Nov</td>
+                    </tr>
+                        
+                        <tr  class="clickable-row" (click)="viewmail()">
+                            <td ><input  class="checkmail" type="checkbox"></td>
+                            <td ><span  class="mail-important"><i  class="fa fa-star"></i></span></td>
+                            <td  class="name hidden-xs" routerlink="view" tabindex="0">Theme Forest</td>
+                            <td  class="subject" routerlink="view" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+                            <td  class="hidden-xs" routerlink="view" tabindex="0"><i  class="fa fa-paperclip"></i></td>
+                            <td  class="mail-date" routerlink="view" tabindex="0">27 Nov</td>
+                        </tr>
+                        <tr  class="clickable-row" (click)="viewmail()">
+                                <td ><input  class="checkmail" type="checkbox"></td>
+                                <td ><span  class="mail-important"><i  class="fa fa-star-o"></i></span></td>
+                                <td  class="name hidden-xs" routerlink="view" tabindex="0">Envato Account</td>
+                                <td  class="subject" routerlink="view" tabindex="0">Important account security update from Envato</td>
+                                <td  class="hidden-xs" routerlink="view" tabindex="0"><i  class="fa fa-paperclip"></i></td>
+                                <td  class="mail-date" routerlink="view" tabindex="0">26 Nov</td>
+                            </tr>
+                                <tr  class="clickable-row unread" (click)="viewmail()">
+                                    <td ><input  class="checkmail" type="checkbox"></td>
+                                    <td ><span  class="mail-important"><i  class="fa fa-star-o"></i></span></td>
+                                    <td  class="name hidden-xs" routerlink="view" tabindex="0">Richard Parker</td>
+                                    <td  class="subject" routerlink="view" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipiscing</td>
+                                    <td  class="hidden-xs" routerlink="view" tabindex="0"><i  class="fa fa-paperclip"></i></td>
+                                    <td  class="mail-date" routerlink="view" tabindex="0">13 Nov</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div></div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+
+              
+        
+<!-- *ngIf="secondTable" -->
+            <div class="text-center" id="secondTable" >
+                <div class="text-center">Hellow world !!</div>
+<!-- 
+<div class="modal-dialog modal-compose">
+    <div class="modal-content" uib-modal-transclude=""> -->
+   
+<!-- GMAIL NEW MESSAGE -->
+
+<div class="no" style="float: right;">
+    <div class="nH nn" style="order: 2147483647; width: 18px;"></div>
+    <div class="nH aJl nn" style="width: 6px; height: 777.778px; order: 2; display: none;">
+        <div class="aJn"><div id=":lt">
+            <div class="nH aAl" style="height: 1px;">
+                <iframe src="https://hangouts.google.com/webchat/u/0/frame?v=1585603183&amp;hl=en&amp;pvt=AMP3uWbF6wwWYWeaYKKdciP7L3fLpJ0kRlaodcbJICOwTaDh0EaXPNJ1bWeoQZswluRzBiJkOS6sicJk6EsBt2aYsK9CSSukOg%3D%3D&amp;prop=gmail#epreld" frameborder="0" scrolling="no" class="a7A" width="1" height="1">
+                </iframe></div></div>
+                <div id=":lw" class="aQV aJo"></div>
+                <div id=":lv" class="aQV aJm"></div>
+                <div id=":lu" class="aQV aQX"></div></div></div>
+                <div class="nH nn" style="width: 515px; height: 357.778px; order: 1;">
+                    <div class="no">
+                        <div class="nH nn" style="width: 510px; position: relative; height: 357.778px;">
+                            <div class="AD" style="position: absolute;">
+                                <div class="nH">
+                                    <div class="nH Hd" role="dialog" aria-labelledby=":mj">
+                                        <div class="nH">
+                                            <div tabindex="1" style="background-color: transparent; position: absolute;"></div></div>
+                                            <div class="nH Hy aXJ">
+                                                <div class="nH">
+                                                    <div class="pi" style="height: 3px;">
+                                                        <div class="ph p" style="width: 3px;"></div>
+                                                        <div class="ph q" style="width: 3px;"></div>
+                                                        <div class="l o"></div></div><div class="l m">
+                                                            <div class="l n" style="margin-left: 3px;">
+                                                                <div class="k" style="padding: 0px 0px 4px; margin: 0px 3px 0px 0px;">
+      <div class="aCk"><div class="nH wKggEb"><table cellpadding="0" class="cf Ht"><tbody><tr id=":pi"><td>
+          <div id=":mj" class="Hp"><h2 class="a3E"><div class="a3I">Compose:</div> 
+            <div class="aYF" style="width:405px">New Message</div></h2></div></td>
+            <td class="Hm">
+        <img class="Hl" id=":p7" src="https://mail.google.com/mail/u/0/images/cleardot.gif" alt="Minimize" aria-label="Minimize" data-tooltip-delay="800" data-tooltip="Minimize">
+        <!-- <i class="fa fa-minus-circle"></i> -->
+     <img class="Hq aUG" id=":mh" src="https://mail.google.com/mail/u/0/images/cleardot.gif" alt="Pop-out" aria-label="Full-screen (Shift for pop-out)" data-tooltip-delay="800" data-tooltip="Full-screen (Shift for pop-out)">
+     <img class="Ha" id=":mi" src="https://mail.google.com/mail/u/0/images/cleardot.gif" alt="Close" aria-label="Save &amp; close" data-tooltip-delay="800" data-tooltip="Save &amp; close">
+    </td></tr>
+</tbody></table></div></div></div></div></div>
+    <div class="dJ"></div><div class="pi" style="height: 4px; display: none;"><div class="ph i" style="width: 3px;">
+    </div>
+    <div class="ph j" style="width: 3px;"></div><div class="l h"></div></div></div>
+</div>
+    <div class="nH" >
+        <div class="aaZ">
+            <div class="M9" jsaction="taiVP:.CLIENT" jslog="77394; u014N:xr6bB; dYFj7e:true; 11:WyIjbXNnLWE6ci01OTgzOTI5OTcyMDAzNzk2NTI0IixudWxsLG51bGwsbnVsbCwxLG51bGwsWyIjdGhyZWFkLWE6ci01OTkzODQ0ODc5ODkzODM1ODg0Il0sZmFsc2Vd">
+                <div id=":nh" class="HX">
+
+                </div><div id=":m7"></div>
+                <div id=":q5">
+                    <div class="J-M J-M-ayU ex" role="menu" aria-haspopup="true" style="user-select: none; display: none;"></div></div>
+                    <div id=":nm" class="aoI" role="region" aria-label="New Message" style="height: 231px;">
+                        <div tabindex="1" style="background-color: transparent; width: 1px; height: 1px; position: absolute;"></div>
+                        <table id=":nl" class="aoP aoC"><tbody>
+                            <tr><td class="aoY"></td>
+                                <td id=":qj" class="I5">
+                                    <form id=":qm" action="" method="POST" enctype="multipart/form-data" accept-charset="utf-8" class="bAs">
+                                        <div class="fX aXjCH" id=":lz" style="max-height: 71px;">
+                                            <table class="GS" tabindex="-1">
+                                            <tbody class="bze">
+                                                <tr class="bzf">
+                                                    <td class="ok">
+                      <div class="o1"><span id=":qd" class="gO aQY" data-tooltip="Select contacts" aria-label="To - Select contacts" role="link" tabindex="1" style="font-size: 15px;font-weight: bold;">To
+                    </span></div></td>
+                      <td class="eV"><div id=":qc" class="oj">
+                          <div class="wO nr l1"><input class="wA" tabindex="-1" aria-hidden="true">
+  <textarea rows="1" id=":qp" class="vO" name="to" spellcheck="false" autocomplete="false" autocapitalize="off" autocorrect="off" tabindex="1" dir="ltr" aria-label="To" role="combobox" aria-autocomplete="list" style="width: 380px;">
+</textarea>
+<div class="aA6"><span>
+    <div tabindex="1" style="background-color: transparent; width: 1px; height: 1px; position: absolute;"></div>
+    <div tabindex="1" style="background-color: transparent; width: 1px; height: 1px; position: absolute;"></div>
+    <span><span id=":mn" class="aB gQ pE" role="link" tabindex="1" data-tooltip="Add Cc recipients &#8234;(Ctrl-Shift-C)&#8236;" aria-label="Add Cc recipients &#8234;(Ctrl-Shift-C)&#8236;" style="user-select: none;font-size: 10px;font-weight: bold;">Cc</span>
+    <span id=":mo" class="aB  gQ pB" role="link" tabindex="1" data-tooltip="Add Bcc recipients &#8234;(Ctrl-Shift-B)&#8236;" aria-label="Add Bcc recipients &#8234;(Ctrl-Shift-B)&#8236;" style="user-select: none;font-size: 10px;font-weight: bold;">Bcc</span>
+    <span id=":pp" role="button" tabindex="1" aria-hidden="false" class="bcV Sz" style="display:none" data-tooltip="Some recipients use services that don't support encryption (click for details)" aria-label="Some recipients use services that don't support encryption (click for details)"></span></span>
+    <div tabindex="1" style="background-color: transparent; width: 1px; height: 1px; position: absolute;"></div></span></div></div></div></td></tr>
+    <tr id=":m9" style="display:none" class="bzf">
+        <td class="ok"><span id=":ma" class="gO aQY" data-tooltip="Select contacts" aria-label="Cc - Select contacts" role="link" tabindex="1">Cc</span></td>
+        <td class="eV"><div id=":p8" class="oj">
+            <div class="wO nr"><input class="wA" tabindex="-1" aria-hidden="true">
+                <textarea rows="1" id=":qq" class="vO" name="cc" spellcheck="false" autocomplete="false" autocapitalize="off" autocorrect="off" tabindex="1" dir="ltr" aria-label="Cc"></textarea>
+                <div class="aA6"></div></div></div></td></tr><tr id=":me" style="display:none" class="bzf"><td class="ok"><span id=":mf" class="gO aQY" data-tooltip="Select contacts" aria-label="Bcc - Select contacts" role="link" tabindex="1">Bcc</span></td><td class="eV"><div id=":mg" class="oj">
+                    <div class="wO nr"><input class="wA" tabindex="-1" aria-hidden="true"><textarea rows="1" id=":qr" class="vO" name="bcc" spellcheck="false" autocomplete="false" autocapitalize="off" autocorrect="off" tabindex="1" dir="ltr" aria-label="Bcc"></textarea><div class="aA6"></div></div></div></td></tr><tr id=":md" style="display:none" class="bzf"><td></td><td class="bzg">
+                    <div id=":r6" class="az7" style="user-select: none;"></div><div id=":qa" class="ow"></div></td></tr></tbody></table></div>
+                <div id=":qi" class="aoD hl" tabindex="1" style="display: none;">
+                    <div id=":op" class="oL aDm">Recipients</div><div id=":ql" class="bgW">
+                        <span id=":ps" role="button" tabindex="-1" aria-hidden="true" class="bcV Sz" style="display:none" data-tooltip="Some recipients use services that don't support encryption (click for details)" aria-label="Some recipients use services that don't support encryption (click for details)"></span></div></div><div id=":q8" class="aoD az6">
+                            <div><input name="subjectbox" id=":q7" class="aoT" autocomplete="off" spellcheck="true" tabindex="1" placeholder="Subject" style="font-size: 15px;font-weight: bold;" aria-label="Subject"><div id=":q9" class="bzm" style="display: none"></div></div></div>
+                        <input type="hidden" name="composeid" value="1"><input type="hidden" name="from" id=":qn" value=""><input type="hidden" name="subject" id=":qs" value="">
+                        <input type="hidden" name="draft" id=":qv" value="#msg-a:r-5983929972003796524"><input type="hidden" name="rt" id=":qw" value="#thread-a:r-5993844879893835884">
+                        <input type="hidden" name="lts" id=":qx" value=""><input type="hidden" name="bwd" id=":qy" value=""><input type="hidden" name="rm" id=":qz" value="">
+                        <input type="hidden" name="ac" id=":r3" value=""><input type="hidden" name="adc" id=":r4" value=""><input type="hidden" name="ishtml" id=":r0" value="0">
+                        <input type="hidden" name="body" id=":qt" value=""><input type="hidden" name="pte" id="undefined" value=""><input type="hidden" name="pti" id="undefined" value="">
+                        <input type="hidden" name="bpfs" id=":mw" value=""><input type="hidden" name="uet" id=":qk" value=""><input type="hidden" name="pbgt" id=":mu" value="">
+                        <input type="hidden" name="pbgas" id=":mx" value=""><input type="hidden" name="pbgir" id=":mt" value=""><input name="msg_encrypt" type="hidden" id=":r9" value="0">
+                        <input name="signature" type="hidden" id=":ra" value="0"><input name="securityindicator" type="hidden" id=":rb" value="0"><div id=":ms" style="display:none"></div>
+                        <div id=":pg" style="display:none"></div><div id=":oo" style="display:none"></div></form><div id=":r8" class="a8i" style="display:none"></div><table class="iN">
+                            <tbody><tr><td id=":m0" class="GQ"><div id=":p1" class="GP" style="max-height: 100px; min-height: 100px; height: 100px;">
+                                <div id=":ly" class="qz aXjCH" style="max-height: 100px;"><div class="G9" style="display:none;">Loading...</div>
+                                <div id=":p0" class="et"><div id=":ng" class="ZyRVue"><div><div class="eJ"><table cellpadding="0" class="cf"><tbody>
+                                    <tr><td class="fw"><img class="fB" src="//ssl.gstatic.com/ui/v1/icons/mail/images/cleardot.gif" alt="">
+                                        <span id=":rd" class="em">Loading rich text...</span><span id=":rf" class="aaw">&nbsp;</span>
+                                        <span id=":re" class="eo el">«&nbsp;Plain&nbsp;Text</span></td><td class="fA"><span id=":ri" class="eu" role="link" tabindex="2">Check Spelling</span>
+                                            <span id=":rj" class="wX" role="menu" tabindex="2"><img class="wY" src="images/cleardot.gif" title="Change language" alt="Change language"></span>&nbsp;
+                                            <span id=":rk" class="eu ei" role="link" tabindex="2">Resume Editing</span></td></tr></tbody></table>
+                                            <div id="undefined" role="alert" class="fy ei"></div></div><table cellpadding="0" class="cf An" id="undefined"><tbody><tr><td class="Aq">&nbsp;</td>
+                                                <td class="Ap"><div id="undefined" class="Ar As"><div class="At">
+                                                    <textarea id=":rh" class="Ak aXjCH"  aria-label="Message Body" spellcheck="true" itacorner="6,7:1,1,0,0" tabindex="1" form="nosend">
+
+                                                    </textarea></div></div><div id=":rg" class="Ar Au" style="display: block;">
+                                                        <div id=":rc" class="Am Al editable LW-avf tS-tW" hidefocus="true" aria-label="Message Body" g_editable="true" role="textbox" aria-multiline="true" contenteditable="true" tabindex="1" style="direction: ltr; min-height: 80px;" itacorner="6,7:1,1,0,0" spellcheck="true">
+    <br></div></div></td>
+    <td class="Aq">&nbsp;</td></tr></tbody></table></div></div>
+    <div id=":mv"></div>
+    <div id=":p9" style="display:none" class="ajR" role="button" tabindex="-1">
+        <div id=":oz" class="uC">
+            <img class="ajT" src="//ssl.gstatic.com/ui/v1/icons/mail/images/cleardot.gif"></div></div>
+            <div id=":ou" style="height: 0px;"></div></div></div>
+            <div id=":ow" class="bv8">
+                <div id=":ov" class="bA3">
+                    <div id=":mm" class="GM" style="display:none;"><div></div></div>
+                    <div id=":n3"></div>
+                    <div id=":nc" style="height: 0px;"></div></div></div></div></td></tr>
+                    <tr>
+                        <td class="HE">
+                            <div id=":py" class="aDg">
+                                <div id=":nb" class="aDj aDi" style="left: 857.234px; width: 478px;">
+                                    <div id=":m4" class="aC5">
+                                        <div style="display: none;">
+                                            <div id=":tr" class="aBt">
+                                                <div id=":tp" class="aBq aXjCH" style="width: 476px;">
+                                                    <div id=":tq" class="aBs" style="width: 478px;"></div></div>
+                                                    
+                                                    <div class="aBr"></div></div></div></div>
+                                                    <div id=":qg" class="aDl">
+                                                        <div id=":pe" class="nc">
+                                                            <div id=":s1.ep" class="a8u avG">
+        <div class="a8D">
+            <div class="a8F">
+                <div class="a8x">
+                    <div class="a8D">
+                        <div class="a8F">
+                            <div class="a8z">
+                                <div class="a8y">
+                                    <div id=":s1.tb" class="a8E">
+                                        <button class="a8v biy biy" title="Search emoticons"></button>
+                                        <button class="a8v a8t a8t" title="Show face emoticons"></button>
+                                        <button class="a8v a8K a8K" title="Show object emoticons"></button>
+                                        <button class="a8v a8q a8q" title="Show nature emoticons"></button>
+                                        <button class="a8v a8L a8L" title="Show transportation emoticons"></button>
+                                        <button class="a8v a8H a8H" title="Show symbol emoticons"></button></div></div></div>
+                                        <div class="a8C">
+                                            <button id=":s1.cl" class="a8o" title="Close the emoticon pane"></button></div></div></div></div></div>
+      <input type="text" id=":s1.se" class="biz" placeholder="Search emojis">
+      <div class="a8B"><div class="a8A"><div id=":s1.pb" class="aXjCH a8J">
+          <div id=":s1.pa" class="a8I"></div></div></div></div></div>
+          <div class="a8s" style="left: 128px"></div></div></div>
+          <div id=":qh" class="Ur"><div class="aX" style="display: none;">
+            <div id=":sl" class="aZ"><div class="J-Z" id=":sk" role="toolbar" aria-label="Formatting options" style="user-select: none;">
+   <div id=":sv" class="J-Z-I J-J5-Ji" command="+undo" data-tooltip="Undo &#8234;(Ctrl-Z)&#8236;" aria-label="Undo &#8234;(Ctrl-Z)&#8236;" role="button" style="user-select: none;">
+    <div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;">
+    <div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="te  aaA aaB" style="user-select: none;"> 
+</div></div></div></div>
+   <div id=":sw" class="J-Z-I J-J5-Ji" command="+redo" data-tooltip="Redo &#8234;(Ctrl-Y)&#8236;" aria-label="Redo &#8234;(Ctrl-Y)&#8236;" role="button" style="user-select: none;">
+    <div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;">
+        <div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;">
+            <div class="sV  aaA aaB" style="user-select: none;"> </div></div></div></div>
+    <div class="J-Z-axR J-J5-Ji" style="user-select: none;"></div>
+    <div id=":sx" class="J-Z-axO J-Z-M-I aOz J-J5-Ji" command="+fontName" data-tooltip="Font &#8234;(Ctrl-Shift-5, Ctrl-Shift-6)&#8236;" aria-label="Font &#8234;(Ctrl-Shift-5, Ctrl-Shift-6)&#8236;" role="listbox" aria-activedescendant=":tv" aria-expanded="false" aria-haspopup="true" style="user-select: none;">
+        <div class="J-J5-Ji J-Z-M-I-Kv-H" style="user-select: none;">
+            <div class="J-J5-Ji J-Z-M-I-J6-H" style="user-select: none;">
+            <div class="J-J5-Ji J-Z-M-I-Jm" id=":tv" role="option" aria-selected="true" style="user-select: none;">Sans Serif</div>
+        <div class="J-J5-Ji J-Z-M-I-JG" style="user-select: none;"> </div></div></div></div>
+        <div class="J-Z-axR J-J5-Ji" style="user-select: none;"></div>
+        <div id=":sy" class="J-Z-M-I J-J5-Ji" command="+fontSize" data-tooltip="Size &#8234;(Ctrl-Shift--, Ctrl-Shift-+)&#8236;" aria-label="Size &#8234;(Ctrl-Shift--, Ctrl-Shift-+)&#8236;" role="button" aria-expanded="false" aria-haspopup="true" style="user-select: none;">
+            <div class="J-J5-Ji J-Z-M-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-M-I-J6-H" style="user-select: none;"><div class="J-J5-Ji J-Z-M-I-Jm" style="user-select: none;"><div class="eY  aaA aaB" style="user-select: none;"> </div></div>
+            <div class="J-J5-Ji J-Z-M-I-JG" style="user-select: none;"> </div></div></div></div>
+            <div class="J-Z-axR J-J5-Ji" style="user-select: none;"></div><div id=":sz" class="J-Z-aEu-I J-Z-I J-J5-Ji" command="+bold" data-tooltip="Bold &#8234;(Ctrl-B)&#8236;" aria-label="Bold &#8234;(Ctrl-B)&#8236;" aria-pressed="false" role="button" style="user-select: none;">
+                <div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="eN  aaA aaB" style="user-select: none;"> </div></div></div></div><div id=":t0" class="J-Z-aEu-I J-Z-I J-J5-Ji" command="+italic" data-tooltip="Italic &#8234;(Ctrl-I)&#8236;" aria-label="Italic &#8234;(Ctrl-I)&#8236;" aria-pressed="false" role="button" style="user-select: none;">
+                    <div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;">
+                    <div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="e3  aaA aaB" style="user-select: none;"> </div></div></div></div><div id=":t1" class="J-Z-aEu-I J-Z-I J-J5-Ji" command="+underline" data-tooltip="Underline &#8234;(Ctrl-U)&#8236;" aria-label="Underline &#8234;(Ctrl-U)&#8236;" aria-pressed="false" role="button" style="user-select: none;">
+                        <div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="fu  aaA aaB" style="user-select: none;"> </div></div></div></div><div id=":t2" class="J-Z-M-I J-J5-Ji" command="+foreColor" data-tooltip="Text color" aria-label="Text color" role="button" aria-expanded="false" aria-haspopup="true" style="user-select: none;">
+                            <div class="J-J5-Ji J-Z-M-I-Kv-H" style="user-select: none;">
+                            <div class="J-J5-Ji J-Z-M-I-J6-H" style="user-select: none;">
+                                <div class="J-J5-Ji J-Z-M-I-Jm" style="user-select: none;">
+                            <div class="eS  aaA aaB" style="user-select: none;"> </div></div>
+                            <div class="J-J5-Ji J-Z-M-I-JG" style="user-select: none;"> </div></div></div></div>
+                            <div class="J-Z-axR J-J5-Ji" style="user-select: none;"></div>
+                            <div id=":t3" class="J-Z-M-I J-J5-Ji" command="alignMenu" data-tooltip="Align" aria-label="Align" role="button" aria-expanded="false" aria-haspopup="false" style="user-select: none;"><div class="J-J5-Ji J-Z-M-I-Kv-H" style="user-select: none;">
+                                <div class="J-J5-Ji J-Z-M-I-J6-H" style="user-select: none;">
+                                <div class="J-J5-Ji J-Z-M-I-Jm" style="user-select: none;"><div class="aaA aaB e4" style="user-select: none;"> </div></div>
+                                <div class="J-J5-Ji J-Z-M-I-JG" style="user-select: none;"> </div></div></div></div>
+                                <div id=":t4" class="J-Z-aEu-I J-Z-I J-J5-Ji" command="+insertOrderedList" data-tooltip="Numbered list &#8234;(Ctrl-Shift-7)&#8236;" aria-label="Numbered list &#8234;(Ctrl-Shift-7)&#8236;" aria-pressed="false" role="button" style="user-select: none;">
+                                    <div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;">
+                                    <div class="e6  aaA aaB" style="user-select: none;"> </div>
+                                </div></div></div>
+   <div id=":t5" class="J-Z-aEu-I J-Z-I J-J5-Ji" command="+insertUnorderedList" data-tooltip="Bulleted list &#8234;(Ctrl-Shift-8)&#8236;" aria-label="Bulleted list &#8234;(Ctrl-Shift-8)&#8236;" aria-pressed="false" role="button" style="user-select: none;">
+                                        <div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;">
+                                            <div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;">
+                                                <div class="eO  aaA aaB" style="user-select: none;">
+                                         </div></div></div></div><div id=":t6" class="J-Z-I J-J5-Ji" command="+outdent" data-tooltip="Indent less &#8234;(Ctrl-[)&#8236;" aria-label="Indent less &#8234;(Ctrl-[)&#8236;" role="button" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="e8  aaA aaB" style="user-select: none;"> </div></div></div></div><div id=":t7" class="J-Z-I J-J5-Ji" command="+indent" data-tooltip="Indent more &#8234;(Ctrl-])&#8236;" aria-label="Indent more &#8234;(Ctrl-])&#8236;" role="button" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="e2  aaA aaB" style="user-select: none;"> </div></div></div></div><div id=":t8" class="J-Z-I J-J5-Ji" command="+BLOCKQUOTE" data-tooltip="Quote &#8234;(Ctrl-Shift-9)&#8236;" aria-label="Quote &#8234;(Ctrl-Shift-9)&#8236;" role="button" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="fa  aaA aaB" style="user-select: none;"> </div></div></div></div><div class="J-Z-axR J-J5-Ji" style="user-select: none;"></div><div id=":t9" class="J-Z-aEu-I J-Z-I J-J5-Ji" command="+strikeThrough" data-tooltip="Strikethrough &#8234;(Alt-Shift-5)&#8236;" aria-label="Strikethrough &#8234;(Alt-Shift-5)&#8236;" aria-pressed="false" role="button" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="td  aaA aaB" style="user-select: none;"> </div></div></div></div><div class="J-Z-axR J-J5-Ji" style="user-select: none;"></div><div id=":ta" class="J-Z-I J-J5-Ji" command="+removeFormat" data-tooltip="Remove formatting &#8234;(Ctrl-\)&#8236;" aria-label="Remove formatting &#8234;(Ctrl-\)&#8236;" role="button" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="fb  aaA aaB" style="user-select: none;"> </div></div></div></div><div class="J-Z-axR J-J5-Ji" style="user-select: none;"></div><div id=":tb" class="J-Z-M-I J-J5-Ji" command="moreMenu" data-tooltip="More formatting options" aria-label="More formatting options" role="button" aria-expanded="false" aria-haspopup="false" style="user-select: none;"><div class="J-J5-Ji J-Z-M-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-M-I-J6-H" style="user-select: none;"><div class="J-J5-Ji J-Z-M-I-Jm" style="user-select: none;"><div class="Y1 aUI  aaA aaB" style="user-select: none;"> </div></div><div class="J-J5-Ji J-Z-M-I-JG" style="user-select: none;"> </div></div></div></div></div><div class="J-Z aA3" id=":sm" style="display:none"><span>Currently in plain text mode.</span> <span class="aA5" id=":sn" role="link">Switch to rich text.</span></div><div id=":su" class="aA4"></div></div></div></div><span id=":ml" class="eq"></span></div><div id=":q4" class="aDx"><div class="aDu" style="display: none; right: 8px;"><div id=":rm.ckd" style="display: none; user-select: none;" class="hL" aria-label="Spell Check" role="toolbar"><div id=":rm.rc" class="T-I J-J5-Ji aDs T-I-Js-IF T-I-ax7 L3" role="button" tabindex="1" style="user-select: none;">Recheck</div><div id=":rm.ln" class="T-I J-J5-Ji aDt T-I-Js-IF T-I-Js-Gs hK T-I-ax7 L3" role="button" tabindex="1" aria-label="Language" aria-expanded="false" aria-haspopup="true" style="user-select: none;"><img class="aDy T-I-J3" src="images/cleardot.gif" alt="" style="user-select: none;"></div><div id=":rm.c" class="T-I J-J5-Ji aDt T-I-Js-Gs aDo hJ T-I-ax7 L3" role="button" tabindex="1" aria-label="Close spell check" style="user-select: none;"><img class="aDw T-I-J3" src="images/cleardot.gif" alt="" style="user-select: none;"></div></div><div id=":rm.ckg" class="aDv">Checking...</div></div></div><div class="aDh"><table id=":pv" class="IZ" role="group"><colgroup><col id=":pw"><col class="Uf"><col class="UA"><col class="Uy"><col class="az8"><col id=":m3"></colgroup><tbody><tr class="btC"><td class="gU Up"><div id=":mb" class="J-J5-Ji btA"><div id=":mz" class="J-J5-Ji"></div><div class="dC"><div id=":px" class="T-I J-J5-Ji aoO v7 T-I-atl L3" role="button" tabindex="1" data-tooltip="Send &#8234;(Ctrl-Enter)&#8236;" aria-label="Send &#8234;(Ctrl-Enter)&#8236;" data-tooltip-delay="800" jslog="32601; u014N:cOuCgd,Kr2w4b; dYFj7e:true; 11:WyIjbXNnLWE6ci01OTgzOTI5OTcyMDAzNzk2NTI0IixudWxsLG51bGwsbnVsbCwxLG51bGwsWyIjdGhyZWFkLWE6ci01OTkzODQ0ODc5ODkzODM1ODg0Il0sZmFsc2Vd" style="user-select: none;">Send</div><div id=":pt" class="T-I J-J5-Ji hG T-I-atl L3" role="button" tabindex="1" aria-label="More send options" data-tooltip="More send options" data-tooltip-delay="800" aria-expanded="false" aria-haspopup="true" style="user-select: none;"><div class="G-asx"></div></div></div><div id=":my" class="J-J5-Ji"></div></div></td><td id=":nd" class="oc gU"><div data-tooltip="Formatting options" aria-label="Formatting options"><div id=":ro" class="J-Z-I J-J5-Ji" role="button" aria-pressed="false" aria-haspopup="true" aria-expanded="false" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H"><div class="J-J5-Ji J-Z-I-J6-H"><div class="dv"><div class="a3I">&nbsp;</div></div></div></div></div></div></td><td class="gU btB"><div class="Uz" aria-hidden="true"></div></td><td id=":pd" class="a8X gU"><div class="bAK" style="user-select: none; position: relative;"><div class="wG J-Z-I" command="Files" data-tooltip="Attach files" aria-label="Attach files" tabindex="1" id=":rq" role="button" aria-pressed="false" aria-haspopup="true" aria-expanded="false" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div id=":rp" class="a1 aaA aMZ" style="user-select: none;"><div class="a3I" style="user-select: none;">&nbsp;</div></div></div></div></div><input type="file" name="Filedata" multiple="" style="position: absolute; overflow: hidden; height: 0px; width: 0px; opacity: 0; left: 0px; top: 0px; display: none;"><div class="wG J-Z-I" command="+link" data-tooltip="Insert link &#8234;(Ctrl-K)&#8236;" aria-label="Insert link &#8234;(Ctrl-K)&#8236;" tabindex="1" id=":rs" role="button" aria-pressed="false" aria-haspopup="true" aria-expanded="false" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div id=":rr" class="e5 aaA aMZ" style="user-select: none;"><div class="a3I" style="user-select: none;">&nbsp;</div></div></div></div></div><div class="wG J-Z-I" command="+emoticon" data-tooltip="Insert emoji &#8234;(Ctrl-Shift-2)&#8236;" aria-label="Insert emoji &#8234;(Ctrl-Shift-2)&#8236;" tabindex="1" id=":ru" role="button" aria-pressed="false" aria-haspopup="true" aria-expanded="false" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div id=":rt" class="QT aaA aMZ" style="user-select: none;"><div class="a3I" style="user-select: none;">&nbsp;</div></div></div></div></div><div class="wG J-Z-I" command="docs" data-tooltip="Insert files using Drive" aria-label="Insert files using Drive" tabindex="1" id=":rw" role="button" aria-pressed="false" aria-haspopup="true" aria-expanded="false" aria-disabled="false" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div id=":rv" class="aA7 aaA aMZ" style="user-select: none;"><div class="a3I" style="user-select: none;">&nbsp;</div></div></div></div></div><div class="wG J-Z-I" command="image" data-tooltip="Insert photo" aria-label="Insert photo" tabindex="1" id=":ry" role="button" aria-pressed="false" aria-haspopup="true" aria-expanded="false" aria-disabled="false" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div id=":rx" class="a2X aaA aMZ" style="user-select: none;"><div class="a3I" style="user-select: none;">&nbsp;</div></div></div></div></div><div class="wG J-Z-I" command="locker" data-tooltip="Turn confidential mode on / off" aria-label="Turn confidential mode on / off" tabindex="1" id=":s0" role="button" aria-pressed="false" aria-haspopup="true" aria-expanded="false" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div id=":rz" class="buc aaA aMZ" style="user-select: none;"><div class="a3I" style="user-select: none;">&nbsp;</div></div></div></div></div></div></td><td class="gU az5"><div id=":oq" class="J-J5-Ji btx"><div id=":n1" class="J-J5-Ji bty"><div id=":sa" class="J-JN-M-I J-J5-Ji Xv L3 T-I-ax7 T-I" role="button" tabindex="1" aria-haspopup="true" aria-expanded="false" data-tooltip="More options" aria-label="More options" style="user-select: none;"><div class="J-J5-Ji J-JN-M-I-Jm"><img class="Y1" src="images/cleardot.gif" alt=""><div class="a3I">&nbsp;</div></div><div class="J-J5-Ji J-JN-M-I-JG"></div></div></div><div class="Uz aw4 J-J5-Ji" aria-hidden="true"></div><div class="J-J5-Ji bty"><div id=":m5" class="oh J-Z-I J-J5-Ji T-I-ax7" tabindex="1" role="button" data-tooltip="Discard draft &#8234;(Ctrl-Shift-D)&#8236;" aria-label="Discard draft &#8234;(Ctrl-Shift-D)&#8236;" style="user-select: none;"><div class="J-J5-Ji J-Z-I-Kv-H" style="user-select: none;"><div class="J-J5-Ji J-Z-I-J6-H" style="user-select: none;"><div class="og T-I-J3" style="user-select: none;"></div></div></div></div></div><div tabindex="1" style="background-color: transparent; width: 1px; height: 1px; position: absolute;"></div></div></td></tr></tbody></table></div></div></div></td></tr></tbody></table></td></tr></tbody></table></div><div id=":ot"></div><div id="sbddm" class="q8NmZb J-M jQjAxd" style="display: none; user-select: none;" role="menu" aria-haspopup="true"><div class="SK AX" style="user-select: none;"><div class="J-N yr" selector="scheduledSend" role="menuitem" id=":si" style="user-select: none;"><div class="J-N-Jz" style="user-select: none;"><img class="v5 J-N-JX" role="menuitem" src="images/cleardot.gif" alt="" style="user-select: none;">Schedule send</div></div></div></div></div></div></div><div class="nH"><div tabindex="1" style="background-color: transparent; position: absolute;"></div></div></div></div></div></div><div class="nH nn" style="width: 5px;"></div></div><div class="dJ"></div></div><div class="nH nn" style="order: 0; width: 66px;"></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- </div></div> -->
+
+
+
+            </div>
+        
+            
+    </div>
+     
+</div>
+  
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
